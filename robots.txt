@@ -1,4 +1,47 @@
+# drjasonvaldivia.com
+
 User-agent: *
+Allow: /
+
+# ── Buscadores con IA ───────────────────────────────────────────────────────
+#
+# Se permiten EXPLÍCITAMENTE, y no por descuido. Un `Disallow` aquí saca al
+# consultorio de las respuestas de ChatGPT, Claude y Perplexity — que es donde
+# cada vez más pacientes preguntan "¿quién opera vesícula en Puerto Vallarta?".
+#
+# Los tres rastreadores de OpenAI son INDEPENDIENTES entre sí:
+#   · OAI-SearchBot  → alimenta las respuestas de ChatGPT. Bloquearlo = NO
+#                      aparecer en ChatGPT. Es el que decide la visibilidad.
+#   · GPTBot         → entrenamiento de modelos.
+#   · ChatGPT-User   → cuando un usuario pide expresamente abrir esta página.
+#
+# Si algún día se decide no ceder contenido para entrenamiento, se bloquea
+# GPTBot y se dejan los otros dos. NO se toque OAI-SearchBot.
+#
+# Un cambio aquí tarda ~24 h en reflejarse del lado de OpenAI.
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://drjasonvaldivia.com/sitemap.xml
