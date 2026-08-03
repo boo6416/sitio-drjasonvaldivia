@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<title>Agendar consulta | Dr. Jason Valdivia · Puerto Vallarta</title>
+<meta name="description" content="Agende su consulta de cirugía general en Puerto Vallarta. Respuesta el mismo día por WhatsApp. Español e inglés.">
+<link rel="canonical" href="https://drjasonvaldivia.com/citas/">
+<meta name="robots" content="index,follow">
+<link rel="alternate" hreflang="es" href="https://drjasonvaldivia.com/citas/">
+<link rel="alternate" hreflang="en" href="https://drjasonvaldivia.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Jason Valdivia — Cirujano General">
+<meta property="og:title" content="Agendar consulta | Dr. Jason Valdivia · Puerto Vallarta">
+<meta property="og:description" content="Agende su consulta de cirugía general en Puerto Vallarta. Respuesta el mismo día por WhatsApp. Español e inglés.">
+<meta property="og:url" content="https://drjasonvaldivia.com/citas/">
+<meta property="og:image" content="https://drjasonvaldivia.com/images/dr-office-portrait.jpg">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Physician","name":"Dr. Jason Alejandro Valdivia Nájar","description":"Cirujano general certificado por el Consejo Mexicano de Cirugía General, con entrenamiento avanzado en cirugía laparoscópica, en Puerto Vallarta.","url":"https://drjasonvaldivia.com/citas/","telephone":"+523313470335","medicalSpecialty":"Surgical","availableLanguage":["es","en"],"priceRange":"$","address":{"@type":"PostalAddress","streetAddress":"Calle Francia 186, Col. Versalles","addressLocality":"Puerto Vallarta","addressRegion":"Jalisco","postalCode":"48310","addressCountry":"MX"},"geo":{"@type":"GeoCoordinates","latitude":20.6364712,"longitude":-105.2275679},"hasMap":"https://maps.app.goo.gl/q8n5PdiaCsoAVkMv7","areaServed":{"@type":"City","name":"Puerto Vallarta"}}</script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'DM Sans',sans-serif; }
+    @keyframes fadeUp { from{ opacity:0; transform:translateY(20px); } to{ opacity:1; transform:translateY(0); } }
+  </style>
+</helmet>
+
+<div style="background:#faf7f2; color:#14293a; overflow-x:hidden;" data-screen-label="Citas">
+
+<!-- NAV -->
+<nav style="position:fixed; top:0; left:0; right:0; z-index:200; display:flex; justify-content:space-between; align-items:center; padding:{{ navPadding }}; background:rgba(13,43,62,0.96); backdrop-filter:blur(14px); border-bottom:1px solid rgba(255,180,150,0.12);">
+  <a href='/' style='display:flex; align-items:center; gap:12px; text-decoration:none;'>
+    <img src="logo.png" alt="Dr. Jason Valdivia Najar" style="width:38px; height:38px; border-radius:50%; object-fit:cover; flex-shrink:0; background:#fdf0ea;">
+    <span style="display:flex; flex-direction:column; line-height:1.2;">
+      <span style="font-family:'Playfair Display',serif; color:#fdf0ea; font-size:1.05rem; font-weight:600; letter-spacing:0.01em;">Dr. Jason Valdivia</span>
+      <span style="font-size:0.62rem; color:rgba(255,255,255,0.5); letter-spacing:0.13em; text-transform:uppercase; font-weight:400;">{{ t.navSub }}</span>
+    </span>
+  </a>
+  <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+    <button onClick="{{ toggleMenu }}" aria-label="Menu" style="background:none; border:none; width:40px; height:40px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; cursor:pointer;">
+      <span style="{{ hamburgerLine1 }}"></span>
+      <span style="{{ hamburgerLine2 }}"></span>
+      <span style="{{ hamburgerLine3 }}"></span>
+    </button>
+  </sc-if>
+  <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+    <ul style="display:flex; gap:2rem; list-style:none; align-items:center;">
+      <li><a href='/#sobre-mi' style='color:rgba(255,255,255,0.75); text-decoration:none; font-size:0.85rem;'>{{ t.navAbout }}</a></li>
+      <li><a href='/#cirugias' style='color:rgba(255,255,255,0.75); text-decoration:none; font-size:0.85rem;'>{{ t.navProc }}</a></li>
+      <li><button onClick="{{ toggleLang }}" style="background:transparent; border:1px solid rgba(79,126,168,0.4); color:#8ab4d6; padding:0.35rem 0.85rem; border-radius:20px; font-size:0.72rem; letter-spacing:0.08em; font-family:'DM Sans',sans-serif; cursor:pointer; font-weight:500;">{{ t.langSwitchLabel }}</button></li>
+    </ul>
+  </sc-if>
+</nav>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed; top:0; left:0; right:0; bottom:0; z-index:190; background:#0d2b3e; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2rem;">
+    <a href='/#sobre-mi' style='color:#fdf0ea; text-decoration:none; font-family:\'Playfair Display\',serif; font-size:1.6rem;'>{{ t.navAbout }}</a>
+    <a href='/#cirugias' style='color:#fdf0ea; text-decoration:none; font-family:\'Playfair Display\',serif; font-size:1.6rem;'>{{ t.navProc }}</a>
+    <button onClick="{{ toggleLang }}" style="margin-top:1rem; background:transparent; border:1px solid rgba(79,126,168,0.4); color:#8ab4d6; padding:0.5rem 1.3rem; border-radius:20px; font-size:0.8rem; letter-spacing:0.08em; font-family:'DM Sans',sans-serif;">{{ t.langSwitchLabel }}</button>
+    <button onClick="{{ closeMenu }}" aria-label="Close" style="position:absolute; top:24px; right:24px; background:none; border:none; color:#fdf0ea; font-size:1.8rem; cursor:pointer;">&times;</button>
+  </div>
+</sc-if>
+
+<!-- PAGE HEAD -->
+<section style="background:#0d2b3e; padding:{{ heroPadding }}; text-align:center; position:relative; overflow:hidden;">
+  <div style="position:absolute; top:-100px; left:50%; transform:translateX(-50%); width:420px; height:420px; border-radius:50%; background:radial-gradient(circle,rgba(79,126,168,0.16),transparent 70%);"></div>
+  <div style="position:relative; z-index:1; max-width:640px; margin:0 auto;">
+    <h1 style="font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,2.8rem); color:#fdf0ea; font-weight:500; margin-bottom:1rem;">{{ t.pageTitle }}</h1>
+    <p style="color:rgba(255,255,255,0.62); line-height:1.75; font-weight:300; font-size:1rem;">{{ t.pageDesc }}</p>
+    <div style="display:inline-flex; align-items:center; gap:8px; margin-top:1.5rem; background:rgba(79,126,168,0.12); border:1px solid rgba(79,126,168,0.35); color:#8ab4d6; padding:0.5rem 1.2rem; border-radius:20px; font-size:0.85rem;">{{ t.priceBadge }}</div>
+  </div>
+</section>
+
+<!-- CALENDLY -->
+<section style="max-width:900px; margin:0 auto; padding:3.5rem 5% 1rem;">
+  <p style="text-align:center; color:#42535f; font-size:0.95rem; margin-bottom:1.5rem; font-weight:300;">{{ t.calendlyNote }}</p>
+  <div style="background:#fff; border:1px solid rgba(13,43,62,0.1); border-radius:14px; padding:0.5rem;">
+    <div class="calendly-inline-widget" data-url="https://calendly.com/jason-valdivian/60" style="min-width:320px;height:700px;"></div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  </div>
+</section>
+
+<div style="display:flex; align-items:center; gap:16px; max-width:720px; margin:2.5rem auto; padding:0 5%;">
+  <div style="flex:1; height:1px; background:rgba(13,43,62,0.12);"></div>
+  <span style="color:#8b98a3; font-size:0.8rem; letter-spacing:0.05em; white-space:nowrap;">{{ t.altDivider }}</span>
+  <div style="flex:1; height:1px; background:rgba(13,43,62,0.12);"></div>
+</div>
+
+<div style="text-align:center; margin-bottom:1rem;">
+  <button onClick="{{ toggleForm }}" style="background:none; border:1px solid rgba(13,43,62,0.25); color:#0d2b3e; padding:0.65rem 1.4rem; border-radius:6px; font-size:0.85rem; font-weight:500; cursor:pointer; font-family:'DM Sans',sans-serif;">{{ t.altToggleBtn }}</button>
+</div>
+
+<!-- FORM -->
+<sc-if value="{{ formOpen }}" hint-placeholder-val="{{ false }}">
+<section style="max-width:720px; margin:0 auto; padding:0 5% 4rem;" ref="{{ formScrollRef }}">
+  <p style="text-align:center; color:#42535f; font-size:0.92rem; line-height:1.7; margin-bottom:2.2rem; font-weight:300;">{{ t.formNote }}</p>
+  <form action='../gracias/index' method='POST' name='citas'>
+    <input type="hidden" name="form-name" value="citas">
+    <input type="hidden" name="idioma" value="{{ t.formLangValue }}">
+    <p style="display:none;"><input name="bot-field"></p>
+    <div style="display:grid; grid-template-columns:{{ formCols }}; gap:1.2rem;">
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <label style="font-size:0.8rem; font-weight:500;">{{ t.fNombre }} <span style="color:#d85a30;">*</span></label>
+        <input type="text" name="nombre" required style="padding:0.75rem 0.9rem; border:1px solid #e5e0d8; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:0.92rem;">
+      </div>
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <label style="font-size:0.8rem; font-weight:500;">{{ t.fApellido }} <span style="color:#d85a30;">*</span></label>
+        <input type="text" name="apellido" required style="padding:0.75rem 0.9rem; border:1px solid #e5e0d8; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:0.92rem;">
+      </div>
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <label style="font-size:0.8rem; font-weight:500;">{{ t.fEdad }} <span style="color:#d85a30;">*</span></label>
+        <input type="number" name="edad" min="1" max="120" required style="padding:0.75rem 0.9rem; border:1px solid #e5e0d8; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:0.92rem;">
+      </div>
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <label style="font-size:0.8rem; font-weight:500;">{{ t.fTelefono }} <span style="color:#d85a30;">*</span></label>
+        <input type="tel" name="telefono" required style="padding:0.75rem 0.9rem; border:1px solid #e5e0d8; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:0.92rem;">
+      </div>
+      <div style="display:flex; flex-direction:column; gap:6px; grid-column:1/-1;">
+        <label style="font-size:0.8rem; font-weight:500;">{{ t.fCorreo }} <span style="color:#d85a30;">*</span></label>
+        <input type="email" name="correo" required style="padding:0.75rem 0.9rem; border:1px solid #e5e0d8; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:0.92rem;">
+      </div>
+      <div style="display:flex; flex-direction:column; gap:6px; grid-column:1/-1;">
+        <label style="font-size:0.8rem; font-weight:500;">{{ t.fMotivo }} <span style="color:#d85a30;">*</span></label>
+        <select name="motivo" required style="padding:0.75rem 0.9rem; border:1px solid #e5e0d8; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:0.92rem;">
+          <option value="">{{ t.fMotivoPlaceholder }}</option>
+          <sc-for list="{{ t.motivoOptions }}" as="opt" hint-placeholder-count="9">
+            <option>{{ opt }}</option>
+          </sc-for>
+        </select>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:6px; grid-column:1/-1;">
+        <label style="font-size:0.8rem; font-weight:500;">{{ t.fMensaje }}</label>
+        <textarea name="mensaje" placeholder="{{ t.fMensajePlaceholder }}" style="padding:0.75rem 0.9rem; border:1px solid #e5e0d8; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:0.92rem; min-height:110px; resize:vertical;"></textarea>
+      </div>
+      <div style="display:flex; gap:10px; align-items:flex-start; grid-column:1/-1;">
+        <input type="checkbox" name="consentimiento" value="Acepta" required style="width:auto; margin-top:3px;">
+        <label style="font-size:0.8rem; color:#42535f; line-height:1.5; font-weight:300;">{{ t.consentText }} <span style="color:#d85a30;">*</span></label>
+      </div>
+      <button type="submit" style="grid-column:1/-1; background:#0d2b3e; color:#fff; border:none; padding:1rem 2rem; border-radius:6px; font-size:1rem; font-weight:600; font-family:'DM Sans',sans-serif; cursor:pointer; margin-top:0.5rem;">{{ t.submitBtn }}</button>
+    </div>
+  </form>
+</section>
+</sc-if>
+
+<!-- ALT CONTACT -->
+<div style="text-align:center; padding:0 5% 3rem;">
+  <p style="color:#5a6b78; font-size:0.88rem; margin-bottom:1rem; font-weight:300;">{{ t.altContactText }}</p>
+  <a href="{{ t.whatsappHref }}" target="_blank" style="display:inline-flex; align-items:center; gap:10px; background:#25D366; color:#fff; text-decoration:none; padding:0.85rem 1.8rem; border-radius:6px; font-weight:600; font-size:0.93rem;">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+    {{ t.whatsappLabel }}
+  </a>
+</div>
+
+<!-- FAQ -->
+<section style="background:#f2ece3; padding:4.5rem 6%;">
+  <div style="max-width:760px; margin:0 auto;">
+    <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,2.5vw,2.2rem); font-weight:500; text-align:center; margin-bottom:2.5rem;">{{ t.faqTitle }}</h2>
+    <sc-for list="{{ t.faqs }}" as="faq" hint-placeholder-count="6">
+      <div style="background:#fff; border:1px solid rgba(13,43,62,0.08); border-radius:8px; margin-bottom:0.9rem; overflow:hidden;">
+        <div onClick="{{ toggleFaq($index) }}" style="padding:1.1rem 1.4rem; font-weight:600; font-size:0.95rem; color:#0d2b3e; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:1rem;">
+          <span>{{ faq.q }}</span>
+          <span style="color:#3a5f80; font-size:1.3rem; flex-shrink:0;">{{ faqSymbol($index) }}</span>
+        </div>
+        <div style="{{ faqBodyStyle($index) }}">
+          <p style="padding:0 1.4rem 1.2rem; color:#5a6b78; font-size:0.9rem; line-height:1.7; font-weight:300; margin:0;">{{ faq.a }}</p>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<footer style="background:#091f2d; padding:2.2rem 6%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+  <div style="display:flex; align-items:center; gap:10px; font-family:'Playfair Display',serif; color:#8ab4d6; font-size:0.92rem;">
+    <img src="logo.png" alt="Dr. Jason Valdivia Najar" style="width:26px; height:26px; border-radius:50%; object-fit:cover; background:#fdf0ea;">
+    Dr. Jason Alejandro Valdivia Najar
+  </div>
+  <p style="color:rgba(255,255,255,0.35); font-size:0.76rem;">{{ t.footerTagline }} &middot; &copy; 2026</p>
+</footer>
+
+</div>
+
+<div style="background:#0d2b3e; color:rgba(255,255,255,0.55); font-family:'DM Sans',sans-serif; font-size:0.72rem; text-align:center; padding:1.1rem 6%; line-height:1.7;">
+  Aviso de publicidad COFEPRIS No. 2614082002A00062 &nbsp;·&nbsp;
+  <a href="/aviso-de-privacidad/" style="color:rgba(255,255,255,0.75);">Aviso de privacidad</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const CONTENT = {
+  es: {
+    navSub: 'Cirujano General · Puerto Vallarta',
+    navAbout: 'Sobre mí', navProc: 'Procedimientos', langSwitchLabel: 'EN',
+    pageTitle: 'Agende su cita', pageDesc: 'Seleccione un horario disponible y su cita queda confirmada al instante — sin esperas.',
+    priceBadge: 'Costo de consulta: $800 MXN',
+    calendlyNote: 'Elija el horario que mejor le convenga — su cita queda confirmada al instante.',
+    altDivider: '¿PREFIERE OTRA FORMA DE CONTACTO?',
+    altToggleBtn: 'Llenar formulario de solicitud',
+    formNote: 'Los campos marcados con * son obligatorios. Sus datos se utilizan únicamente para responder a su solicitud.',
+    formLangValue: 'Español',
+    fNombre: 'Nombre', fApellido: 'Apellido', fEdad: 'Edad', fTelefono: 'Teléfono / WhatsApp', fCorreo: 'Correo electrónico',
+    fMotivo: 'Motivo de consulta', fMotivoPlaceholder: '— Seleccione el motivo —',
+    motivoOptions: ['Valoración para cirugía de vesícula', 'Valoración para cirugía de hernia', 'Valoración para cirugía antirreflujo / hernia hiatal', 'Valoración para apendicectomía', 'Valoración para cirugía de tiroides', 'Masas, quistes o tejidos blandos', 'Dolor abdominal / diagnóstico', 'Segunda opinión', 'Otro'],
+    fMensaje: 'Mensaje (opcional)', fMensajePlaceholder: 'Describa brevemente su situación, síntomas o dudas...',
+    consentText: 'Acepto que mis datos sean utilizados para responder a mi solicitud de cita. En caso de agendar una consulta, se creará un expediente clínico con mi información.',
+    submitBtn: 'Enviar solicitud de cita',
+    altContactText: '¿Prefiere contacto directo? También puede escribirme por WhatsApp:',
+    whatsappHref: 'https://wa.me/523313470335?text=Hola%20doctor,%20quisiera%20agendar%20una%20consulta',
+    whatsappLabel: 'WhatsApp: 33 1347 0335',
+    faqTitle: 'Preguntas frecuentes',
+    faqs: [
+      { q: '¿Cuál es el costo de la consulta?', a: 'El costo de la consulta es de $800 MXN.' },
+      { q: '¿Qué métodos de pago se aceptan?', a: 'Se aceptan pagos en efectivo, tarjetas de crédito y débito, transferencia bancaria y seguros de gastos médicos mayores.' },
+      { q: '¿Qué incluye la consulta?', a: 'Exploración física completa, creación de historial médico, análisis de estudios y resultados, recomendaciones de abordaje quirúrgico si es necesario, detalles del procedimiento y la recuperación, así como resolución de todas sus dudas.' },
+      { q: '¿En cuánto tiempo recibo respuesta a mi solicitud?', a: 'El mismo día o en un plazo máximo de 24 horas hábiles.' },
+      { q: '¿Dónde está ubicado el consultorio?', a: 'En Hospital Multimédica, Calle Francia #186, Colonia Versalles, Puerto Vallarta, Jalisco. Las cirugías pueden realizarse en el hospital que mejor se adapte a su caso y cobertura.' },
+      { q: '¿Atiende en inglés?', a: 'Sí, atiendo pacientes en español e inglés con total fluidez.' },
+    ],
+    footerTagline: 'Cirujano General · Certificado · Puerto Vallarta, Jalisco',
+  },
+  en: {
+    navSub: 'General Surgeon · Puerto Vallarta',
+    navAbout: 'About', navProc: 'Procedures', langSwitchLabel: 'ES',
+    pageTitle: 'Book your appointment', pageDesc: 'Select an available time and your appointment is confirmed instantly — no waiting.',
+    priceBadge: 'Consultation fee: $800 MXN (~$45 USD)',
+    calendlyNote: 'Choose the time that works best for you — your appointment is confirmed instantly.',
+    altDivider: 'PREFER ANOTHER WAY TO REACH OUT?',
+    altToggleBtn: 'Fill out request form instead',
+    formNote: 'Fields marked with * are required. Your information is used only to respond to your request.',
+    formLangValue: 'English',
+    fNombre: 'First name', fApellido: 'Last name', fEdad: 'Age', fTelefono: 'Phone / WhatsApp', fCorreo: 'Email',
+    fMotivo: 'Reason for consultation', fMotivoPlaceholder: '— Select a reason —',
+    motivoOptions: ['Gallbladder surgery evaluation', 'Hernia repair evaluation', 'Anti-reflux / hiatal hernia surgery evaluation', 'Appendectomy evaluation', 'Thyroid surgery evaluation', 'Masses, cysts or soft tissue', 'Abdominal pain / diagnosis', 'Second opinion', 'Other'],
+    fMensaje: 'Message (optional)', fMensajePlaceholder: 'Briefly describe your situation, symptoms or questions...',
+    consentText: 'I agree that my information will be used to respond to my appointment request. If a consultation is scheduled, a clinical record will be created with my information.',
+    submitBtn: 'Send appointment request',
+    altContactText: 'Prefer direct contact? You can also message me on WhatsApp:',
+    whatsappHref: 'https://wa.me/523313470335?text=Hello%20doctor,%20I%20would%20like%20to%20book%20an%20appointment',
+    whatsappLabel: 'WhatsApp: +52 33 1347 0335',
+    faqTitle: 'Frequently asked questions',
+    faqs: [
+      { q: 'How much does the consultation cost?', a: 'The consultation fee is $800 MXN (approximately $45 USD).' },
+      { q: 'What payment methods are accepted?', a: 'Cash, credit and debit cards, bank transfer, and major medical insurance are accepted.' },
+      { q: 'What does the consultation include?', a: 'Complete physical examination, medical history, review of studies and test results, surgical approach recommendations if needed, procedure and recovery details, and answers to all your questions.' },
+      { q: 'How soon will I receive a response?', a: 'The same day or within a maximum of 24 business hours.' },
+      { q: 'Where is the office located?', a: 'At Hospital Multimédica, Calle Francia #186, Colonia Versalles, Puerto Vallarta, Jalisco. Surgeries can be performed at the hospital that best fits your case and insurance coverage.' },
+      { q: 'Do you speak English?', a: 'Yes — all consultations, explanations, and follow-ups are available in fluent English.' },
+    ],
+    footerTagline: 'General Surgeon · Board-Certified · Puerto Vallarta, Jalisco',
+  }
+};
+
+class Component extends DCLogic {
+  state = {
+    lang: 'es',
+    vw: typeof window !== 'undefined' ? window.innerWidth : 1200,
+    menuOpen: false,
+    formOpen: false,
+    openFaqs: {},
+  };
+
+  componentDidMount() {
+    const saved = localStorage.getItem('drv_lang');
+    if (saved === 'en' || saved === 'es') this.setState({ lang: saved });
+    this._onResize = () => this.setState({ vw: window.innerWidth });
+    window.addEventListener('resize', this._onResize);
+  }
+
+  componentWillUnmount() {
+    if (this._onResize) window.removeEventListener('resize', this._onResize);
+  }
+
+  toggleLang = () => {
+    const next = this.state.lang === 'es' ? 'en' : 'es';
+    localStorage.setItem('drv_lang', next);
+    this.setState({ lang: next });
+  };
+
+  toggleMenu = () => this.setState((s) => ({ menuOpen: !s.menuOpen }));
+  closeMenu = () => this.setState({ menuOpen: false });
+  toggleForm = () => this.setState((s) => ({ formOpen: !s.formOpen }));
+
+  toggleFaq = (i) => () => {
+    this.setState((s) => ({ openFaqs: { ...s.openFaqs, [i]: !s.openFaqs[i] } }));
+  };
+  faqSymbol = (i) => (this.state.openFaqs[i] ? '\u2212' : '+');
+  faqBodyStyle = (i) => {
+    const open = !!this.state.openFaqs[i];
+    return { maxHeight: open ? '400px' : '0px', overflow: 'hidden', transition: 'max-height 0.3s ease' };
+  };
+
+  renderVals() {
+    const lang = this.state.lang;
+    const isMobile = this.state.vw < 860;
+    const open = this.state.menuOpen;
+    const t = CONTENT[lang];
+    const barBase = { width: '22px', height: '2px', background: '#fdf0ea', borderRadius: '2px', transition: 'transform 0.25s ease, opacity 0.25s ease' };
+    return {
+      t,
+      isMobile,
+      isDesktop: !isMobile,
+      menuOpen: open,
+      formOpen: this.state.formOpen,
+      navPadding: isMobile ? '0.9rem 5%' : '1.1rem 5%',
+      heroPadding: isMobile ? '7.5rem 6% 3rem' : '9rem 6% 3.5rem',
+      formCols: isMobile ? '1fr' : '1fr 1fr',
+      toggleLang: this.toggleLang,
+      toggleMenu: this.toggleMenu,
+      closeMenu: this.closeMenu,
+      toggleForm: this.toggleForm,
+      toggleFaq: this.toggleFaq,
+      faqSymbol: this.faqSymbol,
+      faqBodyStyle: this.faqBodyStyle,
+      hamburgerLine1: { ...barBase, transform: open ? 'translateY(7px) rotate(45deg)' : 'none' },
+      hamburgerLine2: { ...barBase, opacity: open ? 0 : 1 },
+      hamburgerLine3: { ...barBase, transform: open ? 'translateY(-7px) rotate(-45deg)' : 'none' },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

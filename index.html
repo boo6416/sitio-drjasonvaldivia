@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<title>Cirujano General en Puerto Vallarta | Dr. Jason Valdivia</title>
+<meta name="description" content="Cirujano general certificado en Puerto Vallarta. Cirugía laparoscópica de vesícula, hernia, apéndice y tiroides. Atención en español e inglés. Seguros y particulares.">
+<link rel="canonical" href="https://drjasonvaldivia.com/">
+<meta name="robots" content="index,follow">
+<link rel="alternate" hreflang="es" href="https://drjasonvaldivia.com/">
+<link rel="alternate" hreflang="en" href="https://drjasonvaldivia.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Jason Valdivia — Cirujano General">
+<meta property="og:title" content="Cirujano General en Puerto Vallarta | Dr. Jason Valdivia">
+<meta property="og:description" content="Cirujano general certificado en Puerto Vallarta. Cirugía laparoscópica de vesícula, hernia, apéndice y tiroides. Atención en español e inglés. Seguros y particulares.">
+<meta property="og:url" content="https://drjasonvaldivia.com/">
+<meta property="og:image" content="https://drjasonvaldivia.com/images/dr-office-portrait.jpg">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Physician","name":"Dr. Jason Alejandro Valdivia Nájar","description":"Cirujano general certificado por el Consejo Mexicano de Cirugía General, con entrenamiento avanzado en cirugía laparoscópica, en Puerto Vallarta.","url":"https://drjasonvaldivia.com/","telephone":"+523313470335","medicalSpecialty":"Surgical","availableLanguage":["es","en"],"priceRange":"$","address":{"@type":"PostalAddress","streetAddress":"Calle Francia 186, Col. Versalles","addressLocality":"Puerto Vallarta","addressRegion":"Jalisco","postalCode":"48310","addressCountry":"MX"},"geo":{"@type":"GeoCoordinates","latitude":20.6364712,"longitude":-105.2275679},"hasMap":"https://maps.app.goo.gl/q8n5PdiaCsoAVkMv7","areaServed":{"@type":"City","name":"Puerto Vallarta"}}</script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'DM Sans',sans-serif; }
+    @keyframes floatSlow { 0%,100%{ transform:translateY(0px); } 50%{ transform:translateY(-14px); } }
+    @keyframes pulseDot { 0%,100%{ opacity:1; } 50%{ opacity:0.35; } }
+    @keyframes fadeUp { from{ opacity:0; transform:translateY(22px); } to{ opacity:1; transform:translateY(0); } }
+    @keyframes fadeScale { from{ opacity:0; transform:scale(0.94); } to{ opacity:1; transform:scale(1); } }
+  </style>
+</helmet>
+
+<div style="background:#faf7f2; color:#14293a; overflow-x:hidden;" data-screen-label="Homepage">
+
+<!-- NAV -->
+<nav style="position:fixed; top:0; left:0; right:0; z-index:200; display:flex; justify-content:space-between; align-items:center; padding:{{ navPadding }}; background:rgba(13,43,62,0.96); backdrop-filter:blur(14px); border-bottom:1px solid rgba(255,180,150,0.12);">
+  <a href="#top" style="display:flex; align-items:center; gap:12px; text-decoration:none;">
+    <img src="images/logo.png" alt="Dr. Jason Valdivia Najar" style="width:42px; height:42px; border-radius:50%; object-fit:cover; flex-shrink:0; background:#fdf0ea;">
+    <span style="display:flex; flex-direction:column; line-height:1.2;">
+      <span style="font-family:'Playfair Display',serif; color:#fdf0ea; font-size:1.15rem; font-weight:600; letter-spacing:0.01em;">Dr. Jason Valdivia</span>
+      <span style="font-size:0.66rem; color:rgba(255,255,255,0.5); letter-spacing:0.14em; text-transform:uppercase; font-weight:400;">Cirujano General &middot; Puerto Vallarta</span>
+    </span>
+  </a>
+
+  <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+    <button onClick="{{ toggleMenu }}" aria-label="Menu" style="background:none; border:none; width:40px; height:40px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; cursor:pointer;">
+      <span style="{{ hamburgerLine1 }}"></span>
+      <span style="{{ hamburgerLine2 }}"></span>
+      <span style="{{ hamburgerLine3 }}"></span>
+    </button>
+  </sc-if>
+  <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+    <ul style="display:flex; gap:2.2rem; list-style:none; align-items:center;">
+      <li><a href="#sobre-mi" style="color:rgba(255,255,255,0.75); text-decoration:none; font-size:0.87rem;" style-hover="color:{{ accent }};">{{ t.navAbout }}</a></li>
+      <li><a href="#cirugias" style="color:rgba(255,255,255,0.75); text-decoration:none; font-size:0.87rem;" style-hover="color:{{ accent }};">{{ t.navProc }}</a></li>
+      <li><a href="#testimonios" style="color:rgba(255,255,255,0.75); text-decoration:none; font-size:0.87rem;" style-hover="color:{{ accent }};">{{ t.navPatients }}</a></li>
+      <li><button onClick="{{ toggleLang }}" style="background:transparent; border:1px solid {{ accentA30 }}; color:{{ accentLight }}; padding:0.35rem 0.85rem; border-radius:20px; font-size:0.72rem; letter-spacing:0.08em; font-family:'DM Sans',sans-serif; cursor:pointer; font-weight:500;">{{ t.langSwitchLabel }}</button></li>
+      <li><a href='/citas/' style='background:{{ accent }}; color:#1b2c3a; text-decoration:none; padding:0.55rem 1.2rem; border-radius:6px; font-weight:600; font-size:0.85rem;'>{{ t.navCta }}</a></li>
+    </ul>
+  </sc-if>
+</nav>
+
+<!-- MOBILE MENU DRAWER -->
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed; top:0; left:0; right:0; bottom:0; z-index:190; background:#0d2b3e; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2rem;">
+    <a href="#sobre-mi" onClick="{{ closeMenu }}" style="color:#fdf0ea; text-decoration:none; font-family:'Playfair Display',serif; font-size:1.6rem;">{{ t.navAbout }}</a>
+    <a href="#cirugias" onClick="{{ closeMenu }}" style="color:#fdf0ea; text-decoration:none; font-family:'Playfair Display',serif; font-size:1.6rem;">{{ t.navProc }}</a>
+    <a href="#testimonios" onClick="{{ closeMenu }}" style="color:#fdf0ea; text-decoration:none; font-family:'Playfair Display',serif; font-size:1.6rem;">{{ t.navPatients }}</a>
+    <a href="#contacto" onClick="{{ closeMenu }}" style="color:#fdf0ea; text-decoration:none; font-family:'Playfair Display',serif; font-size:1.6rem;">{{ t.navContact }}</a>
+    <button onClick="{{ toggleLang }}" style="margin-top:1rem; background:transparent; border:1px solid rgba(224,138,99,0.4); color:{{ accentLight }}; padding:0.5rem 1.3rem; border-radius:20px; font-size:0.8rem; letter-spacing:0.08em; font-family:'DM Sans',sans-serif;">{{ t.langSwitchLabel }}</button>
+    <button onClick="{{ closeMenu }}" aria-label="Close" style="position:absolute; top:24px; right:24px; background:none; border:none; color:#fdf0ea; font-size:1.8rem; cursor:pointer;">&times;</button>
+  </div>
+</sc-if>
+
+<div id="top"></div>
+
+<!-- HERO -->
+<section style="background:#0d2b3e; padding:{{ heroPadding }}; position:relative; overflow:hidden;">
+  <div style="position:absolute; top:-120px; right:-120px; width:380px; height:380px; border-radius:50%; background:radial-gradient(circle,{{ accentA18 }},transparent 70%);"></div>
+  <div style="max-width:1240px; margin:0 auto; display:flex; gap:3.5rem; align-items:center; flex-wrap:wrap;">
+    <div style="flex:1 1 460px; min-width:300px; position:relative; z-index:2;">
+      <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:1.8rem;">
+        <div style="display:flex; align-items:center; gap:8px; background:{{ accentA12 }}; border:1px solid {{ accentA35 }}; color:{{ accentLight }}; padding:0.4rem 0.9rem; border-radius:20px; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase;">
+          <span style="width:6px; height:6px; border-radius:50%; background:{{ accentLight }}; animation:pulseDot 2s ease-in-out infinite;"></span>{{ t.heroBadge1 }}
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.85); padding:0.4rem 0.9rem; border-radius:20px; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase;">{{ t.heroBadge2 }}</div>
+      </div>
+      <h1 style="font-family:'Playfair Display',serif; font-size:clamp(2.2rem,4.6vw,3.4rem); color:#fdf0ea; font-weight:500; line-height:1.14; margin-bottom:1.4rem;">{{ t.heroTitle1 }}<br>{{ t.heroTitle2 }} <span style="color:{{ accentLight }}; font-style:italic;">{{ t.heroTitleCity }}</span></h1>
+      <p style="font-size:1.02rem; color:rgba(255,255,255,0.62); max-width:520px; line-height:1.8; font-weight:300; margin-bottom:2.2rem;">{{ t.heroDesc }}</p>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2.6rem;">
+        <a href="https://wa.me/523313470335" target="_blank" style="display:inline-flex; align-items:center; gap:10px; background:{{ accent }}; color:#1b2c3a; text-decoration:none; padding:0.95rem 1.7rem; border-radius:6px; font-weight:600; font-size:0.92rem;">
+          {{ t.heroCtaPrimary }}
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        </a>
+        <a href="#cirugias" style="display:inline-flex; align-items:center; background:transparent; border:1px solid rgba(255,255,255,0.3); color:#fdf0ea; text-decoration:none; padding:0.95rem 1.7rem; border-radius:6px; font-weight:500; font-size:0.92rem;">{{ t.heroCtaSecondary }}</a>
+      </div>
+      <div style="display:flex; gap:2.4rem; flex-wrap:wrap;">
+        <div>
+          <div style="font-family:'Playfair Display',serif; font-size:2.1rem; color:#fdf0ea; font-weight:500;">{{ stat1Display }}</div>
+          <div style="font-size:0.76rem; color:rgba(255,255,255,0.5); max-width:110px; line-height:1.4;">{{ t.stat1Label }}</div>
+        </div>
+        <div>
+          <div style="font-family:'Playfair Display',serif; font-size:2.1rem; color:#fdf0ea; font-weight:500;">{{ stat2Display }}</div>
+          <div style="font-size:0.76rem; color:rgba(255,255,255,0.5); max-width:110px; line-height:1.4;">{{ t.stat2Label }}</div>
+        </div>
+        <div>
+          <div style="font-family:'Playfair Display',serif; font-size:2.1rem; color:#fdf0ea; font-weight:500;">{{ stat3Display }}</div>
+          <div style="font-size:0.76rem; color:rgba(255,255,255,0.5); max-width:110px; line-height:1.4;">{{ t.stat3Label }}</div>
+        </div>
+      </div>
+    </div>
+    <div style="flex:1 1 340px; min-width:280px; display:flex; justify-content:center; position:relative; z-index:2;">
+      <div style="position:relative; max-width:400px; width:100%;">
+        <div style="position:absolute; inset:-16px; border:1px solid {{ accentA35 }}; border-radius:20px; animation:floatSlow 6s ease-in-out infinite;"></div>
+        <img src="images/dr-office-portrait.jpg" alt="Dr. Jason Valdivia Najar" style="width:100%; border-radius:16px; display:block; box-shadow:0 30px 60px rgba(0,0,0,0.35); position:relative; z-index:1;">
+        <div style="position:absolute; bottom:-22px; left:-22px; background:#fdf0ea; color:#0d2b3e; padding:0.9rem 1.2rem; border-radius:10px; box-shadow:0 14px 30px rgba(0,0,0,0.25); z-index:2;">
+          <div style="font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:600;">5.0 &#9733;</div>
+          <div style="font-size:0.68rem; color:#5a6b78;">{{ t.reviewsLabel }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div style="background:#faf7f2; padding:1.6rem 6%; display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; border-bottom:1px solid rgba(13,43,62,0.06); animation:fadeUp 0.8s ease both;">
+  <div style="font-size:0.78rem; color:#5a6b78; padding:0.5rem 1rem; border-right:1px solid rgba(13,43,62,0.1);">{{ t.trust1 }}</div>
+  <div style="font-size:0.78rem; color:#5a6b78; padding:0.5rem 1rem; border-right:1px solid rgba(13,43,62,0.1);">{{ t.trust2 }}</div>
+  <div style="font-size:0.78rem; color:#5a6b78; padding:0.5rem 1rem; border-right:1px solid rgba(13,43,62,0.1);">{{ t.trust3 }}</div>
+  <div style="font-size:0.78rem; color:#5a6b78; padding:0.5rem 1rem;">{{ t.trust4 }}</div>
+</div>
+
+<!-- ABOUT -->
+<section id="sobre-mi" data-screen-label="About" style="padding:{{ sectionPadding }}; max-width:1240px; margin:0 auto; display:flex; gap:3.5rem; align-items:flex-start; flex-wrap:wrap;">
+  <div style="flex:1 1 340px; min-width:280px; animation:fadeUp 0.9s ease both;">
+    <img src="images/dr-model-demo.jpg" alt="Dr. Valdivia explicando un procedimiento" style="width:100%; border-radius:14px; display:block; box-shadow:0 20px 45px rgba(13,43,62,0.12);">
+  </div>
+  <div style="flex:1.3 1 420px; min-width:300px; animation:fadeUp 0.9s ease 0.1s both;">
+    <div style="font-size:0.75rem; letter-spacing:0.16em; text-transform:uppercase; color:{{ accentDark }}; font-weight:600; margin-bottom:0.7rem;">{{ t.aboutKicker }}</div>
+    <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.7rem,2.8vw,2.4rem); font-weight:500; margin-bottom:1.3rem; line-height:1.25;">{{ t.aboutTitle }}</h2>
+    <p style="font-size:0.98rem; color:#42535f; line-height:1.85; font-weight:300; margin-bottom:1rem;">{{ t.aboutP1 }}</p>
+    <p style="font-size:0.98rem; color:#42535f; line-height:1.85; font-weight:300; margin-bottom:1.8rem;">{{ t.aboutP2 }}</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1rem;">
+      <sc-for list="{{ credentials }}" as="c" hint-placeholder-count="4">
+        <div style="display:flex; gap:12px; align-items:flex-start;">
+          <div style="width:34px; height:34px; border-radius:8px; background:{{ accentDarkA10 }}; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:{{ accentDark }}; font-family:'Playfair Display',serif; font-weight:600;">{{ c.mono }}</div>
+          <div>
+            <strong style="display:block; font-size:0.87rem; color:#14293a; margin-bottom:2px;">{{ c.title }}</strong>
+            <span style="font-size:0.8rem; color:#5a6b78; line-height:1.5;">{{ c.detail }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDURES -->
+<section id="cirugias" data-screen-label="Procedures" style="background:#0d2b3e; padding:{{ sectionPadding }};">
+  <div style="max-width:1240px; margin:0 auto;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; flex-wrap:wrap; margin-bottom:3rem; animation:fadeUp 0.8s ease both;">
+      <div>
+        <div style="font-size:0.75rem; letter-spacing:0.16em; text-transform:uppercase; color:{{ accentLight }}; font-weight:600; margin-bottom:0.7rem;">{{ t.procKicker }}</div>
+        <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.7rem,2.8vw,2.4rem); color:#fdf0ea; font-weight:500;">{{ t.procTitle }}</h2>
+      </div>
+      <p style="color:rgba(255,255,255,0.55); max-width:380px; font-size:0.92rem; line-height:1.7; font-weight:300;">{{ t.procDesc }}</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.4px; background:rgba(255,255,255,0.08); border-radius:10px; overflow:hidden;">
+      <sc-for list="{{ procedures }}" as="p" hint-placeholder-count="6">
+        <a href="{{ p.href }}" style="display:block; background:#123549; padding:2.2rem 1.9rem; text-decoration:none; transition:background 0.25s; animation:fadeUp 0.8s ease both;" style-hover="background:#17415a;">
+          <div style="width:46px; height:46px; border-radius:10px; background:{{ accentA14 }}; border:1px solid {{ accentA30 }}; display:flex; align-items:center; justify-content:center; margin-bottom:1.1rem; color:{{ accentLight }}; font-family:'Playfair Display',serif; font-weight:600; font-size:1rem;">{{ p.mono }}</div>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.08rem; color:#fdf0ea; margin-bottom:0.6rem; font-weight:500;">{{ p.title }}</h3>
+          <p style="color:rgba(255,255,255,0.55); font-size:0.85rem; line-height:1.7; font-weight:300; margin-bottom:0.9rem;">{{ p.desc }}</p>
+          <span style="display:inline-block; background:{{ accentA12 }}; border:1px solid {{ accentA25 }}; color:{{ accentLight }}; font-size:0.66rem; letter-spacing:0.08em; text-transform:uppercase; padding:0.3rem 0.7rem; border-radius:4px;">{{ p.tag }}</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="por-que" data-screen-label="Why choose me" style="padding:{{ sectionPadding }};">
+  <div style="max-width:1240px; margin:0 auto;">
+    <div style="text-align:center; max-width:600px; margin:0 auto 3.2rem; animation:fadeUp 0.8s ease both;">
+      <div style="font-size:0.75rem; letter-spacing:0.16em; text-transform:uppercase; color:{{ accentDark }}; font-weight:600; margin-bottom:0.7rem;">{{ t.whyKicker }}</div>
+      <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.7rem,2.8vw,2.4rem); font-weight:500;">{{ t.whyTitle }}</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.4rem;">
+      <sc-for list="{{ whyItems }}" as="w" hint-placeholder-count="4">
+        <div style="text-align:center; padding:2.3rem 1.5rem; background:#ffffff; border-radius:10px; border:1px solid rgba(13,43,62,0.07); transition:transform 0.25s ease, box-shadow 0.25s ease; animation:fadeUp 0.8s ease both;" style-hover="transform:translateY(-6px); box-shadow:0 16px 34px rgba(13,43,62,0.1);">
+          <div style="font-family:'Playfair Display',serif; font-size:2.3rem; color:{{ accent }}; font-weight:400; margin-bottom:0.6rem;">{{ w.num }}</div>
+          <h4 style="font-size:0.95rem; font-weight:600; color:#14293a; margin-bottom:0.6rem;">{{ w.title }}</h4>
+          <p style="font-size:0.83rem; color:#5a6b78; line-height:1.65; font-weight:300;">{{ w.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- OR GALLERY -->
+<section id="quirofano" data-screen-label="Operating room" style="padding:{{ sectionPadding }}; background:#f2ece3;">
+  <div style="max-width:1240px; margin:0 auto;">
+    <div style="text-align:center; max-width:600px; margin:0 auto 2.6rem; animation:fadeUp 0.8s ease both;">
+      <div style="font-size:0.75rem; letter-spacing:0.16em; text-transform:uppercase; color:{{ accentDark }}; font-weight:600; margin-bottom:0.7rem;">{{ t.orKicker }}</div>
+      <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.7rem,2.8vw,2.4rem); font-weight:500; margin-bottom:0.9rem;">{{ t.orTitle }}</h2>
+      <p style="color:#5a6b78; font-size:0.95rem; line-height:1.7; font-weight:300;">{{ t.orDesc }}</p>
+    </div>
+    <div style="position:relative; max-width:920px; margin:0 auto; animation:fadeScale 0.8s ease both;">
+      <div style="border-radius:14px; overflow:hidden; aspect-ratio:16/9; box-shadow:0 24px 50px rgba(13,43,62,0.18); position:relative;" onMouseEnter="{{ pauseCarousel }}" onMouseLeave="{{ resumeCarousel }}">
+        <div style="{{ carouselTrackStyle }}">
+          <sc-for list="{{ orPhotos }}" as="photo" hint-placeholder-count="4">
+            <div style="width:100%; height:100%; flex-shrink:0;">
+              <img src="{{ photo.src }}" alt="{{ photo.alt }}" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </sc-for>
+        </div>
+        <button onClick="{{ carouselPrev }}" aria-label="Previous photo" style="position:absolute; top:50%; left:14px; transform:translateY(-50%); width:42px; height:42px; border-radius:50%; background:rgba(13,43,62,0.65); border:none; color:#fff; font-size:1.2rem; cursor:pointer; display:flex; align-items:center; justify-content:center;">&#8249;</button>
+        <button onClick="{{ carouselNext }}" aria-label="Next photo" style="position:absolute; top:50%; right:14px; transform:translateY(-50%); width:42px; height:42px; border-radius:50%; background:rgba(13,43,62,0.65); border:none; color:#fff; font-size:1.2rem; cursor:pointer; display:flex; align-items:center; justify-content:center;">&#8250;</button>
+      </div>
+      <div style="display:flex; justify-content:center; gap:9px; margin-top:1.1rem;">
+        <sc-for list="{{ orPhotos }}" as="photo" hint-placeholder-count="4">
+          <button onClick="{{ carouselGoTo($index) }}" aria-label="Go to photo {{ $index }}" style="{{ dotStyle($index) }}"></button>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonios" data-screen-label="Testimonials" style="padding:{{ sectionPadding }};">
+  <div style="max-width:1240px; margin:0 auto;">
+    <div style="text-align:center; max-width:640px; margin:0 auto 3rem; animation:fadeUp 0.8s ease both;">
+      <div style="font-size:0.75rem; letter-spacing:0.16em; text-transform:uppercase; color:{{ accentDark }}; font-weight:600; margin-bottom:0.7rem;">{{ t.testKicker }}</div>
+      <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.7rem,2.8vw,2.4rem); font-weight:500; margin-bottom:0.9rem;">{{ t.testTitle }}</h2>
+      <p style="color:{{ accentDark }}; font-weight:600; font-size:0.95rem;">{{ t.testRating }}</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.4rem;">
+      <sc-for list="{{ testimonials }}" as="rev" hint-placeholder-count="3">
+        <div style="background:#ffffff; border:1px solid rgba(13,43,62,0.07); border-radius:12px; padding:1.9rem; animation:fadeUp 0.8s ease both;">
+          <div style="color:{{ accent }}; letter-spacing:2px; margin-bottom:0.9rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p style="font-size:0.9rem; color:#374651; line-height:1.75; font-weight:300; margin-bottom:1.3rem;">&ldquo;{{ rev.quote }}&rdquo;</p>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:32px; height:32px; border-radius:50%; background:#0d2b3e; color:#fdf0ea; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:600;">{{ rev.initials }}</div>
+            <div>
+              <div style="font-size:0.82rem; font-weight:600; color:#14293a;">{{ rev.name }}</div>
+              <div style="font-size:0.72rem; color:#8b98a3;">{{ rev.detail }}</div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <p style="text-align:center; margin-top:2.4rem; font-size:0.85rem; color:#5a6b78;">{{ t.testMore }} <a href="https://maps.app.goo.gl/q8n5PdiaCsoAVkMv7" target="_blank" style="color:{{ accentDark }};">{{ t.testMoreLink }}</a></p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto" data-screen-label="Contact" style="background:#0d2b3e; padding:{{ sectionPadding }};">
+  <div style="max-width:1240px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,1fr)); gap:3rem;">
+    <div style="animation:fadeUp 0.8s ease both;">
+      <div style="font-size:0.75rem; letter-spacing:0.16em; text-transform:uppercase; color:{{ accentLight }}; font-weight:600; margin-bottom:0.7rem;">{{ t.contactKicker }}</div>
+      <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.7rem,2.8vw,2.4rem); color:#fdf0ea; font-weight:500; margin-bottom:1.1rem;">{{ t.contactTitle }}</h2>
+      <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; line-height:1.8; font-weight:300; margin-bottom:1.8rem; max-width:440px;">{{ t.contactDesc }}</p>
+      <a href="https://wa.me/523313470335" target="_blank" style="display:inline-flex; align-items:center; gap:10px; background:#25D366; color:#fff; text-decoration:none; padding:0.95rem 1.7rem; border-radius:6px; font-weight:600; font-size:0.92rem; margin-bottom:2rem;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+        {{ t.contactWhatsapp }}
+      </a>
+      <div style="display:flex; flex-direction:column; gap:1rem;">
+        <a href="tel:+523313470335" style="display:flex; gap:12px; text-decoration:none; color:rgba(255,255,255,0.75); align-items:flex-start;">
+          <span style="width:34px; height:34px; border-radius:8px; background:rgba(255,255,255,0.07); display:flex; align-items:center; justify-content:center; flex-shrink:0;">&#9742;</span>
+          <span style="font-size:0.85rem; line-height:1.6;"><strong style="display:block; color:#fdf0ea;">{{ t.contactPhoneLabel }}</strong>33 1347 0335</span>
+        </a>
+        <a href="https://maps.app.goo.gl/q8n5PdiaCsoAVkMv7" target="_blank" style="display:flex; gap:12px; text-decoration:none; color:rgba(255,255,255,0.75); align-items:flex-start;">
+          <span style="width:34px; height:34px; border-radius:8px; background:rgba(255,255,255,0.07); display:flex; align-items:center; justify-content:center; flex-shrink:0;">&#128205;</span>
+          <span style="font-size:0.85rem; line-height:1.6;"><strong style="display:block; color:#fdf0ea;">{{ t.contactAddrLabel }}</strong>Calle Francia #186, Col. Versalles, Puerto Vallarta, Jal.</span>
+        </a>
+      </div>
+    </div>
+    <div style="border-radius:14px; overflow:hidden; min-height:320px; animation:fadeUp 0.8s ease 0.1s both;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.8!2d-105.2301428!3d20.6364762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842145cd62a90235%3A0xc3f66c6a177c86b5!2sDr%20Jason%20Valdivia%20Najar%20Cirujano!5e0!3m2!1ses!2smx!4v1" style="width:100%; height:100%; min-height:320px; border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#091f2d; padding:2.2rem 6%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+  <div style="display:flex; align-items:center; gap:10px; font-family:'Playfair Display',serif; color:{{ accentLight }}; font-size:0.95rem;">
+    <img src="images/logo.png" alt="Dr. Jason Valdivia Najar" style="width:28px; height:28px; border-radius:50%; object-fit:cover; background:#fdf0ea;">
+    Dr. Jason Alejandro Valdivia Najar
+  </div>
+  <p style="color:rgba(255,255,255,0.35); font-size:0.76rem;">{{ t.footerTagline }} &middot; &copy; 2026</p>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed; bottom:0; left:0; right:0; z-index:150; display:flex; background:#0d2b3e; border-top:1px solid rgba(255,255,255,0.1); box-shadow:0 -8px 24px rgba(0,0,0,0.25);">
+    <a href="https://wa.me/523313470335" target="_blank" style="flex:1; display:flex; align-items:center; justify-content:center; gap:8px; background:#25D366; color:#fff; text-decoration:none; padding:0.95rem; font-weight:600; font-size:0.85rem;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+      WhatsApp
+    </a>
+    <a href="tel:+523313470335" style="flex:1; display:flex; align-items:center; justify-content:center; gap:8px; background:{{ accent }}; color:#1b2c3a; text-decoration:none; padding:0.95rem; font-weight:600; font-size:0.85rem; border-left:1px solid rgba(255,255,255,0.15);">
+      &#9742; {{ t.callLabel }}
+    </a>
+  </div>
+</sc-if>
+
+</div>
+
+<div style="background:#0d2b3e; color:rgba(255,255,255,0.55); font-family:'DM Sans',sans-serif; font-size:0.72rem; text-align:center; padding:1.1rem 6%; line-height:1.7;">
+  Aviso de publicidad COFEPRIS No. 2614082002A00062 &nbsp;·&nbsp;
+  <a href="/aviso-de-privacidad/" style="color:rgba(255,255,255,0.75);">Aviso de privacidad</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accentPalette&quot;: {
+    &quot;editor&quot;: &quot;color&quot;,
+    &quot;default&quot;: [&quot;#4f7ea8&quot;, &quot;#3a5f80&quot;, &quot;#8ab4d6&quot;],
+    &quot;tsType&quot;: &quot;string[]&quot;,
+    &quot;options&quot;: [
+      [&quot;#4f7ea8&quot;, &quot;#3a5f80&quot;, &quot;#8ab4d6&quot;],
+      [&quot;#6b7280&quot;, &quot;#4b5563&quot;, &quot;#9ca3af&quot;],
+      [&quot;#5b7d8c&quot;, &quot;#3f5c68&quot;, &quot;#93b3bf&quot;]
+    ],
+    &quot;section&quot;: &quot;Brand&quot;
+  }
+}">
+const CONTENT = {
+  es: {
+    navAbout: 'Sobre mí', navProc: 'Procedimientos', navPatients: 'Pacientes', navContact: 'Contacto',
+    navCta: 'Agendar consulta', langSwitchLabel: 'EN',
+    heroBadge1: 'Certificado · Consejo Mexicano de Cirugía General', heroBadge2: '🇺🇸 English spoken',
+    heroTitle1: 'Cirugía laparoscópica avanzada', heroTitle2: 'en', heroTitleCity: 'Puerto Vallarta',
+    heroDesc: 'Procedimientos mínimamente invasivos con menor dolor, recuperación más rápida cuando el caso lo permite. Atención directa, personalizada y sin intermediarios.',
+    heroCtaPrimary: 'Agendar por WhatsApp', heroCtaSecondary: 'Ver procedimientos',
+    stat1Label: 'Años en medicina', stat2Label: 'Años como cirujano', stat3Label: 'Años de residencia quirúrgica',
+    reviewsLabel: '69 reseñas en Google',
+    trust1: 'Consejo Mexicano de Cirugía General', trust2: 'Hospital Multimédica', trust3: 'Seguros de gastos médicos', trust4: '5.0★ · 69 reseñas',
+    aboutKicker: 'Sobre mí', aboutTitle: 'Formación sólida, enfoque humano',
+    aboutP1: 'Soy el Dr. Jason Alejandro Valdivia Najar, médico cirujano con más de 10 años de trayectoria en medicina y especialidad en Cirugía General con entrenamiento avanzado en laparoscopia. Mi práctica en Puerto Vallarta combina técnica depurada, equipo actualizado y un trato directo y cercano con cada paciente.',
+    aboutP2: 'Creo que un buen cirujano no solo opera — también escucha, explica y acompaña al paciente antes, durante y después del procedimiento.',
+    procKicker: 'Procedimientos', procTitle: 'Cirugías que realizo',
+    procDesc: 'Con enfoque en técnicas laparoscópicas: incisiones mínimas, menos dolor postoperatorio y regreso más rápido a su vida cotidiana.',
+    whyKicker: '¿Por qué elegirme?', whyTitle: 'Lo que me distingue',
+    orKicker: 'Detrás de la cirugía', orTitle: 'En el quirófano',
+    orDesc: 'Tecnología laparoscópica moderna y un equipo comprometido con cada procedimiento.',
+    testKicker: 'Pacientes', testTitle: 'Opiniones verificadas en Google', testRating: '5.0 ★ · 69 reseñas en Google',
+    testMore: '69 reseñas · 5.0⭐ en Google Maps —', testMoreLink: 'ver todas las reseñas ↗',
+    contactKicker: 'Contacto', contactTitle: 'Agende su consulta',
+    contactDesc: 'La forma más rápida de contactarme es por WhatsApp. Atiendo en español e inglés. Citas con agenda previa.',
+    contactWhatsapp: 'Escribir al Dr. Valdivia', contactPhoneLabel: 'WhatsApp / Teléfono', contactAddrLabel: 'Consultorio · Hospital Multimédica',
+    footerTagline: 'Cirujano General · Certificado · Puerto Vallarta, Jalisco', callLabel: 'Llamar',
+  },
+  en: {
+    navAbout: 'About', navProc: 'Procedures', navPatients: 'Patients', navContact: 'Contact',
+    navCta: 'Book consultation', langSwitchLabel: 'ES',
+    heroBadge1: 'Board-Certified · Mexican Council of General Surgery', heroBadge2: '🇺🇸 English spoken',
+    heroTitle1: 'Advanced laparoscopic surgery', heroTitle2: 'in', heroTitleCity: 'Puerto Vallarta',
+    heroDesc: 'Minimally invasive procedures with less pain, faster recovery, and safe outcomes. Direct, personalized care — English-speaking surgeon available.',
+    heroCtaPrimary: 'Book via WhatsApp', heroCtaSecondary: 'View procedures',
+    stat1Label: 'Years in medicine', stat2Label: 'Years as surgeon', stat3Label: 'Years surgical residency',
+    reviewsLabel: '69 reviews on Google',
+    trust1: 'Mexican Council of General Surgery', trust2: 'Hospital Multimédica', trust3: 'Major medical insurance', trust4: '5.0★ · 69 reviews',
+    aboutKicker: 'About me', aboutTitle: 'Strong training, human approach',
+    aboutP1: 'I am Dr. Jason Alejandro Valdivia Najar, a general surgeon with over 10 years in medicine and a specialty in General Surgery with advanced laparoscopic training. My practice in Puerto Vallarta combines refined technique, up-to-date equipment, and direct, personal care for every patient — fully available in English.',
+    aboutP2: "I believe a good surgeon doesn't just operate — they listen, explain, and support the patient before, during, and after the procedure.",
+    procKicker: 'Procedures', procTitle: 'Surgeries I perform',
+    procDesc: 'Focused on laparoscopic techniques: minimal incisions, less postoperative pain, and a faster return to daily life.',
+    whyKicker: 'Why choose me?', whyTitle: 'What sets me apart',
+    orKicker: 'Behind the surgery', orTitle: 'In the operating room',
+    orDesc: 'Modern laparoscopic technology and a team committed to every procedure.',
+    testKicker: 'Patients', testTitle: 'Opiniones verificadas en Google', testRating: '5.0 ★ · 69 reviews on Google',
+    testMore: '69 reviews · 5.0⭐ on Google Maps —', testMoreLink: 'read all reviews ↗',
+    contactKicker: 'Contact', contactTitle: 'Book your appointment',
+    contactDesc: 'The fastest way to reach me is WhatsApp — available in English and Spanish. Appointments by prior arrangement.',
+    contactWhatsapp: 'Message Dr. Valdivia', contactPhoneLabel: 'WhatsApp / Phone', contactAddrLabel: 'Office · Hospital Multimédica',
+    footerTagline: 'General Surgeon · Board-Certified · Puerto Vallarta, Jalisco', callLabel: 'Call',
+  }
+};
+
+const CREDENTIALS = {
+  es: [
+    { mono:'M', title:'Médico Cirujano', detail:'Universidad de Guadalajara (UdeG)' },
+    { mono:'CG', title:'Especialidad en Cirugía General', detail:'Hospital Civil "Dr. Antonio González Guevara" · UAN' },
+    { mono:'L', title:'Entrenamiento en Laparoscopía', detail:'Cirugía mínimamente invasiva avanzada' },
+    { mono:'C', title:'Certificado vigente', detail:'Consejo Mexicano de Cirugía General' },
+  ],
+  en: [
+    { mono:'M', title:'Medical Degree', detail:'Universidad de Guadalajara (UdeG)' },
+    { mono:'CG', title:'General Surgery Specialty', detail:'Civil Hospital "Dr. Antonio González Guevara" · UAN' },
+    { mono:'L', title:'Laparoscopic Training', detail:'Advanced minimally invasive surgery' },
+    { mono:'C', title:'Board Certified', detail:'Mexican Council of General Surgery' },
+  ]
+};
+
+const PROCEDURES = {
+  es: [
+    { mono:'V', title:'Colecistectomía Laparoscópica', desc:'Extirpación de la vesícula biliar por pequeñas incisiones. Opción quirúrgica más frecuente para los cálculos biliares.', tag:'Laparoscópica', href:'cirugia-de-vesicula/index.html' },
+    { mono:'A', title:'Apendicectomía', desc:'Cirugía para apendicitis aguda, preferentemente por laparoscopia. Recuperación más rápida.', tag:'Urgencias', href:'cirugia-de-apendice/index.html' },
+    { mono:'H', title:'Hernias', desc:'Reparación de hernia inguinal, umbilical, epigástrica e incisional con o sin malla.', tag:'Laparoscópica · Abierta', href:'cirugia-de-hernia/index.html' },
+    { mono:'R', title:'Cirugía Antirreflujo', desc:'Tratamiento del reflujo gastroesofágico crónico y hernia hiatal mediante funduplicatura.', tag:'Laparoscópica', href:'cirugia-antirreflujo/index.html' },
+    { mono:'T', title:'Tiroides y Cuello', desc:'Tiroidectomía total o parcial para nódulos, bocio y patología tiroidea.', tag:'Cirugía General', href:'cirugia-de-tiroides/index.html' },
+    { mono:'Q', title:'Masas y Tejidos Blandos', desc:'Extirpación de lipomas, quistes sebáceos y masas subcutáneas, muchas veces ambulatoria.', tag:'Cirugía Menor', href:'cirugia-de-quistes-y-lipomas/index.html' },
+  ],
+  en: [
+    { mono:'V', title:'Laparoscopic Cholecystectomy', desc:'Gallbladder removal through small incisions. Most common surgical option for gallstones.', tag:'Laparoscopic', href:'gallbladder-surgery/index.html' },
+    { mono:'A', title:'Appendectomy', desc:'Surgery for acute appendicitis, preferably laparoscopic. Faster recovery.', tag:'Emergency', href:'appendectomy-puerto-vallarta/index.html' },
+    { mono:'H', title:'Hernia Repair', desc:'Repair of inguinal, umbilical, epigastric and incisional hernias, mesh or open technique.', tag:'Laparoscopic · Open', href:'hernia-surgery-puerto-vallarta/index.html' },
+    { mono:'R', title:'Anti-Reflux Surgery', desc:'Surgical treatment for chronic GERD and hiatal hernia via laparoscopic fundoplication.', tag:'Laparoscopic', href:'acid-reflux-surgery-puerto-vallarta/index.html' },
+    { mono:'T', title:'Thyroid & Neck', desc:'Total or partial thyroidectomy for nodules, goiter and thyroid disease.', tag:'General Surgery', href:'thyroid-surgery-puerto-vallarta/index.html' },
+    { mono:'Q', title:'Soft Tissue & Masses', desc:'Removal of lipomas, sebaceous cysts and subcutaneous masses, often outpatient.', tag:'Minor Surgery', href:'cyst-lipoma-removal-puerto-vallarta/index.html' },
+  ]
+};
+
+const WHY_ITEMS = {
+  es: [
+    { num:'01', title:'Acceso directo', desc:'Puede contactarme personalmente por WhatsApp en español o inglés. Sin secretarias ni intermediarios.' },
+    { num:'02', title:'Capacidad hospitalaria', desc:'Credencializado en múltiples hospitales de Puerto Vallarta. Cirugía donde mejor se adapte a su cobertura.' },
+    { num:'03', title:'Técnica laparoscópica', desc:'Especializado en cirugía mínimamente invasiva: menos dolor, cicatrices pequeñas y recuperación más rápida.' },
+    { num:'04', title:'Seguros médicos', desc:'Atención a pacientes con seguro de gastos médicos mayores y particulares.' },
+  ],
+  en: [
+    { num:'01', title:'Direct access', desc:'You can reach me personally via WhatsApp in English or Spanish. No gatekeepers, no delays.' },
+    { num:'02', title:'Hospital coverage', desc:'Credentialed at multiple hospitals in Puerto Vallarta. Surgery at the facility that best fits your coverage.' },
+    { num:'03', title:'Laparoscopic technique', desc:'Specialized in minimally invasive surgery: less pain, small scars, faster recovery than open surgery.' },
+    { num:'04', title:'Insurance accepted', desc:'Accepts major medical insurance and international patients from the first visit.' },
+  ]
+};
+
+const TESTIMONIALS = { es: [], en: [] };
+
+const OR_PHOTOS = [
+  { src:'images/or-1.jpg', alt:'Dr. Jason Valdivia en quirófano' },
+  { src:'images/or-2.jpg', alt:'Cirugía laparoscópica' },
+  { src:'images/or-3.jpg', alt:'Dr. Jason Valdivia con lupas quirúrgicas' },
+  { src:'images/or-4.jpg', alt:'Equipo quirúrgico en procedimiento' },
+];
+
+function hexToRgba(hex, alpha) {
+  const h = hex.replace('#', '');
+  const r = parseInt(h.substring(0, 2), 16);
+  const g = parseInt(h.substring(2, 4), 16);
+  const b = parseInt(h.substring(4, 6), 16);
+  return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+}
+
+class Component extends DCLogic {
+  state = {
+    lang: 'es',
+    vw: typeof window !== 'undefined' ? window.innerWidth : 1200,
+    menuOpen: false,
+    statsAnimated: false,
+    stat1: 0, stat2: 0, stat3: 0,
+    carouselIndex: 0,
+  };
+
+  componentDidMount() {
+    const saved = localStorage.getItem('drv_lang');
+    if (saved === 'en' || saved === 'es') this.setState({ lang: saved });
+    this._onResize = () => this.setState({ vw: window.innerWidth });
+    window.addEventListener('resize', this._onResize);
+
+    this.animateStats();
+    this._startCarousel();
+  }
+
+  componentWillUnmount() {
+    if (this._onResize) window.removeEventListener('resize', this._onResize);
+    this._stopCarousel();
+  }
+
+  _startCarousel = () => {
+    this._stopCarousel();
+    this._carouselTimer = setInterval(() => {
+      this.setState((s) => ({ carouselIndex: (s.carouselIndex + 1) % OR_PHOTOS.length }));
+    }, 4500);
+  };
+
+  _stopCarousel = () => {
+    if (this._carouselTimer) clearInterval(this._carouselTimer);
+  };
+
+  pauseCarousel = () => this._stopCarousel();
+  resumeCarousel = () => this._startCarousel();
+
+  carouselNext = () => {
+    this.setState((s) => ({ carouselIndex: (s.carouselIndex + 1) % OR_PHOTOS.length }));
+    this._startCarousel();
+  };
+
+  carouselPrev = () => {
+    this.setState((s) => ({ carouselIndex: (s.carouselIndex - 1 + OR_PHOTOS.length) % OR_PHOTOS.length }));
+    this._startCarousel();
+  };
+
+  carouselGoTo = (i) => () => {
+    this.setState({ carouselIndex: i });
+    this._startCarousel();
+  };
+
+  animateStats() {
+    const targets = [10, 3, 4];
+    const duration = 1100;
+    const start = performance.now();
+    const step = (now) => {
+      const p = Math.min(1, (now - start) / duration);
+      const ease = 1 - Math.pow(1 - p, 3);
+      this.setState({
+        stat1: Math.round(targets[0] * ease),
+        stat2: Math.round(targets[1] * ease),
+        stat3: Math.round(targets[2] * ease),
+      });
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  toggleLang = () => {
+    const next = this.state.lang === 'es' ? 'en' : 'es';
+    localStorage.setItem('drv_lang', next);
+    this.setState({ lang: next });
+  };
+
+  toggleMenu = () => this.setState((s) => ({ menuOpen: !s.menuOpen }));
+  closeMenu = () => this.setState({ menuOpen: false });
+
+  renderVals() {
+    const lang = this.state.lang;
+    const isMobile = this.state.vw < 860;
+    const t = CONTENT[lang];
+    const barBase = { width: '22px', height: '2px', background: '#fdf0ea', borderRadius: '2px', transition: 'transform 0.25s ease, opacity 0.25s ease' };
+    const open = this.state.menuOpen;
+    const palette = this.props.accentPalette || ['#4f7ea8', '#3a5f80', '#8ab4d6'];
+    const [accent, accentDark, accentLight] = palette;
+    return {
+      t,
+      accent, accentDark, accentLight,
+      accentA12: hexToRgba(accent, 0.12),
+      accentA14: hexToRgba(accent, 0.14),
+      accentA18: hexToRgba(accent, 0.18),
+      accentA25: hexToRgba(accent, 0.25),
+      accentA30: hexToRgba(accent, 0.3),
+      accentA35: hexToRgba(accent, 0.35),
+      accentDarkA10: hexToRgba(accentDark, 0.1),
+      isMobile,
+      isDesktop: !isMobile,
+      menuOpen: open,
+      navPadding: isMobile ? '0.9rem 5%' : '1.1rem 5%',
+      heroPadding: isMobile ? '7.5rem 6% 3.5rem' : '9.5rem 6% 5rem',
+      sectionPadding: isMobile ? '3.5rem 6%' : '6rem 6%',
+      credentials: CREDENTIALS[lang],
+      procedures: PROCEDURES[lang],
+      whyItems: WHY_ITEMS[lang],
+      testimonials: TESTIMONIALS[lang],
+      orPhotos: OR_PHOTOS,
+      carouselTrackStyle: {
+        display: 'flex',
+        width: '100%',
+        height: '100%',
+        transform: 'translateX(-' + (this.state.carouselIndex * 100) + '%)',
+        transition: 'transform 0.6s ease',
+      },
+      carouselPrev: this.carouselPrev,
+      carouselNext: this.carouselNext,
+      carouselGoTo: this.carouselGoTo,
+      pauseCarousel: this.pauseCarousel,
+      resumeCarousel: this.resumeCarousel,
+      dotStyle: (i) => ({
+        width: i === this.state.carouselIndex ? '22px' : '8px',
+        height: '8px',
+        borderRadius: '4px',
+        border: 'none',
+        cursor: 'pointer',
+        background: i === this.state.carouselIndex ? accent : 'rgba(13,43,62,0.2)',
+        transition: 'all 0.3s ease',
+        padding: 0,
+      }),
+      stat1Display: this.state.stat1 + '+',
+      stat2Display: String(this.state.stat2),
+      stat3Display: String(this.state.stat3),
+      toggleLang: this.toggleLang,
+      toggleMenu: this.toggleMenu,
+      closeMenu: this.closeMenu,
+      hamburgerLine1: { ...barBase, transform: open ? 'translateY(7px) rotate(45deg)' : 'none' },
+      hamburgerLine2: { ...barBase, opacity: open ? 0 : 1 },
+      hamburgerLine3: { ...barBase, transform: open ? 'translateY(-7px) rotate(-45deg)' : 'none' },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<title>Cirugía de vesícula en Puerto Vallarta | Colecistectomía laparoscópica</title>
+<meta name="description" content="Extirpación de la vesícula biliar por laparoscopia en Puerto Vallarta. Cirujano general certificado. Valoración de su caso, seguros y particulares.">
+<link rel="canonical" href="https://drjasonvaldivia.com/cirugia-de-vesicula/">
+<meta name="robots" content="index,follow">
+<link rel="alternate" hreflang="es" href="https://drjasonvaldivia.com/cirugia-de-vesicula/">
+<link rel="alternate" hreflang="en" href="https://drjasonvaldivia.com/gallbladder-surgery/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Jason Valdivia — Cirujano General">
+<meta property="og:title" content="Cirugía de vesícula en Puerto Vallarta | Colecistectomía laparoscópica">
+<meta property="og:description" content="Extirpación de la vesícula biliar por laparoscopia en Puerto Vallarta. Cirujano general certificado. Valoración de su caso, seguros y particulares.">
+<meta property="og:url" content="https://drjasonvaldivia.com/cirugia-de-vesicula/">
+<meta property="og:image" content="https://drjasonvaldivia.com/images/dr-office-portrait.jpg">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Physician","name":"Dr. Jason Alejandro Valdivia Nájar","description":"Cirujano general certificado por el Consejo Mexicano de Cirugía General, con entrenamiento avanzado en cirugía laparoscópica, en Puerto Vallarta.","url":"https://drjasonvaldivia.com/cirugia-de-vesicula/","telephone":"+523313470335","medicalSpecialty":"Surgical","availableLanguage":["es","en"],"priceRange":"$","address":{"@type":"PostalAddress","streetAddress":"Calle Francia 186, Col. Versalles","addressLocality":"Puerto Vallarta","addressRegion":"Jalisco","postalCode":"48310","addressCountry":"MX"},"geo":{"@type":"GeoCoordinates","latitude":20.6364712,"longitude":-105.2275679},"hasMap":"https://maps.app.goo.gl/q8n5PdiaCsoAVkMv7","areaServed":{"@type":"City","name":"Puerto Vallarta"}}</script>
+</head>
+<body>
+<x-dc>
+<div style="display:none;"><x-import component-from-global-scope="image-slot" from="./image-slot.js" hint-size="1,1"></x-import></div>
+<dc-import name="ProcedurePage" d="{{ d }}" hint-size="100%,100vh"></dc-import>
+
+<div style="background:#0d2b3e; color:rgba(255,255,255,0.55); font-family:'DM Sans',sans-serif; font-size:0.72rem; text-align:center; padding:1.1rem 6%; line-height:1.7;">
+  Aviso de publicidad COFEPRIS No. 2614082002A00062 &nbsp;·&nbsp;
+  <a href="/aviso-de-privacidad/" style="color:rgba(255,255,255,0.75);">Aviso de privacidad</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentPalette&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:[&quot;#4f7ea8&quot;,&quot;#3a5f80&quot;,&quot;#8ab4d6&quot;],&quot;tsType&quot;:&quot;string[]&quot;,&quot;options&quot;:[[&quot;#e08a63&quot;,&quot;#c8654a&quot;,&quot;#e6a37f&quot;],[&quot;#7c9473&quot;,&quot;#5c7355&quot;,&quot;#a3b89c&quot;],[&quot;#4f7ea8&quot;,&quot;#3a5f80&quot;,&quot;#8ab4d6&quot;]],&quot;section&quot;:&quot;Feel&quot;},&quot;density&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;cozy&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;cozy&quot;,&quot;roomy&quot;],&quot;section&quot;:&quot;Feel&quot;},&quot;heroLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;photo&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;photo&quot;,&quot;minimal&quot;],&quot;section&quot;:&quot;Feel&quot;}}">
+function hexToRgba(hex, alpha) {
+  const h = hex.replace('#', '');
+  const r = parseInt(h.substring(0, 2), 16);
+  const g = parseInt(h.substring(2, 4), 16);
+  const b = parseInt(h.substring(4, 6), 16);
+  return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+}
+
+class Component extends DCLogic {
+  renderVals() {
+    const palette = this.props.accentPalette || ['#e08a63', '#c8654a', '#e6a37f'];
+    const [accent, accentDark, accentLight] = palette;
+    const density = this.props.density || 'cozy';
+    const roomy = density === 'roomy';
+    const heroLayout = this.props.heroLayout || 'photo';
+
+    const themedFields = {
+      accent, accentDark, accentLight,
+      accentA12: hexToRgba(accent, 0.12),
+      accentA35: hexToRgba(accent, 0.35),
+      accentA16: hexToRgba(accent, 0.16),
+      bodyLineHeight: roomy ? '2.05' : '1.8',
+      cardPadding: roomy ? '1.2rem 1.4rem' : '0.9rem 1.1rem',
+      symptomGap: roomy ? '1.1rem' : '0.8rem',
+      blockGap: roomy ? '3.4rem' : '2.6rem',
+      isPhotoHero: heroLayout === 'photo',
+      isMinimalHero: heroLayout !== 'photo',
+      densityScale: roomy ? 1.35 : 1,
+    };
+
+    return {
+      d: {
+        ...themedFields,
+        breadcrumbLabel: 'Cirugía de Vesícula',
+        kicker: 'Colecistectomía Laparoscópica',
+        title: 'Cirugía de Vesícula en Puerto Vallarta',
+        lede: 'Si tiene cálculos biliares o dolor recurrente después de comer, la extirpación laparoscópica de la vesícula es un procedimiento seguro, común y de recuperación rápida. Realizado por un Cirujano General certificado con entrenamiento específico en técnicas mínimamente invasivas.',
+        whatsappHref: 'https://wa.me/523313470335?text=Hola%20doctor,%20tengo%20dudas%20sobre%20cirug%C3%ADa%20de%20ves%C3%ADcula',
+        altLangHref: '../gallbladder-surgery/index.html',
+        slotId: 'vesicula-hero',
+        imagePlaceholder: 'Foto o ilustración: vesícula biliar / colecistectomía',
+        imageSrc: 'illus.png',
+        symptomsTitle: '¿Cuáles son los síntomas de un problema de vesícula?',
+        symptomsIntro: 'Los cálculos biliares y la inflamación de la vesícula (colecistitis) suelen presentar señales reconocibles. Si tiene varios de estos síntomas, especialmente después de comidas grasosas, vale la pena una valoración:',
+        symptoms: [
+          'Dolor en la parte superior derecha del abdomen, a veces irradiado a la espalda o el hombro',
+          'Dolor que aparece o empeora después de comidas abundantes o grasosas',
+          'Náusea o vómito recurrente',
+          'Sensación de hinchazón o pesadez después de comer',
+          'Episodios de dolor tipo cólico que duran de minutos a horas',
+          'En casos más avanzados: fiebre, piel u ojos amarillentos (ictericia)',
+        ],
+        whenTitle: '¿Cuándo es necesaria la cirugía?',
+        whenText: 'No todos los cálculos biliares requieren cirugía inmediata, pero se recomienda cuando hay síntomas recurrentes, cálculos grandes, inflamación de la vesícula, o riesgo de complicaciones como obstrucción de las vías biliares o pancreatitis. En consulta se evalúa su caso específico con base en sus síntomas, estudios de imagen (como ultrasonido) y su historial médico para determinar si la cirugía es la mejor opción para usted.',
+        procedureTitle: '¿Cómo es el procedimiento?',
+        procedureIntro: 'La colecistectomía laparoscópica es la técnica estándar actual — se realiza a través de 3 a 4 incisiones muy pequeñas en lugar de un corte grande, lo que reduce el dolor postoperatorio y acelera la recuperación.',
+        steps: [
+          { title: 'Anestesia general', desc: 'El procedimiento se realiza bajo anestesia general, por lo que no sentirá dolor durante la cirugía.' },
+          { title: 'Incisiones mínimas', desc: 'Se hacen 3-4 pequeñas incisiones en el abdomen para introducir una cámara y los instrumentos quirúrgicos.' },
+          { title: 'Extirpación de la vesícula', desc: 'La vesícula biliar se separa cuidadosamente y se retira a través de una de las incisiones.' },
+          { title: 'Cierre y recuperación inmediata', desc: 'Las incisiones se cierran con puntos internos o adhesivo quirúrgico. La mayoría de los pacientes camina el mismo día.' },
+        ],
+        calloutStrong: 'Duración del procedimiento:',
+        calloutText: 'Entre 45 y 90 minutos en la mayoría de los casos. La mayoría de los pacientes son dados de alta entre 24 y 48 horas después de la cirugía.',
+        recoveryTitle: '¿Cómo es la recuperación?',
+        recoveryText: 'Una de las grandes ventajas de la técnica laparoscópica es la recuperación rápida. La mayoría de los pacientes retoma actividades ligeras en 3 a 5 días y actividades normales en 1 a 2 semanas. El cuerpo humano funciona perfectamente sin vesícula biliar — el hígado continúa produciendo la bilis necesaria para la digestión.',
+        faqs: [
+          { q: '¿Es dolorosa la recuperación?', a: 'La mayoría de los pacientes reporta un dolor leve a moderado los primeros 2-3 días, controlado con analgésicos comunes. Al ser laparoscópica, el dolor es considerablemente menor que con cirugía abierta.' },
+          { q: '¿Puedo vivir sin vesícula biliar?', a: 'Sí, completamente. La vesícula almacena bilis pero no es indispensable — el hígado sigue produciendo la bilis necesaria para digerir grasas con normalidad.' },
+          { q: '¿Cuánto cuesta la cirugía?', a: 'El costo varía según el hospital, tipo de habitación y si cuenta con seguro de gastos médicos mayores. En la consulta inicial ($800 MXN) se le proporciona una cotización completa y transparente.' },
+          { q: '¿Aceptan seguros de gastos médicos?', a: 'Sí, se aceptan seguros de gastos médicos mayores además de pago particular.' },
+          { q: '¿Atiende pacientes que no hablan español?', a: 'Sí, la consulta y todo el proceso quirúrgico están disponibles en inglés con total fluidez.' },
+        ],
+        finalTitle: '¿Tiene síntomas de cálculos biliares?',
+        finalText: 'Agende su consulta y reciba una valoración clara sobre su caso específico.',
+      },
+    };
+  }
+}
+
+</script>
+</body>
+</html>
