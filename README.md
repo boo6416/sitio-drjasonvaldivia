@@ -41,8 +41,20 @@ revisor las mira todas.
 2. **Sin promesas de resultado.** Nada de "resultados seguros", "definitivo",
    "garantizado", "sin riesgo", "el mejor".
 3. **El número de aviso de publicidad va en CADA página**: `2614082002A00062`.
-4. **El teléfono público es el del CONSULTORIO**: 33 1347 0335. Es el que tiene el
-   asistente automático; con el personal, el asistente no atiende a nadie.
+4. **El teléfono público es el que ALGUIEN CONTESTA.** Hoy es el del Dr.:
+   **33 3971 8620**.
+
+   ⚠ El 2026-08-03 se cambiaron los 18 enlaces al número del consultorio
+   (33 1347 0335) *anticipando* el asistente automático. Fue un error y estuvo en
+   producción: **ese número no lo puede leer nadie**. Un número dado de alta en la
+   API de WhatsApp deja de funcionar en la app de WhatsApp —es así por diseño de
+   Meta—, así que el Dr. no lo ve; y el asistente que sí lo recibiría está apagado
+   y la app de Meta sin publicar. Resultado: los pacientes escribían al vacío.
+
+   **Cuándo cambiarlo al del consultorio**: sólo cuando las tres cosas sean ciertas
+   a la vez — app de Meta publicada, `ASISTENTE_ACTIVO=true`, y la bandeja
+   `/asistente` del expediente atendida. Antes no. Un número de publicidad que
+   nadie contesta es peor que no poner número.
 5. **Cada página lleva su `<title>` y su descripción** en el HTML, no inyectados por
    JavaScript. Hasta el 2026-08-03 ninguna los tenía y el sitio era invisible en
    Google pese a estar bien diseñado.
