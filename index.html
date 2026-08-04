@@ -60,7 +60,7 @@
       <li><a href="#sobre-mi" style="color:rgba(255,255,255,0.75); text-decoration:none; font-size:0.87rem;" style-hover="color:{{ accent }};">{{ t.navAbout }}</a></li>
       <li><a href="#cirugias" style="color:rgba(255,255,255,0.75); text-decoration:none; font-size:0.87rem;" style-hover="color:{{ accent }};">{{ t.navProc }}</a></li>
       <li><a href="#testimonios" style="color:rgba(255,255,255,0.75); text-decoration:none; font-size:0.87rem;" style-hover="color:{{ accent }};">{{ t.navPatients }}</a></li>
-      <li><button onClick="{{ toggleLang }}" style="background:transparent; border:1px solid {{ accentA30 }}; color:{{ accentLight }}; padding:0.35rem 0.85rem; border-radius:20px; font-size:0.72rem; letter-spacing:0.08em; font-family:'DM Sans',sans-serif; cursor:pointer; font-weight:500;">{{ t.langSwitchLabel }}</button></li>
+      <li><a href="/seguros/" style="color:rgba(255,255,255,0.75); text-decoration:none; font-size:0.87rem;" style-hover="color:{{ accent }};">{{ t.navSeguros }}</a></li><li><a href="/preguntas-frecuentes/" style="color:rgba(255,255,255,0.75); text-decoration:none; font-size:0.87rem;" style-hover="color:{{ accent }};">{{ t.navFaq }}</a></li><li><button onClick="{{ toggleLang }}" style="background:transparent; border:1px solid {{ accentA30 }}; color:{{ accentLight }}; padding:0.35rem 0.85rem; border-radius:20px; font-size:0.72rem; letter-spacing:0.08em; font-family:'DM Sans',sans-serif; cursor:pointer; font-weight:500;">{{ t.langSwitchLabel }}</button></li>
       <li><a href='/citas/' style='background:{{ accent }}; color:#1b2c3a; text-decoration:none; padding:0.55rem 1.2rem; border-radius:6px; font-weight:600; font-size:0.85rem;'>{{ t.navCta }}</a></li>
     </ul>
   </sc-if>
@@ -73,7 +73,7 @@
     <a href="#cirugias" onClick="{{ closeMenu }}" style="color:#fdf0ea; text-decoration:none; font-family:'Playfair Display',serif; font-size:1.6rem;">{{ t.navProc }}</a>
     <a href="#testimonios" onClick="{{ closeMenu }}" style="color:#fdf0ea; text-decoration:none; font-family:'Playfair Display',serif; font-size:1.6rem;">{{ t.navPatients }}</a>
     <a href="#contacto" onClick="{{ closeMenu }}" style="color:#fdf0ea; text-decoration:none; font-family:'Playfair Display',serif; font-size:1.6rem;">{{ t.navContact }}</a>
-    <button onClick="{{ toggleLang }}" style="margin-top:1rem; background:transparent; border:1px solid rgba(224,138,99,0.4); color:{{ accentLight }}; padding:0.5rem 1.3rem; border-radius:20px; font-size:0.8rem; letter-spacing:0.08em; font-family:'DM Sans',sans-serif;">{{ t.langSwitchLabel }}</button>
+    <a href="/seguros/" style="color:#fdf0ea; text-decoration:none; font-family:'Playfair Display',serif; font-size:1.6rem;">{{ t.navSeguros }}</a><a href="/preguntas-frecuentes/" style="color:#fdf0ea; text-decoration:none; font-family:'Playfair Display',serif; font-size:1.6rem;">{{ t.navFaq }}</a><a href="/citas/" style="background:{{ accent }}; color:#1b2c3a; text-decoration:none; padding:0.7rem 1.6rem; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:600;">{{ t.navCta }}</a><button onClick="{{ toggleLang }}" style="margin-top:1rem; background:transparent; border:1px solid rgba(224,138,99,0.4); color:{{ accentLight }}; padding:0.5rem 1.3rem; border-radius:20px; font-size:0.8rem; letter-spacing:0.08em; font-family:'DM Sans',sans-serif;">{{ t.langSwitchLabel }}</button>
     <button onClick="{{ closeMenu }}" aria-label="Close" style="position:absolute; top:24px; right:24px; background:none; border:none; color:#fdf0ea; font-size:1.8rem; cursor:pointer;">&times;</button>
   </div>
 </sc-if>
@@ -310,7 +310,15 @@
 
 </div>
 
-<div style="background:#0d2b3e; color:rgba(255,255,255,0.55); font-family:'DM Sans',sans-serif; font-size:0.72rem; text-align:center; padding:1.1rem 6%; line-height:1.7;">
+
+<footer style="background:#091f2d;padding:2.8rem 6% 2.2rem;font-family:'DM Sans',system-ui,sans-serif;">
+  <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:2rem;">
+    <div><h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1rem;color:#fdf0ea;margin:0 0 .8rem;font-weight:600;">Procedimientos</h3><ul style="list-style:none;padding:0;margin:0;line-height:2;"><li><a href="/cirugia-de-vesicula/" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">Cirugía de Vesícula</a></li><li><a href="/cirugia-de-hernia/" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">Cirugía de Hernia</a></li><li><a href="/cirugia-antirreflujo/" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">Cirugía Antirreflujo</a></li><li><a href="/cirugia-de-apendice/" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">Cirugía de Apéndice</a></li><li><a href="/cirugia-de-tiroides/" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">Cirugía de Tiroides</a></li><li><a href="/cirugia-de-quistes-y-lipomas/" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">Quistes y Lipomas</a></li></ul></div>
+    <div><h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1rem;color:#fdf0ea;margin:0 0 .8rem;font-weight:600;">In English</h3><ul style="list-style:none;padding:0;margin:0;line-height:2;"><li><a href="/gallbladder-surgery/" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">Gallbladder Surgery</a></li><li><a href="/hernia-surgery-puerto-vallarta/" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">Hernia Repair</a></li><li><a href="/acid-reflux-surgery-puerto-vallarta/" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">Anti-Reflux Surgery</a></li><li><a href="/appendectomy-puerto-vallarta/" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">Appendectomy</a></li><li><a href="/thyroid-surgery-puerto-vallarta/" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">Thyroid Surgery</a></li><li><a href="/cyst-lipoma-removal-puerto-vallarta/" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">Cysts & Lipomas</a></li></ul></div>
+    <div><h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1rem;color:#fdf0ea;margin:0 0 .8rem;font-weight:600;">Pacientes</h3><ul style="list-style:none;padding:0;margin:0;line-height:2;"><li><a href="/citas/" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">Agendar consulta</a></li><li><a href="/seguros/" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">Seguros de gastos médicos</a></li><li><a href="/preguntas-frecuentes/" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">Preguntas frecuentes</a></li><li><a href="/aviso-de-privacidad/" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">Aviso de privacidad</a></li></ul></div>
+    <div><h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1rem;color:#fdf0ea;margin:0 0 .8rem;font-weight:600;">Contacto</h3><ul style="list-style:none;padding:0;margin:0;line-height:2;"><li><a href="https://wa.me/523339718620" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">WhatsApp 33 3971 8620</a></li><li><a href="tel:+523339718620" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">Llamar al consultorio</a></li><li><a href="https://maps.app.goo.gl/q8n5PdiaCsoAVkMv7" style="color:rgba(255,255,255,0.68);text-decoration:none;font-size:.87rem;">Cómo llegar</a></li></ul></div>
+  </div>
+</footer><div style="background:#0d2b3e; color:rgba(255,255,255,0.55); font-family:'DM Sans',sans-serif; font-size:0.72rem; text-align:center; padding:1.1rem 6%; line-height:1.7;">
   Aviso de publicidad COFEPRIS No. 2614082002A00062 &nbsp;·&nbsp;
   <a href="/aviso-de-privacidad/" style="color:rgba(255,255,255,0.75);">Aviso de privacidad</a>
   &nbsp;·&nbsp;
@@ -335,7 +343,7 @@
 const CONTENT = {
   es: {
     navAbout: 'Sobre mí', navProc: 'Procedimientos', navPatients: 'Pacientes', navContact: 'Contacto',
-    navCta: 'Agendar consulta', langSwitchLabel: 'EN',
+    navCta: 'Agendar consulta', navSeguros: 'Seguros', navFaq: 'Preguntas', langSwitchLabel: 'EN',
     heroBadge1: 'Certificado · Consejo Mexicano de Cirugía General', heroBadge2: '🇺🇸 English spoken',
     heroTitle1: 'Cirugía laparoscópica avanzada', heroTitle2: 'en', heroTitleCity: 'Puerto Vallarta',
     heroDesc: 'Procedimientos mínimamente invasivos con menor dolor, recuperación más rápida cuando el caso lo permite. Atención directa, personalizada y sin intermediarios.',
@@ -360,7 +368,7 @@ const CONTENT = {
   },
   en: {
     navAbout: 'About', navProc: 'Procedures', navPatients: 'Patients', navContact: 'Contact',
-    navCta: 'Book consultation', langSwitchLabel: 'ES',
+    navCta: 'Book consultation', navSeguros: 'Insurance', navFaq: 'FAQ', langSwitchLabel: 'ES',
     heroBadge1: 'Board-Certified · Mexican Council of General Surgery', heroBadge2: '🇺🇸 English spoken',
     heroTitle1: 'Advanced laparoscopic surgery', heroTitle2: 'in', heroTitleCity: 'Puerto Vallarta',
     heroDesc: 'Minimally invasive procedures with less pain, faster recovery, and safe outcomes. Direct, personalized care — English-speaking surgeon available.',
