@@ -1,0 +1,5 @@
+# El sitio se sirve tal cual desde este repo. Que un archivo cambie de
+# terminadores de linea al pasar por Windows solo ensucia los diffs.
+* text=auto eol=lf
+*.png binary
+*.jpg binary

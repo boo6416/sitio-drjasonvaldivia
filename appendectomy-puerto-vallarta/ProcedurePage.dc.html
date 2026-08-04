@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <x-import component-from-global-scope="image-slot" from="./image-slot.js"></x-import>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'DM Sans',sans-serif; }
+    @keyframes fadeUp { from{ opacity:0; transform:translateY(20px); } to{ opacity:1; transform:translateY(0); } }
+  </style>
+</helmet>
+
+<div style="background:#faf7f2; color:#14293a; overflow-x:hidden;" data-screen-label="{{ d.breadcrumbLabel }}">
+
+<!-- NAV -->
+<nav style="position:fixed; top:0; left:0; right:0; z-index:200; display:flex; justify-content:space-between; align-items:center; padding:{{ navPadding }}; background:rgba(13,43,62,0.96); backdrop-filter:blur(14px); border-bottom:1px solid rgba(255,180,150,0.12);">
+  <a href='/' style='display:flex; align-items:center; gap:12px; text-decoration:none;'>
+    <img src="logo.png" alt="Dr. Jason Valdivia Najar" style="width:38px; height:38px; border-radius:50%; object-fit:cover; flex-shrink:0; background:#fdf0ea;">
+    <span style="display:flex; flex-direction:column; line-height:1.2;">
+      <span style="font-family:'Playfair Display',serif; color:#fdf0ea; font-size:1.05rem; font-weight:600; letter-spacing:0.01em;">Dr. Jason Valdivia</span>
+      <span style="font-size:0.62rem; color:rgba(255,255,255,0.5); letter-spacing:0.13em; text-transform:uppercase; font-weight:400;">General Surgeon &middot; Puerto Vallarta</span>
+    </span>
+  </a>
+  <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+    <button onClick="{{ toggleMenu }}" aria-label="Menu" style="background:none; border:none; width:40px; height:40px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; cursor:pointer;">
+      <span style="{{ hamburgerLine1 }}"></span>
+      <span style="{{ hamburgerLine2 }}"></span>
+      <span style="{{ hamburgerLine3 }}"></span>
+    </button>
+  </sc-if>
+  <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+    <ul style="display:flex; gap:2rem; list-style:none; align-items:center;">
+      <li><a href='/#cirugias' style='color:rgba(255,255,255,0.75); text-decoration:none; font-size:0.85rem;'>Procedures</a></li>
+      <li><a href='/#testimonios' style='color:rgba(255,255,255,0.75); text-decoration:none; font-size:0.85rem;'>Patients</a></li>
+      <li><a href="{{ d.altLangHref }}" style="border:1px solid rgba(79,126,168,0.4); color:#8ab4d6; text-decoration:none; padding:0.35rem 0.85rem; border-radius:20px; font-size:0.72rem;">Español</a></li>
+      <li><a href='/citas/' style='background:#4f7ea8; color:#1b2c3a; text-decoration:none; padding:0.55rem 1.2rem; border-radius:6px; font-weight:600; font-size:0.85rem;'>Book consultation</a></li>
+    </ul>
+  </sc-if>
+</nav>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed; top:0; left:0; right:0; bottom:0; z-index:190; background:#0d2b3e; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2rem;">
+    <a href='/#cirugias' style='color:#fdf0ea; text-decoration:none; font-family:\'Playfair Display\',serif; font-size:1.6rem;'>Procedures</a>
+    <a href='/#testimonios' style='color:#fdf0ea; text-decoration:none; font-family:\'Playfair Display\',serif; font-size:1.6rem;'>Patients</a>
+    <a href='/citas/' style='color:#fdf0ea; text-decoration:none; font-family:\'Playfair Display\',serif; font-size:1.6rem;'>Book consultation</a>
+    <a href="{{ d.altLangHref }}" style="margin-top:1rem; border:1px solid rgba(79,126,168,0.4); color:#8ab4d6; text-decoration:none; padding:0.5rem 1.3rem; border-radius:20px; font-size:0.85rem;">Español</a>
+    <button onClick="{{ closeMenu }}" aria-label="Close" style="position:absolute; top:24px; right:24px; background:none; border:none; color:#fdf0ea; font-size:1.8rem; cursor:pointer;">&times;</button>
+  </div>
+</sc-if>
+
+<!-- BREADCRUMB + HERO -->
+<section style="background:#0d2b3e; padding:{{ heroPadding }}; position:relative; overflow:hidden;">
+  <div style="position:absolute; top:-100px; right:-100px; width:320px; height:320px; border-radius:50%; background:radial-gradient(circle,rgba(79,126,168,0.16),transparent 70%);"></div>
+  <div style="max-width:1100px; margin:0 auto; position:relative; z-index:1; display:flex; gap:3rem; align-items:center; flex-wrap:wrap;">
+    <div style="flex:1.3 1 480px; min-width:300px;">
+      <div style="font-size:0.8rem; color:rgba(255,255,255,0.45); margin-bottom:1.6rem;"><a href='/' style='color:rgba(255,255,255,0.6); text-decoration:none;'>Home</a> / {{ d.breadcrumbLabel }}</div>
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(79,126,168,0.12); border:1px solid rgba(79,126,168,0.35); color:#8ab4d6; padding:0.4rem 0.9rem; border-radius:20px; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:1.4rem;">{{ d.kicker }}</div>
+      <h1 style="font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,2.9rem); color:#fdf0ea; font-weight:500; line-height:1.18; margin-bottom:1.3rem;">{{ d.title }}</h1>
+      <p style="font-size:1.02rem; color:rgba(255,255,255,0.62); line-height:1.8; font-weight:300; margin-bottom:2rem;">{{ d.lede }}</p>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href='/citas/' style='background:#4f7ea8; color:#1b2c3a; text-decoration:none; padding:0.9rem 1.7rem; border-radius:6px; font-weight:600; font-size:0.9rem;'>Book consultation</a>
+        <a href="{{ d.whatsappHref }}" target="_blank" style="display:inline-flex; align-items:center; gap:8px; background:#25D366; color:#fff; text-decoration:none; padding:0.9rem 1.7rem; border-radius:6px; font-weight:600; font-size:0.9rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+    <div style="flex:1 1 320px; min-width:260px;">
+      <div style="width:100%; height:320px; border-radius:14px; overflow:hidden; box-shadow:0 24px 50px rgba(0,0,0,0.3);">
+        <image-slot id="{{ d.slotId }}" shape="rect" placeholder="{{ d.imagePlaceholder }}" src="{{ d.imageSrc }}"></image-slot>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SYMPTOMS -->
+<section style="padding:{{ sectionPadding }}; max-width:860px; margin:0 auto;">
+  <div style="animation:fadeUp 0.8s ease both;">
+    <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.4rem,2.4vw,1.8rem); font-weight:500; margin-bottom:1.1rem;">{{ d.symptomsTitle }}</h2>
+    <p style="font-size:0.97rem; color:#42535f; line-height:1.8; font-weight:300; margin-bottom:1.6rem;">{{ d.symptomsIntro }}</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:0.8rem;">
+      <sc-for list="{{ d.symptoms }}" as="s" hint-placeholder-count="6">
+        <div style="display:flex; gap:10px; align-items:flex-start; padding:0.9rem 1.1rem; background:#f2ece3; border-radius:8px; border-left:3px solid #3a5f80; font-size:0.9rem; color:#42535f; font-weight:300;">
+          <span style="width:6px; height:6px; border-radius:50%; background:#3a5f80; margin-top:7px; flex-shrink:0;"></span><span>{{ s }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="margin-top:2.6rem; animation:fadeUp 0.8s ease both;">
+    <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.4rem,2.4vw,1.8rem); font-weight:500; margin-bottom:1.1rem;">{{ d.whenTitle }}</h2>
+    <p style="font-size:0.97rem; color:#42535f; line-height:1.8; font-weight:300;">{{ d.whenText }}</p>
+  </div>
+
+  <div style="margin-top:2.6rem; animation:fadeUp 0.8s ease both;">
+    <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.4rem,2.4vw,1.8rem); font-weight:500; margin-bottom:1.1rem;">{{ d.procedureTitle }}</h2>
+    <p style="font-size:0.97rem; color:#42535f; line-height:1.8; font-weight:300; margin-bottom:1.6rem;">{{ d.procedureIntro }}</p>
+    <div>
+      <sc-for list="{{ d.steps }}" as="st" hint-placeholder-count="4">
+        <div style="display:flex; gap:1.1rem; margin-bottom:1.2rem; align-items:flex-start;">
+          <div style="width:32px; height:32px; background:#0d2b3e; color:#fdf0ea; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:600; font-size:0.88rem; flex-shrink:0;">{{ $index }}</div>
+          <div>
+            <strong style="display:block; font-size:0.92rem; color:#14293a; margin-bottom:2px;">{{ st.title }}</strong>
+            <span style="font-size:0.86rem; color:#5a6b78; line-height:1.6;">{{ st.desc }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="background:#0d2b3e; color:#fff; border-radius:12px; padding:1.8rem 2rem; margin:2.4rem 0; animation:fadeUp 0.8s ease both;">
+    <p style="margin:0; color:rgba(255,255,255,0.85); font-size:0.94rem; line-height:1.75; font-weight:300;"><strong style="color:#8ab4d6;">{{ d.calloutStrong }}</strong> {{ d.calloutText }}</p>
+  </div>
+
+  <div style="animation:fadeUp 0.8s ease both;">
+    <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.4rem,2.4vw,1.8rem); font-weight:500; margin-bottom:1.1rem;">{{ d.recoveryTitle }}</h2>
+    <p style="font-size:0.97rem; color:#42535f; line-height:1.8; font-weight:300;">{{ d.recoveryText }}</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:#f2ece3; padding:{{ sectionPadding }};">
+  <div style="max-width:800px; margin:0 auto;">
+    <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.4rem,2.4vw,1.8rem); font-weight:500; text-align:center; margin-bottom:2rem; animation:fadeUp 0.8s ease both;">Frequently asked questions</h2>
+    <sc-for list="{{ d.faqs }}" as="faq" hint-placeholder-count="5">
+      <div style="background:#fff; border:1px solid rgba(13,43,62,0.08); border-radius:8px; margin-bottom:0.8rem; overflow:hidden; animation:fadeUp 0.7s ease both;">
+        <div onClick="{{ toggleFaq($index) }}" style="padding:1.05rem 1.3rem; font-weight:600; font-size:0.92rem; color:#0d2b3e; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:1rem;">
+          <span>{{ faq.q }}</span>
+          <span style="color:#3a5f80; font-size:1.2rem; flex-shrink:0;">{{ faqSymbol($index) }}</span>
+        </div>
+        <div style="{{ faqBodyStyle($index) }}">
+          <p style="padding:0 1.3rem 1.1rem; color:#5a6b78; font-size:0.87rem; line-height:1.7; font-weight:300; margin:0;">{{ faq.a }}</p>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section style="background:#0d2b3e; padding:{{ sectionPadding }}; text-align:center;">
+  <h2 style="font-family:'Playfair Display',serif; color:#fdf0ea; font-size:clamp(1.4rem,2.4vw,1.8rem); font-weight:500; margin-bottom:0.8rem;">{{ d.finalTitle }}</h2>
+  <p style="color:rgba(255,255,255,0.6); font-size:0.94rem; margin-bottom:1.6rem; font-weight:300;">{{ d.finalText }}</p>
+  <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+    <a href='/citas/' style='background:#4f7ea8; color:#1b2c3a; text-decoration:none; padding:0.9rem 1.7rem; border-radius:6px; font-weight:600; font-size:0.9rem;'>Book consultation</a>
+    <a href="{{ d.whatsappHref }}" target="_blank" style="background:#25D366; color:#fff; text-decoration:none; padding:0.9rem 1.7rem; border-radius:6px; font-weight:600; font-size:0.9rem;">WhatsApp</a>
+  </div>
+</section>
+
+<footer style="background:#091f2d; padding:2.2rem 6%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+  <div style="display:flex; align-items:center; gap:10px; font-family:'Playfair Display',serif; color:#8ab4d6; font-size:0.92rem;">
+    <img src="logo.png" alt="Dr. Jason Valdivia Najar" style="width:26px; height:26px; border-radius:50%; object-fit:cover; background:#fdf0ea;">
+    Dr. Jason Alejandro Valdivia Najar
+  </div>
+  <p style="color:rgba(255,255,255,0.35); font-size:0.76rem;">General Surgeon · Board-Certified · Puerto Vallarta, Jalisco &middot; &copy; 2026</p>
+</footer>
+
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+  <div style="height:64px;"></div>
+  <div style="position:fixed; bottom:0; left:0; right:0; z-index:150; display:flex; background:#0d2b3e; border-top:1px solid rgba(255,255,255,0.1); box-shadow:0 -8px 24px rgba(0,0,0,0.25);">
+    <a href="{{ d.whatsappHref }}" target="_blank" style="flex:1; display:flex; align-items:center; justify-content:center; gap:8px; background:#25D366; color:#fff; text-decoration:none; padding:0.95rem; font-weight:600; font-size:0.85rem;">WhatsApp</a>
+    <a href='/citas/' style='flex:1; display:flex; align-items:center; justify-content:center; gap:8px; background:#4f7ea8; color:#1b2c3a; text-decoration:none; padding:0.95rem; font-weight:600; font-size:0.85rem; border-left:1px solid rgba(255,255,255,0.15);'>Book</a>
+  </div>
+</sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;d&quot;: {&quot;editor&quot;: null, &quot;default&quot;: {}, &quot;tsType&quot;: &quot;object&quot;}}">
+class Component extends DCLogic {
+  state = {
+    vw: typeof window !== 'undefined' ? window.innerWidth : 1200,
+    menuOpen: false,
+    openFaqs: {},
+  };
+
+  componentDidMount() {
+    this._onResize = () => this.setState({ vw: window.innerWidth });
+    window.addEventListener('resize', this._onResize);
+  }
+
+  componentWillUnmount() {
+    if (this._onResize) window.removeEventListener('resize', this._onResize);
+  }
+
+  toggleMenu = () => this.setState((s) => ({ menuOpen: !s.menuOpen }));
+  closeMenu = () => this.setState({ menuOpen: false });
+
+  toggleFaq = (i) => () => {
+    this.setState((s) => ({ openFaqs: { ...s.openFaqs, [i]: !s.openFaqs[i] } }));
+  };
+
+  faqSymbol = (i) => (this.state.openFaqs[i] ? '\u2212' : '+');
+
+  faqBodyStyle = (i) => {
+    const open = !!this.state.openFaqs[i];
+    return { maxHeight: open ? '400px' : '0px', overflow: 'hidden', transition: 'max-height 0.3s ease' };
+  };
+
+  renderVals() {
+    const isMobile = this.state.vw < 860;
+    const open = this.state.menuOpen;
+    const barBase = { width: '22px', height: '2px', background: '#fdf0ea', borderRadius: '2px', transition: 'transform 0.25s ease, opacity 0.25s ease' };
+    return {
+      d: this.props.d || {},
+      isMobile,
+      isDesktop: !isMobile,
+      menuOpen: open,
+      navPadding: isMobile ? '0.85rem 5%' : '1.05rem 5%',
+      heroPadding: isMobile ? '7rem 6% 3rem' : '8.5rem 6% 4rem',
+      sectionPadding: isMobile ? '3rem 6%' : '4.5rem 6%',
+      toggleMenu: this.toggleMenu,
+      closeMenu: this.closeMenu,
+      toggleFaq: this.toggleFaq,
+      faqSymbol: this.faqSymbol,
+      faqBodyStyle: this.faqBodyStyle,
+      hamburgerLine1: { ...barBase, transform: open ? 'translateY(7px) rotate(45deg)' : 'none' },
+      hamburgerLine2: { ...barBase, opacity: open ? 0 : 1 },
+      hamburgerLine3: { ...barBase, transform: open ? 'translateY(-7px) rotate(-45deg)' : 'none' },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

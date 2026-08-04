@@ -11,6 +11,28 @@ este repositorio, cada cambio queda registrado.
 Las páginas usan `support.js`, un runtime que interpola las plantillas `{{ }}` y los
 `<sc-for>`. **No lo borre**: sin él las páginas salen en blanco.
 
+### Antes de publicar, corra el revisor de rutas
+
+```bash
+node revisar-rutas.mjs      # debe decir "sin rutas relativas rotas"
+```
+
+**Por qué existe**: al traer el sitio a este repositorio se copiaron las páginas pero
+**no los archivos que cada carpeta necesita al lado**. El resultado fue que todas las
+páginas menos la portada salieron en blanco en producción, sin un solo error visible —
+sólo un 404 silencioso de `./support.js`. Cada carpeta de procedimiento necesita, junto
+a su `index.html`:
+
+| Archivo | Para qué |
+|---|---|
+| `image-slot.js` | el componente que pinta la foto del encabezado |
+| `ProcedurePage.dc.html` | la plantilla de la página; **es distinta en cada carpeta** |
+| `illus.png` | la ilustración clínica de esa cirugía |
+| `logo.png` | el logotipo que usa la plantilla |
+
+Una página que se ve bien en el navegador **no** prueba que las demás también. El
+revisor las mira todas.
+
 ## Reglas que no se negocian
 
 1. **Sin testimonios de pacientes.** Están prohibidos en publicidad médica en México

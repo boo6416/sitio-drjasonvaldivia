@@ -381,14 +381,23 @@
   }
 
   /* El runtime de la página reconcilia su propio árbol cuando cambia de idioma
-   * o al redimensionar. Si en una de esas se lleva el widget, se vuelve a
-   * colgar: el estado vive en JS, así que no se pierde nada. */
-  function observarMontaje(hueco) {
-    var obs = new MutationObserver(function () {
-      if (!hueco.contains(caja)) { hueco.appendChild(caja); pintar(); }
-      else if (idioma() !== langPintado) pintar();
-    });
-    obs.observe(document.body, { childList: true, subtree: true });
+   * o al redimensionar, y en esas REEMPLAZA el nodo de montaje por uno nuevo.
+   *
+   * ⚠ Por eso NO se guarda una referencia al hueco: se vuelve a buscar por id
+   * cada vez. Guardándola, el widget se pintaba una vez y desaparecía para
+   * siempre — el nodo viejo seguía conteniendo la caja, así que nada delataba
+   * el problema; simplemente ya no estaba en la página. Pasó.
+   *
+   * El estado vive en JS, así que volver a colgarlo no pierde nada. */
+  function revisarMontaje() {
+    var hueco = document.getElementById("agenda-quiru");
+    if (!hueco) return;
+    if (!hueco.contains(caja)) { hueco.appendChild(caja); pintar(); }
+    else if (idioma() !== langPintado) pintar();
+  }
+
+  function observarMontaje() {
+    new MutationObserver(revisarMontaje).observe(document.body, { childList: true, subtree: true });
   }
 
   /* El runtime pinta su árbol después de cargar, así que al primer intento el
@@ -403,8 +412,15 @@
     })();
   }
 
+  /* `window.agendaQuiru` no es un resto de depuración: si algún día el recuadro
+   * sale en blanco, escribir `agendaQuiru` en la consola dice en qué paso se
+   * quedó. Un widget que falla en silencio cuesta una tarde de adivinanzas. */
   function arrancar() {
-    esperarHueco(montar);
+    window.agendaQuiru = "buscando el punto de montaje";
+    esperarHueco(function (h) {
+      try { montar(h); window.agendaQuiru = "montada"; }
+      catch (e) { window.agendaQuiru = "error al montar: " + e.message; }
+    });
   }
 
   function montar(hueco) {
@@ -412,9 +428,10 @@
     hueco.appendChild(caja);
     pintar();
     pedirHuecos();
-    observarMontaje(hueco);
-    // El botón de idioma no emite evento propio; se revisa de tanto en tanto.
-    setInterval(function () { if (idioma() !== langPintado) pintar(); }, 500);
+    observarMontaje();
+    // El botón de idioma no emite evento propio, y una re-pintada del runtime
+    // puede no disparar el observador. Se revisa de tanto en tanto.
+    setInterval(revisarMontaje, 500);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", arrancar);
