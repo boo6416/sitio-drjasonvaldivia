@@ -1,0 +1,14 @@
+LOGOTIPOS DE ASEGURADORAS
+
+Para que aparezca el logo de una aseguradora en /seguros/, ponga aqui el
+archivo PNG con el nombre exacto de la lista:
+
+  gnp.png  axa.png  metlife.png  monterrey.png  mapfre.png  allianz.png
+  zurich.png  hdi.png  banorte.png  inbursa.png  atlas.png  planseguro.png
+  bupa.png  cigna.png  allianzcare.png  img.png  geoblue.png  aetna.png
+  nowhealth.png
+
+Si el archivo no esta, la tarjeta muestra solo el nombre y la pagina se ve
+igual de bien. NO se descargaron los logos a proposito: son marcas registradas
+de terceros y mostrarlas puede leerse como que usted pertenece a su red. Si
+tiene convenio con alguna, ponga su logo con confianza.
