@@ -79,12 +79,14 @@
   </div>
 </section>
 
-<!-- CALENDLY -->
+<!-- AGENDA EN LÍNEA — habla directo con la agenda del consultorio (mini-ADR-044).
+     Aquí había un widget de Calendly: era una SEGUNDA agenda que no sabía nada
+     de la del consultorio, así que podía apartar horas ya ocupadas o días
+     cerrados por cirugía. El widget lo monta agenda.js, al final del body. -->
 <section style="max-width:900px; margin:0 auto; padding:3.5rem 5% 1rem;">
   <p style="text-align:center; color:#42535f; font-size:0.95rem; margin-bottom:1.5rem; font-weight:300;">{{ t.calendlyNote }}</p>
-  <div style="background:#fff; border:1px solid rgba(13,43,62,0.1); border-radius:14px; padding:0.5rem;">
-    <div class="calendly-inline-widget" data-url="https://calendly.com/jason-valdivian/60" style="min-width:320px;height:700px;"></div>
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <div style="background:#fff; border:1px solid rgba(13,43,62,0.1); border-radius:14px; padding:1.6rem 1.4rem; min-height:250px;">
+    <div id="agenda-quiru"></div>
   </div>
 </section>
 
@@ -192,14 +194,15 @@
   <a href="/aviso-de-privacidad/" style="color:rgba(255,255,255,0.75);">Aviso de privacidad</a>
 </div>
 </x-dc>
+<script src="agenda.js" defer></script>
 <script type="text/x-dc" data-dc-script>
 const CONTENT = {
   es: {
     navSub: 'Cirujano General · Puerto Vallarta',
     navAbout: 'Sobre mí', navProc: 'Procedimientos', langSwitchLabel: 'EN',
-    pageTitle: 'Agende su cita', pageDesc: 'Seleccione un horario disponible y su cita queda confirmada al instante — sin esperas.',
+    pageTitle: 'Agende su cita', pageDesc: 'Elija un horario libre de la agenda del consultorio. Su lugar queda apartado y se le confirma por WhatsApp.',
     priceBadge: 'Costo de consulta: $800 MXN',
-    calendlyNote: 'Elija el horario que mejor le convenga — su cita queda confirmada al instante.',
+    calendlyNote: 'Estos son los horarios realmente libres en la agenda del consultorio.',
     altDivider: '¿PREFIERE OTRA FORMA DE CONTACTO?',
     altToggleBtn: 'Llenar formulario de solicitud',
     formNote: 'Los campos marcados con * son obligatorios. Sus datos se utilizan únicamente para responder a su solicitud.',
@@ -227,9 +230,9 @@ const CONTENT = {
   en: {
     navSub: 'General Surgeon · Puerto Vallarta',
     navAbout: 'About', navProc: 'Procedures', langSwitchLabel: 'ES',
-    pageTitle: 'Book your appointment', pageDesc: 'Select an available time and your appointment is confirmed instantly — no waiting.',
+    pageTitle: 'Book your appointment', pageDesc: 'Pick a free time from the practice calendar. Your slot is held and confirmed by WhatsApp.',
     priceBadge: 'Consultation fee: $800 MXN (~$45 USD)',
-    calendlyNote: 'Choose the time that works best for you — your appointment is confirmed instantly.',
+    calendlyNote: 'These are the times actually open in the practice calendar.',
     altDivider: 'PREFER ANOTHER WAY TO REACH OUT?',
     altToggleBtn: 'Fill out request form instead',
     formNote: 'Fields marked with * are required. Your information is used only to respond to your request.',
