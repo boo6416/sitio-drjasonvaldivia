@@ -131,6 +131,13 @@
     hora: null,
     error: "",
     mandando: false,
+    /* ⚠ Lo tecleado vive AQUÍ, no en los <input>.
+     *
+     * El runtime de la página re-pinta su árbol cada tanto y se lleva el
+     * widget; al volver a colgarlo, los campos se construyen de nuevo. Si el
+     * valor viviera sólo en el DOM, el paciente perdería su nombre y su
+     * teléfono a media captura, sin entender por qué. */
+    datos: { nombre: "", apellidos: "", telefono: "", correo: "", motivo: "", consiente: false },
   };
   var caja = null;      // el nodo que pintamos
   var langPintado = null;
@@ -225,6 +232,10 @@
     i.type = tipo || "text";
     i.name = nombre;
     i.autocomplete = nombre === "telefono" ? "tel" : nombre === "correo" ? "email" : "on";
+    // Se restaura lo ya escrito y se guarda en cada tecla, para que una
+    // re-pintada del runtime no le borre los datos al paciente.
+    i.value = estado.datos[nombre] || "";
+    i.oninput = function () { estado.datos[nombre] = i.value; };
     hijos(env, [l, i]);
     env._input = i;
     return env;
@@ -249,6 +260,8 @@
       "font-size:0.95rem; color:" + C.tinta + "; background:#fff;");
     sel.appendChild(new Option(t.motivoPh, ""));
     for (var i = 0; i < t.motivos.length; i++) sel.appendChild(new Option(t.motivos[i], t.motivos[i]));
+    sel.value = estado.datos.motivo || "";
+    sel.onchange = function () { estado.datos.motivo = sel.value; };
     hijos(envM, [lM, sel, el("p", FUENTE + "font-size:0.72rem; color:" + C.grisSuave + "; margin-top:2px;", t.noClinico)]);
 
     /* Campo trampa: invisible para una persona, irresistible para un robot que
@@ -263,6 +276,8 @@
       "font-size:0.8rem; color:" + C.gris + "; line-height:1.6; cursor:pointer;");
     var chk = el("input", "margin-top:3px; flex:0 0 auto;");
     chk.type = "checkbox";
+    chk.checked = !!estado.datos.consiente;
+    chk.onchange = function () { estado.datos.consiente = chk.checked; };
     var txtC = el("span", null, t.consent + " ");
     var enl = el("a", "color:" + C.azul + ";", t.privacidad);
     enl.href = "/aviso-de-privacidad/"; enl.target = "_blank"; enl.rel = "noopener";
@@ -282,19 +297,19 @@
 
     btn.onclick = function () {
       var d = {
-        nombre: cNombre._input.value.trim(),
-        apellidos: cApell._input.value.trim(),
-        telefono: cTel._input.value.trim(),
-        correo: cMail._input.value.trim(),
+        nombre: (estado.datos.nombre || "").trim(),
+        apellidos: (estado.datos.apellidos || "").trim(),
+        telefono: (estado.datos.telefono || "").trim(),
+        correo: (estado.datos.correo || "").trim(),
         fecha: estado.fecha,
         hora: estado.hora,
         offset_min: OFFSET_MIN,
-        motivo: sel.value || undefined,
+        motivo: estado.datos.motivo || undefined,
         idioma: idioma(),
-        consentimiento: chk.checked,
+        consentimiento: !!estado.datos.consiente,
         sitio_web: tr.value,
       };
-      if (d.nombre.length < 2 || d.apellidos.length < 2 || d.telefono.length < 8 || !chk.checked) {
+      if (d.nombre.length < 2 || d.apellidos.length < 2 || d.telefono.length < 8 || !d.consentimiento) {
         estado.error = t.faltan; pintar(); return;
       }
       if (!d.correo) delete d.correo;
@@ -318,11 +333,29 @@
     return f;
   }
 
+  function restaurarFoco(nombre, cursor) {
+    if (!nombre || !caja) return;
+    var campoNuevo = caja.querySelector('[name="' + nombre + '"]');
+    if (!campoNuevo || campoNuevo === document.activeElement) return;
+    campoNuevo.focus();
+    try { if (cursor != null) campoNuevo.setSelectionRange(cursor, cursor); } catch (e) { /* select y checkbox no lo admiten */ }
+  }
+
   function pintar() {
     if (!caja) return;
     var t = T[idioma()];
     langPintado = idioma();
+
+    /* Se recuerda DÓNDE estaba el cursor. Re-pintar reconstruye los campos, y
+     * sin esto el paciente pierde el foco a media palabra cada vez que el
+     * runtime de la página repinta — el valor ya no se pierde, pero escribir
+     * se vuelve exasperante. */
+    var activo = document.activeElement;
+    var foco = activo && caja.contains(activo) && activo.name ? activo.name : null;
+    var cursor = foco && activo.selectionStart != null ? activo.selectionStart : null;
+
     while (caja.firstChild) caja.removeChild(caja.firstChild);
+    setTimeout(function () { restaurarFoco(foco, cursor); }, 0);
 
     if (estado.fase === "cargando") {
       caja.appendChild(el("p", FUENTE + "text-align:center; color:" + C.grisSuave + "; padding:2.5rem 0;", t.cargando));
