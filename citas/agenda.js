@@ -120,6 +120,15 @@
     return padre;
   }
 
+  /* Identificadores para atar cada <label> a su campo (2026-08-05).
+   *
+   * Sin `for`/`id` un lector de pantalla anuncia "cuadro de texto" sin decir
+   * cuál, y —esto lo nota cualquiera— tocar la palabra "Teléfono" no lleva el
+   * cursor al campo. En un teléfono, donde el blanco es chico, ese toque
+   * perdido es un paciente peleándose con el formulario en el último paso. */
+  var nId = 0;
+  function idUnico(p) { nId++; return "ag-" + p + "-" + nId; }
+
   var FUENTE = "font-family:'DM Sans',sans-serif;";
   var TITULO = FUENTE + "font-size:0.78rem; letter-spacing:0.09em; text-transform:uppercase; color:" + C.grisSuave + "; margin-bottom:0.9rem;";
 
@@ -202,6 +211,12 @@
       "background:" + (sel ? C.tinta : "#fff") + "; color:" + (sel ? C.crema : C.gris) + ";" +
       "display:flex; flex-direction:column; align-items:center; gap:2px; transition:all .15s ease;");
     b.type = "button";
+    /* El día se lee de corrido y se dice si está elegido. Suelto, un lector de
+       pantalla dictaba "vie 6 ago" en tres trozos y nunca decía cuál estaba
+       seleccionado: quien no ve la pantalla no tenía forma de saber en qué día
+       estaba parado. */
+    b.setAttribute("aria-label", e.dia + " " + e.num + " de " + e.mes);
+    b.setAttribute("aria-pressed", sel ? "true" : "false");
     hijos(b, [
       el("span", "font-size:0.7rem; opacity:0.75;", e.dia),
       el("span", "font-size:1.25rem; font-weight:500; line-height:1;", e.num),
@@ -211,14 +226,23 @@
     return b;
   }
 
-  function chipHora(h) {
+  function chipHora(h, t) {
     var sel = h === estado.hora;
+    /* `min-height:44px`: era de ~36 px y 44 es el mínimo que se toca sin fallar.
+       Este es EL botón del embudo —el paciente ya decidió, sólo le falta
+       apretar— y fallar el toque aquí, en una rejilla apretada, es elegir una
+       hora que no era o abandonar. Sube el alto, no el ancho: la rejilla se
+       queda igual. */
     var b = el("button", FUENTE +
-      "padding:0.55rem 0.2rem; border-radius:8px; cursor:pointer; font-size:0.92rem;" +
+      "padding:0.55rem 0.2rem; min-height:44px; border-radius:8px; cursor:pointer; font-size:0.92rem;" +
       "border:1px solid " + (sel ? C.tinta : C.borde) + ";" +
       "background:" + (sel ? C.tinta : "#fff") + "; color:" + (sel ? C.crema : C.gris) + ";" +
       "transition:all .15s ease;", h);
     b.type = "button";
+    // La hora sola no dice de qué día es, y en esta pantalla hay 21 días.
+    var e = estado.fecha ? etiquetaDia(estado.fecha, t) : null;
+    b.setAttribute("aria-label", e ? (h + " del " + e.num + " de " + e.mes) : h);
+    b.setAttribute("aria-pressed", sel ? "true" : "false");
     b.onclick = function () { estado.hora = h; estado.error = ""; pintar(); };
     return b;
   }
@@ -227,9 +251,15 @@
     var env = el("div", "display:flex; flex-direction:column; gap:5px;");
     var l = el("label", FUENTE + "font-size:0.78rem; color:" + C.gris + ";", etiqueta);
     var i = el("input", FUENTE +
-      "padding:0.65rem 0.75rem; border:1px solid " + C.borde + "; border-radius:8px;" +
+      "padding:0.65rem 0.75rem; min-height:44px; border:1px solid " + C.borde + "; border-radius:8px;" +
       "font-size:0.95rem; color:" + C.tinta + "; background:#fff;");
     i.type = tipo || "text";
+    i.id = idUnico(nombre);
+    l.setAttribute("for", i.id);
+    // Los tres primeros son obligatorios y la etiqueta ya lleva el asterisco;
+    // decirlo también aquí es lo que hace que el navegador y el lector de
+    // pantalla lo traten como tal, en vez de que el asterisco sea un adorno.
+    if (etiqueta.indexOf("*") >= 0) i.required = true;
     i.name = nombre;
     i.autocomplete = nombre === "telefono" ? "tel" : nombre === "correo" ? "email" : "on";
     // Se restaura lo ya escrito y se guarda en cada tecla, para que una
@@ -256,8 +286,10 @@
     var envM = el("div", "display:flex; flex-direction:column; gap:5px; margin-top:1rem;");
     var lM = el("label", FUENTE + "font-size:0.78rem; color:" + C.gris + ";", t.motivo);
     var sel = el("select", FUENTE +
-      "padding:0.65rem 0.75rem; border:1px solid " + C.borde + "; border-radius:8px;" +
+      "padding:0.65rem 0.75rem; min-height:44px; border:1px solid " + C.borde + "; border-radius:8px;" +
       "font-size:0.95rem; color:" + C.tinta + "; background:#fff;");
+    sel.id = idUnico("motivo");
+    lM.setAttribute("for", sel.id);
     sel.appendChild(new Option(t.motivoPh, ""));
     for (var i = 0; i < t.motivos.length; i++) sel.appendChild(new Option(t.motivos[i], t.motivos[i]));
     sel.value = estado.datos.motivo || "";
@@ -405,9 +437,21 @@
     if (dia) {
       caja.appendChild(el("p", TITULO + "margin-top:1.8rem;", t.elijaHora));
       var rej = el("div", "display:grid; grid-template-columns:repeat(auto-fill,minmax(84px,1fr)); gap:8px;");
-      for (var j = 0; j < dia.horas.length; j++) rej.appendChild(chipHora(dia.horas[j]));
+      for (var j = 0; j < dia.horas.length; j++) rej.appendChild(chipHora(dia.horas[j], t));
       caja.appendChild(rej);
       caja.appendChild(el("p", FUENTE + "font-size:0.74rem; color:" + C.grisSuave + "; margin-top:0.7rem;", t.zona));
+
+      /* Al elegir un día la lista de horas cambia entera, y eso pasaba en
+         SILENCIO: quien navega con lector de pantalla se quedaba oyendo la tira
+         de días sin enterarse de que abajo ya había horarios. Este renglón lo
+         dice; es invisible en pantalla, no cambia el diseño. */
+      var eDia = etiquetaDia(estado.fecha, t);
+      var aviso = el("p",
+        "position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;",
+        dia.horas.length + " horarios disponibles el " + eDia.num + " de " + eDia.mes);
+      aviso.setAttribute("role", "status");
+      aviso.setAttribute("aria-live", "polite");
+      caja.appendChild(aviso);
     }
 
     if (estado.hora) caja.appendChild(bloqueFormulario(t));
