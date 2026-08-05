@@ -20,18 +20,13 @@ git push
 - **Los dos números** en las 16 páginas, con urgencias intacto en el personal.
 - **Accesibilidad del agendado**: etiquetas atadas a sus campos, botones de 44 px, aviso
   al cambiar de día, campos obligatorios marcados de verdad.
-- **Tres páginas nuevas completas**: `cirugia-de-hemorroides`,
+- **SEIS páginas nuevas completas**: `cirugia-de-hemorroides`,
   `cirugia-de-hernia-umbilical`, `cirugia-de-urgencia`.
 
 ## Qué falta
 
-Tres páginas más, ya **redactadas y verificadas** (están en `textos-6-paginas.json`):
-`cirugia-laparoscopica`, `manejo-de-heridas-complejas`, `terapia-de-presion-negativa`.
-Sólo les falta la imagen.
+Nada de las seis páginas: están completas, con su imagen y vistas en local.
 
-1. Genere la imagen con el prompt que le toca en `prompts-de-imagenes.md`.
-2. Guárdela en `_pendiente/imagenes/<slug>.png`.
-3. Corra `node _pendiente/armar-paginas.mjs` (arma las dos versiones de cada página —la
    que lee Google y la que pinta el navegador— del MISMO objeto, para que no se
    desincronicen).
 
