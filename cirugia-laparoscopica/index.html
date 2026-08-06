@@ -9,6 +9,7 @@
 <link rel="canonical" href="https://drjasonvaldivia.com/cirugia-laparoscopica/">
 <meta name="robots" content="index,follow">
 <link rel="alternate" hreflang="es" href="https://drjasonvaldivia.com/cirugia-laparoscopica/">
+<link rel="alternate" hreflang="en" href="https://drjasonvaldivia.com/laparoscopic-surgery-puerto-vallarta/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Dr. Jason Valdivia — Cirujano General">
 <meta property="og:title" content="Cirugía laparoscópica en Puerto Vallarta | Dr. Valdivia">
@@ -115,7 +116,9 @@ class Component extends DCLogic {
         title: 'Cirugía laparoscópica en Puerto Vallarta',
         lede: 'La cirugía laparoscópica, o de mínima invasión, opera dentro del abdomen a través de incisiones pequeñas, guiándose con una cámara y con la imagen ampliada en un monitor. La operación que se hace adentro es la misma que en cirugía abierta; lo que cambia es la forma de llegar hasta ahí.',
         whatsappHref: 'https://wa.me/523313470335?text=Hola%20doctor%2C%20tengo%20dudas%20sobre%20cirug%C3%ADa%20laparosc%C3%B3pica',
-        altLangHref: '/citas/',
+        /* El botón de cambiar idioma. Si hay pareja, lleva a ella; si no, a la
+           página de citas — nunca a un enlace muerto. */
+        altLangHref: '../laparoscopic-surgery-puerto-vallarta/index.html',
         slotId: 'cirugia-laparoscopica-hero',
         imagePlaceholder: 'Ilustración: cirugía laparoscópica',
         imageSrc: 'illus.png',

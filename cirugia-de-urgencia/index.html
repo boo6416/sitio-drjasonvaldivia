@@ -9,6 +9,7 @@
 <link rel="canonical" href="https://drjasonvaldivia.com/cirugia-de-urgencia/">
 <meta name="robots" content="index,follow">
 <link rel="alternate" hreflang="es" href="https://drjasonvaldivia.com/cirugia-de-urgencia/">
+<link rel="alternate" hreflang="en" href="https://drjasonvaldivia.com/emergency-surgery-puerto-vallarta/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Dr. Jason Valdivia — Cirujano General">
 <meta property="og:title" content="Cirugía de urgencia en Puerto Vallarta | Abdomen agudo">
@@ -115,7 +116,9 @@ class Component extends DCLogic {
         title: 'Cirugía General de Urgencia en Puerto Vallarta',
         lede: 'Una apendicitis, una vesícula inflamada, un intestino obstruido o una hernia atascada pueden necesitar cirugía en cuestión de horas. Esta página no es para agendar: es para que decida rápido si tiene que ir a urgencias hoy y sepa qué le van a hacer al llegar.',
         whatsappHref: 'https://wa.me/523313470335?text=Hola%20doctor%2C%20tengo%20dudas%20sobre%20cirug%C3%ADa%20de%20urgencia',
-        altLangHref: '/citas/',
+        /* El botón de cambiar idioma. Si hay pareja, lleva a ella; si no, a la
+           página de citas — nunca a un enlace muerto. */
+        altLangHref: '../emergency-surgery-puerto-vallarta/index.html',
         slotId: 'cirugia-de-urgencia-hero',
         imagePlaceholder: 'Ilustración: cirugía de urgencia',
         imageSrc: 'illus.png',

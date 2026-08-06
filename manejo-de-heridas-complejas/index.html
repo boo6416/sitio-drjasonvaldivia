@@ -9,6 +9,7 @@
 <link rel="canonical" href="https://drjasonvaldivia.com/manejo-de-heridas-complejas/">
 <meta name="robots" content="index,follow">
 <link rel="alternate" hreflang="es" href="https://drjasonvaldivia.com/manejo-de-heridas-complejas/">
+<link rel="alternate" hreflang="en" href="https://drjasonvaldivia.com/complex-wound-care-puerto-vallarta/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Dr. Jason Valdivia — Cirujano General">
 <meta property="og:title" content="Heridas complejas y que no cierran en Puerto Vallarta">
@@ -115,7 +116,9 @@ class Component extends DCLogic {
         title: 'Manejo de heridas complejas y de difícil cicatrización en Puerto Vallarta',
         lede: 'Una herida que no cierra en el tiempo esperado pocas veces es un problema sólo de la piel: por debajo suele haber tejido muerto, infección, azúcar alta o poca circulación. Se valora la herida y la causa que la mantiene abierta, y se trata lo que corresponda: desbridamiento, curaciones, control metabólico y, cuando hace falta, cirugía.',
         whatsappHref: 'https://wa.me/523313470335?text=Hola%20doctor%2C%20tengo%20dudas%20sobre%20heridas%20complejas',
-        altLangHref: '/citas/',
+        /* El botón de cambiar idioma. Si hay pareja, lleva a ella; si no, a la
+           página de citas — nunca a un enlace muerto. */
+        altLangHref: '../complex-wound-care-puerto-vallarta/index.html',
         slotId: 'manejo-de-heridas-complejas-hero',
         imagePlaceholder: 'Ilustración: heridas complejas',
         imageSrc: 'illus.png',

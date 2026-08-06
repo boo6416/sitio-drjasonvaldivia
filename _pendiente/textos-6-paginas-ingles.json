@@ -1,0 +1,483 @@
+[
+ {
+  "es": "cirugia-de-hemorroides",
+  "d": {
+   "breadcrumbLabel": "Hemorrhoid Surgery",
+   "kicker": "Hemorrhoidectomy and Anorectal Surgery",
+   "title": "Hemorrhoid Surgery in Puerto Vallarta",
+   "lede": "Hemorrhoids, anal fissures, abscesses and fistulas are common, treatable problems, and a good share of cases can be handled without surgery. Every case gets a full evaluation to decide what it actually calls for, and bleeding with a bowel movement is never assumed to be hemorrhoids until it has been examined.",
+   "symptomsTitle": "What are the symptoms?",
+   "symptomsIntro": "These are complaints people rarely bring up, and that often get labeled hemorrhoids without anyone having looked. These are the reasons patients come in most often:",
+   "symptoms": [
+    "Bright red bleeding with a bowel movement: on the paper, in the toilet, or dripping at the end",
+    "A lump that comes out when you strain and goes back on its own, or that you have to push back in with a finger",
+    "Sharp, intense pain during and after a bowel movement that can go on for a while afterward (typical of an anal fissure)",
+    "A hard, very painful lump that shows up from one day to the next (a thrombosed hemorrhoid)",
+    "Constant pain with swelling and redness beside the anus, sometimes with fever or feeling generally unwell (an abscess)",
+    "Pus or drainage from an opening near the anus that closes and then opens up again (a fistula)",
+    "Itching, dampness, burning, or staining on your underwear"
+   ],
+   "whenTitle": "When is surgery necessary?",
+   "whenText": "Most cases never reach the operating room. Grade I and II internal hemorrhoids, and some grade III, improve with enough fiber and fluids, correcting bowel habits, and topical treatment. There are also office-based treatments — rubber band ligation, sclerotherapy, infrared coagulation — that are not offered here; when medical management isn't enough, what is offered is surgery. An acute anal fissure heals with sitz baths and fiber alone in about half of cases, and a chronic fissure is treated first with ointments: nifedipine or diltiazem are usually preferred, because nitroglycerin gives a headache to a high proportion of the people who use it. Surgery comes into the picture when there is an external component or significant prolapse (grades III and IV), when bleeding or symptoms haven't improved with the measures above, and for chronic fissures that haven't healed with medical treatment. With a thrombosed hemorrhoid, taking the clot out within the first 72 hours relieves the pain faster than waiting; after that window, non-surgical management is usually the better choice, because the problem is already settling down on its own. An anal abscess is the exception: it is always drained, and without delay, and some abscesses go on to leave a fistula that needs a second procedure.",
+   "procedureTitle": "What does the procedure involve?",
+   "procedureIntro": "There is no single operation. What gets done depends on what the examination finds: some procedures take a few minutes in the office, and others are done in the operating room, most of the time on an outpatient basis.",
+   "steps": [
+    {
+     "title": "Evaluation and examination",
+     "desc": "Your history comes first — how long this has been going on, what the bleeding looks like, your bowel habits, family history, and the medications you take — followed by an anorectal examination with anoscopy. That is what establishes the grade of the hemorrhoids and shows whether your case also calls for a study of the colon."
+    },
+    {
+     "title": "Anesthesia",
+     "desc": "If your case needs the operating room, the procedure is done under regional or general anesthesia, depending on the type of surgery and on what the preoperative evaluation shows. Anesthesia carries risks of its own, and those are gone over with you before you sign the consent form."
+    },
+    {
+     "title": "The operation depends on the problem",
+     "desc": "Hemorrhoidectomy: the hemorrhoidal cushions are removed. It is the most effective option for advanced prolapse and also the most painful one. Chronic fissure: lateral internal sphincterotomy, which can leave altered control of gas or stool — permanently, in some cases — so the sphincter is assessed beforehand and a flap is sometimes the better choice. Abscess: incision and drainage. Fistula: fistulotomy when the tract is simple, or sphincter-sparing techniques when it is complex; with a fistula there is both a risk of it coming back and a risk to continence, and both are explained before anything is chosen."
+    },
+    {
+     "title": "Discharge and follow-up",
+     "desc": "Most of these procedures are outpatient, and when your recovery allows it you go home the same day with pain medication, fiber, and sitz baths prescribed in writing. A follow-up visit is set for a few days later, and the warning signs that mean coming back sooner are written down for you as well."
+    }
+   ],
+   "calloutStrong": "Bleeding with a bowel movement is never taken for granted:",
+   "calloutText": "hemorrhoids are the most common cause, but not the only one — polyps, inflammatory bowel disease, and colon and rectal cancer bleed too. When bleeding starts after age 45, or comes along with a change in bowel habits, weight loss, anemia, or a family history of colon cancer, a full study of the colon is indicated before any of it is attributed to hemorrhoids. Having hemorrhoids does not rule out something higher up.",
+   "recoveryTitle": "What is recovery like?",
+   "recoveryText": "It depends on the procedure and on the person; what follows are rough ranges, not guaranteed timelines. Hemorrhoidectomy is the hardest one: pain is worst in the first few days and bowel movements hurt, the first one especially. Most people are back to their usual activities somewhere between the second and fourth week, and some take longer. In every case you get fiber, fluids, sitz baths and a combination of pain medications, because constipation is what slows healing down the most. The possible complications — bleeding, urinary retention that can mean a catheter or being admitted to the hospital, infection, narrowing of the anus, altered control of gas or stool, and the problem coming back — are gone over in the consultation, before anything is decided. And do not wait for your follow-up visit if you have heavy bleeding, fever, pain that keeps growing instead of easing, or trouble urinating: get medical attention right away.",
+   "faqs": [
+    {
+     "q": "Can hemorrhoids be treated without surgery?",
+     "a": "In a lot of cases the symptoms are controlled without it. Grade I and II, and plenty of grade III, improve with fiber, fluids, correcting bowel habits, and topical treatment. There are office treatments as well, such as rubber band ligation, which are not offered here. When those measures fall short — an external component, significant prolapse, or symptoms that don't let up — surgery is what's offered, and it is explained to you before you decide. Surgery treats the hemorrhoids you have now; it does not remove the tendency for them to come back, so fiber, not straining, and not spending long stretches sitting on the toilet still matter afterward."
+    },
+    {
+     "q": "Does hemorrhoid surgery hurt, and how long is the recovery?",
+     "a": "Hemorrhoidectomy does hurt, especially in the first few days and with bowel movements; there's no reason to tell you otherwise. It is handled with a combination of pain medications, which keeps opioid use down. Most people get back to their usual activities somewhere between the second and fourth week, but treat that as a rough range: it varies from person to person and with the procedure that was done."
+    },
+    {
+     "q": "Do hemorrhoids turn into cancer?",
+     "a": "No, they don't. The concern is a different one: colon and rectal cancer can bleed exactly the way a hemorrhoid does, and when bleeding is taken for granted, the diagnosis gets delayed. That is why bleeding is examined, and why from age 45 on — earlier if there are other findings — a colonoscopy is considered."
+    },
+    {
+     "q": "How do I know if it's hemorrhoids or an anal fissure?",
+     "a": "The kind of pain is the main clue. A fissure hurts sharply and intensely during the bowel movement and can keep hurting for a while after, with scant, bright red bleeding. An internal hemorrhoid usually bleeds without hurting, and an external one hurts when it clots, showing up as a hard lump out of nowhere. Either way, the distinction is settled by examination, not by description."
+    },
+    {
+     "q": "How much does it cost, and do you take insurance?",
+     "a": "The consultation is $800 MXN. What the procedure costs depends on which one it is, on the hospital, and on the anesthesia, and you get that in writing before anything is scheduled. Major medical insurance is accepted, as is private payment. If your policy is from outside Mexico, check with your insurer first — what they cover abroad, and whether they reimburse you afterward, varies from one company to the next."
+    },
+    {
+     "q": "How long do I need to stay in Puerto Vallarta, and when can I fly home?",
+     "a": "Most of these procedures are outpatient, so you go home the same day. The follow-up visit is a few days later, so plan to still be in town for it. When it is reasonable to fly depends on which procedure was done and on how you are healing, so that gets decided at the follow-up rather than promised ahead of time."
+    }
+   ],
+   "finalTitle": "Bleeding, pain, or a lump with bowel movements?",
+   "finalText": "Book a consultation for a full anorectal evaluation and a straight explanation of the options that apply to your case. Consultations in English and Spanish."
+  },
+  "metaDescription": "Hemorrhoids, anal fissure, abscess and fistula in Puerto Vallarta. General surgeon, consultations in English. Many cases can be managed without surgery.",
+  "metaTitle": "Hemorrhoid Surgery in Puerto Vallarta | Dr. Valdivia",
+  "slug": "hemorrhoid-surgery-puerto-vallarta"
+ },
+ {
+  "es": "cirugia-de-hernia-umbilical",
+  "slug": "umbilical-hernia-surgery-puerto-vallarta",
+  "metaTitle": "Umbilical Hernia Surgery in Puerto Vallarta | Dr. Valdivia",
+  "metaDescription": "Umbilical hernia repair in Puerto Vallarta with Dr. Jason Valdivia, general surgeon. Symptoms, when surgery is advised, mesh, recovery and risks explained.",
+  "d": {
+   "breadcrumbLabel": "Umbilical hernia",
+   "kicker": "Umbilical hernia repair",
+   "title": "Umbilical Hernia Surgery in Puerto Vallarta",
+   "lede": "The navel is a naturally weak spot in the abdominal wall, and in an adult it can open up again over the years. Before any repair is proposed, three things are looked at: how big the defect is, how much it bothers you, and what may be raising the pressure inside your abdomen.",
+   "symptomsTitle": "Common symptoms and signs",
+   "symptomsIntro": "An umbilical hernia is almost always noticed before it hurts. These are the findings that most often bring people in:",
+   "symptoms": [
+    "A bulge at the navel, or just to one side of it, anywhere from the size of a pea to the size of a lime.",
+    "The bulge stands out more when you stand up, cough, strain or lift something heavy.",
+    "It shrinks or disappears when you lie down, and can usually be pushed back in with your fingers, without forcing it.",
+    "Discomfort, burning or a pulling feeling around the navel at the end of the day or after exertion.",
+    "A sense of pressure or heaviness around the navel, without clear pain.",
+    "A change in the shape of the navel, which looks pushed out or stretched even at rest.",
+    "No symptoms at all, which is common: the bulge turns up on a routine exam or on a scan done for something else."
+   ],
+   "whenTitle": "When surgery is recommended",
+   "whenText": "In an adult the umbilical ring does not close by itself: unlike in a baby, the tissue is no longer growing. Repair is recommended when the hernia hurts, when it has been getting bigger, when it limits everyday activity, or when it has become trapped at any point. If the defect is small and gives no trouble, it is reasonable to leave it alone and have it checked from time to time, as long as you know the warning signs; the risk of the bowel getting trapped is low, but it is not zero, and emergency surgery carries more risk than a planned operation. It is also worth knowing that, over the years, some of the people who choose to wait end up having surgery anyway because the hernia grows or starts to bother them — waiting is a decision you revisit, not a final answer. On technique, the 2020 joint guidelines of the European Hernia Society and the Americas Hernia Society recommend reinforcing defects larger than one centimeter (a little under half an inch) with mesh, and leave suture-only closure as an option to be decided with the patient in smaller defects. Before anything is scheduled, the conditions that raise pressure inside the abdomen are reviewed — body weight, a chronic cough, constipation, abdominal fluid from liver disease, a pregnancy still ahead — because they affect the result, and it is sometimes better to deal with them first.",
+   "procedureTitle": "How the repair is performed",
+   "procedureIntro": "The technique depends on the size of the defect, on whether this is a first repair or a repeat one, and on your own circumstances. It is planned surgery and, in most cases, you go home the same day.",
+   "steps": [
+    {
+     "title": "Assessment and measurement of the defect",
+     "desc": "You are examined standing and lying down, and the umbilical ring is measured. If the findings are unclear, if you have had abdominal surgery before, or if excess weight makes the exam difficult, an ultrasound or a CT scan is added."
+    },
+    {
+     "title": "Anesthesia",
+     "desc": "Depending on the size of the hernia and the approach chosen, the operation can be done under general anesthesia, regional anesthesia, or local anesthesia with sedation. That is decided together with the anesthesiologist at the pre-operative visit, where the risks of the anesthesia itself and your medical history are also gone over."
+    },
+    {
+     "title": "Open or laparoscopic approach",
+     "desc": "Most small and medium defects are repaired through a short incision at the rim of the navel, which is what the guidelines recommend for the usual case. A laparoscopic approach, normally through three small ports, is considered when the defect is large, when the hernia has come back before, or when the risk of wound problems is higher."
+    },
+    {
+     "title": "Putting the contents back and closing the ring",
+     "desc": "Whatever has pushed through — most often fat, sometimes bowel — is returned to the abdomen and its condition is checked, and the gap in the wall is closed, taking care to keep the natural shape of the navel."
+    },
+    {
+     "title": "Mesh reinforcement when appropriate",
+     "desc": "For defects larger than one centimeter, a mesh is placed so that it overlaps the edge in every direction, usually by two to three centimeters (roughly an inch), because at that size closure with sutures alone comes back more often. For smaller defects, mesh or sutures is a choice made with you, going through what each option offers and what it involves, including the drawbacks of mesh."
+    }
+   ],
+   "calloutStrong": "Go to an emergency room immediately",
+   "calloutText": "if the bulge turns hard and will no longer go back in, if you get sudden severe pain at the navel, if the skin over it turns red or purple, or if it comes with nausea, vomiting, fever, or you stop passing gas and stool. That can mean a piece of bowel is trapped and losing its blood supply. Do not wait for an appointment, and do not try to force the bulge back in.",
+   "recoveryTitle": "Recovery and risks",
+   "recoveryText": "Most people go home the same day, after a few hours of observation, although some need to stay longer. For the first few days it hurts to cough, laugh or get out of bed, and that is managed with the pain medication you are given; walking the same day is part of the treatment, not something to put off. You are asked to avoid lifting and abdominal exercise for about four weeks — a general guide adjusted to your case, not a guaranteed deadline — and going back to work depends on how physical the job is, since a desk job resumes sooner than one that involves lifting. A lump or a firm area under the scar, from swelling and fluid, is common; it usually settles on its own, sometimes in weeks and sometimes over longer, and it is checked at your follow-up visits. Like any operation, this one carries risks: wound infection, a collection of fluid or blood, pain that lasts longer than expected, and the hernia coming back, which can happen even after a well-performed repair. On top of those are the risks of anesthesia and, less often, injury to the bowel, bladder, blood vessels or nerves, clots in the legs, and breathing or heart complications; when the operation is done laparoscopically, there is also the possibility of having to convert to open surgery partway through. This is not a complete list, and these risks do not weigh the same for everyone: the ones that apply to you, given your age and your health conditions, are gone over before you sign the consent form, along with the signs that should make you call.",
+   "faqs": [
+    {
+     "q": "Can an umbilical hernia be fixed without surgery, with a binder or with exercise?",
+     "a": "No. A binder can make the discomfort easier to live with and hold the bulge in, but it does not close the opening in the abdominal wall, and core exercises do not close it either. In an adult, surgical repair is the only treatment that corrects the defect. What does change the picture is controlling whatever raises the pressure inside the abdomen, such as body weight, a chronic cough or constipation."
+    },
+    {
+     "q": "It doesn't hurt. Is it dangerous to leave it alone?",
+     "a": "Surgery is not always needed right away. For a small hernia that gives no trouble and pushes back in easily, watching it is a reasonable option. The risk of the bowel getting trapped in any given year is low, but published figures vary from one study to another, and none of them describes an individual case on its own, so you will not be handed a percentage in the office as though it were your personal prognosis. What is worth being clear about is that the risk does not go away with time, that some of the people who wait end up having surgery because the hernia grows or starts to hurt, and that an emergency repair is more complicated than a planned one. That is why, if you choose to wait, you should leave the consultation knowing exactly which signs mean going straight to an emergency room."
+    },
+    {
+     "q": "Is mesh always used?",
+     "a": "No. When the defect is larger than one centimeter, international guidelines recommend mesh, because closure with sutures alone comes back more often. For smaller defects both options are valid and the decision is made in the consultation. Mesh is a reinforcing material that becomes part of the abdominal wall and, under normal circumstances, is neither removed nor needs any special care. It is not without drawbacks: it makes fluid collecting under the wound somewhat more common and, in uncommon cases, it can become infected or be linked to persistent pain, situations that may call for another operation to remove it. All of that is explained before you decide, once your own defect has been measured."
+    },
+    {
+     "q": "I'm visiting Puerto Vallarta. How long does the surgery take, and when could I fly home?",
+     "a": "An uncomplicated umbilical hernia repair usually takes between half an hour and an hour, and in most cases you go home the same day. Light activity comes back within a few days, and usual activity, including exercise and lifting, at around four weeks. Visitors are operated on here regularly, but there is no standard date for flying, and you will not be given one before you have been examined. Two things set the timing: at least one follow-up visit after the operation, and those weeks of restricted lifting, which in practice includes handling luggage. If you already have a return flight booked, say so at the consultation so it can be taken into account when surgery is scheduled. These timeframes are a general reference, not a commitment: they change with the size of the defect, whether mesh was used, the kind of work you do and how healing goes, and a complication makes them longer."
+    },
+    {
+     "q": "My baby's navel sticks out. Will it need an operation?",
+     "a": "Almost never. An umbilical hernia in a newborn or an infant is a different problem: in the great majority the ring finishes closing on its own, usually before the age of four or five. Taping a coin over it, binding it or strapping it does not help and can damage the skin. Surgery is considered if it is still there after that age, if the defect is large, or if at any point the bulge turns hard and painful and will not go back in — that last one needs to be seen the same day, at an emergency room. This is a pediatric surgeon's work, and at the consultation you will be pointed to where to go."
+    },
+    {
+     "q": "Do you take insurance? My policy was issued outside Mexico.",
+     "a": "Patients with major medical expense insurance are seen. Bring your policy details to the consultation, because the paperwork and the insurer's answer depend on the particular contract and on how long the policy has been in force, and the medical report your insurer asks for is prepared at the office. If your policy was issued outside Mexico, check with your insurer first how it works here: many foreign plans reimburse you afterwards rather than paying the hospital directly, and some ask for authorization before the operation. What is covered is decided by your insurer, not by this office."
+    }
+   ],
+   "finalTitle": "Consultation in Puerto Vallarta",
+   "finalText": "The assessment takes one appointment: your abdomen is examined, the defect is measured, and the options are explained with their risks and their timelines — none of which commits you to surgery. The office is at Calle Francia 186, Col. Versalles, Puerto Vallarta. The consultation costs $800 MXN (Mexican pesos), patients are seen in English and Spanish, and patients with major medical expense insurance are received. If the bulge no longer goes back in, or the pain is severe, do not book an appointment: go to an emergency room."
+  }
+ },
+ {
+  "es": "cirugia-de-urgencia",
+  "slug": "emergency-surgery-puerto-vallarta",
+  "metaTitle": "Emergency Surgery in Puerto Vallarta | Dr. Valdivia",
+  "metaDescription": "Acute abdominal pain in Puerto Vallarta? Learn which warning signs need the ER today, what happens when you arrive, and how emergency surgery is decided.",
+  "d": {
+   "breadcrumbLabel": "Emergency Surgery",
+   "kicker": "The Acute Abdomen",
+   "title": "Emergency General Surgery in Puerto Vallarta",
+   "lede": "Appendicitis, an inflamed gallbladder, a blocked bowel or a trapped hernia can all need surgery within hours. This page is not for booking an appointment. It is here so you can decide quickly whether you need to go to the emergency room today, and know what will happen once you get there.",
+   "symptomsTitle": "When should you go to the emergency room right away?",
+   "symptomsIntro": "Do not wait for morning, for a reply to a message, or for office hours. Go to the nearest emergency room if you have any of the following. And keep in mind that in older adults, in people with diabetes or a weakened immune system, and during pregnancy, the picture can look milder than it really is:",
+   "symptoms": [
+    "Abdominal pain that keeps getting worse over the hours instead of easing off, especially if it began near the navel and then moved to the lower right side",
+    "Pain under the ribs on the right side, or in the pit of the stomach, that lasts several hours, with nausea, vomiting or fever",
+    "Vomiting that will not stop, a swollen belly, and being unable to have a bowel movement or pass gas",
+    "A hernia bulge (in the groin, at the navel or over a scar) that no longer pushes back in, that hurts, hardens or changes color",
+    "Pain that comes on suddenly and severely, with the abdomen hard as a board, so that you cannot move or take a deep breath",
+    "Fever with chills, yellow skin or eyes, or very dark urine, together with abdominal pain",
+    "Abdominal pain with fainting, confusion, cold sweats or paleness; vomiting blood or passing black stools"
+   ],
+   "whenTitle": "Why waiting works against you",
+   "whenText": "Because with these problems, time changes the operation. An inflamed appendix can perforate, and the risk of complications tends to climb as the hours add up from the moment the pain began. A trapped hernia can strangulate, meaning the piece of bowel caught inside loses its blood supply, and at that point repairing the hernia is no longer enough. A bowel obstruction sometimes settles without surgery, but it stops being a candidate for that as soon as there are signs the bowel is suffering or that the abdomen is irritated. And a perforation spills intestinal contents inside the abdomen: that is peritonitis, and it is almost always operated on. That said, not every abdominal pain is surgical, and many are not, which is why the decision is not made over the phone or over the internet. It is made by examining the abdomen and reading the studies. Getting there in time usually means operating under better conditions; getting there late does not always leave that choice.",
+   "procedureTitle": "What happens when you get to the emergency room?",
+   "procedureIntro": "The first hours are spent answering a single question: does this need surgery today? This is what normally happens, in order.",
+   "steps": [
+    {
+     "title": "Triage on arrival",
+     "desc": "Vital signs are taken and the severity is judged. Abdominal pain with low blood pressure, high fever or a rigid abdomen goes ahead of the rest; you are told not to eat or drink anything, and an intravenous line is started."
+    },
+    {
+     "title": "History and examination of the abdomen",
+     "desc": "Where the pain started, where it moved to, how long it has been there, what makes it worse, whether there has been vomiting or fever, whether you have stopped passing stool or gas. Say what medicines you take as well, blood thinners and antiplatelet drugs above all, along with your allergies, your medical conditions and any previous surgery: they change which tests are ordered and the timing of surgery. A written list, or photos of your medicine boxes on your phone, saves time. Examining the abdomen still guides the decision more than any single test."
+    },
+    {
+     "title": "Laboratory and imaging",
+     "desc": "Blood count, chemistry panel and other tests depending on the case; an abdominal ultrasound and, when it is needed, a CT scan. In women of childbearing age, pregnancy is ruled out before ordering any study that uses radiation."
+    },
+    {
+     "title": "The decision: operate, observe, or rule surgery out",
+     "desc": "With the examination and the results in hand, the call is made: operate now, watch you for a few hours and examine you again, or conclude that the problem is not surgical. It is explained to you in plain language, with the risks and the alternatives, before you sign anything."
+    },
+    {
+     "title": "Surgery, laparoscopic when the case allows",
+     "desc": "Appendectomy, gallbladder removal and many hernias are done laparoscopically when conditions allow it. If the case arrived already complicated, if the anatomy cannot be made out safely, or if something unexpected turns up, open surgery may be required. Converting is not a failure; it is a safety decision taken during the operation."
+    }
+   ],
+   "calloutStrong": "If the pain is severe or getting worse, do not send a message: go.",
+   "calloutText": "Go straight to the emergency room of the nearest hospital. A WhatsApp message can sit unread for hours, and an abdominal emergency will not wait. If you cannot get there under your own steam, or if there is fainting, confusion or bleeding, call 911, the emergency number in Mexico, the same three digits used in the United States and Canada.",
+   "recoveryTitle": "And after surgery?",
+   "recoveryText": "It depends on what was operated on, on the shape you were in when you arrived, and on you: there is no single timeline for everyone, and no one can promise you one in advance. After an uncomplicated appendicitis or a gallbladder removed laparoscopically, the hospital stay is usually short and the return to normal activity is gradual, over a period that varies from one patient to the next. When there was a perforation, an abscess or bowel that had lost its blood supply, the stay is longer, intravenous antibiotics, a drain or a further operation may be needed, and recovery takes more time. Every operation carries risk, and in an emergency the risks are higher than in planned surgery: bleeding; infection of the wound or inside the abdomen; injury to nearby structures, including the bile duct in gallbladder surgery; a leak where the bowel was joined back together; clots in the legs or the lungs; complications of anesthesia; a hernia through the scar later on; the need to reoperate; and, in severe cases or in people with other illnesses, complications that can be life-threatening. Some bowel operations may call for an ostomy, bringing the bowel out to the skin, either temporary or permanent. No outcome can be guaranteed. All of this is explained before surgery, not afterwards. Follow-up is done in the office: checking the wound, going over the pathology report when there is one, and agreeing when you can go back to your usual activities. If you are due to travel home, ask when it is reasonable for you to fly before you change your ticket.",
+   "faqs": [
+    {
+     "q": "How do I know if it is appendicitis and not just a stomach bug?",
+     "a": "The most telling sign is how the pain travels: it starts vague around the navel or in the pit of the stomach and, over the course of hours, settles in the lower right side, along with loss of appetite, nausea, vomiting or a mild fever. It is not an infallible rule. Some cases of appendicitis do not follow that pattern, particularly in children, older adults, pregnant women and people with diabetes or a weakened immune system, where the pain and the fever can be mild even when the situation is serious. And there is no safe number of hours that anyone can promise you: the chance of the appendix perforating rises as time passes from the start of the symptoms, and operating on a perforated appendicitis is harder and carries more risk than operating on one that has not perforated. So the advice is not to count hours at home. If the pain has lasted several hours and is increasing, it needs to be assessed in the emergency room."
+    },
+    {
+     "q": "I am on vacation. Should I fly home and have the surgery there instead?",
+     "a": "If what you have is a surgical emergency, flying is not one of the options on the table. A perforated appendix, a strangulated hernia or peritonitis does not travel: the hours in the air, the cabin pressure and the absence of medical care on board turn a bad situation into a worse one, and airlines can refuse to board a passenger who is clearly unwell. Moving a patient is arranged after the problem has been treated and you are stable, usually through your insurer and sometimes with a medical escort. If the assessment shows the problem is not urgent, then waiting and being treated at home is a perfectly reasonable choice, and you will be told so plainly. What should not happen is boarding a plane with an abdomen that has not been examined."
+    },
+    {
+     "q": "Can appendicitis be treated with antibiotics alone?",
+     "a": "In selected cases of uncomplicated appendicitis without an appendicolith (a small stone inside the appendix), antibiotics alone are a reasonable alternative, and international guidelines recognize it. There is an important trade-off: in follow-up over several years, close to half of those patients end up having surgery anyway. It is not a decision to be made from home or over the phone. It requires studies confirming that the case is uncomplicated, and it is agreed with the team treating you, based on your case and on what the hospital can offer."
+    },
+    {
+     "q": "Can I take something for the pain before I go to the emergency room?",
+     "a": "The sensible thing is not to self-medicate and to go and be examined: if the pain is bad, they can give you something for it there. The old idea that a painkiller hides the diagnosis does not hold up, since those studies were done with pain relief given in the hospital, with the patient already under assessment, so pain is no reason to delay care or to be refused it on arrival. At home it is a different matter: anti-inflammatories can irritate the stomach or make it bleed, and they can bring a fever down and hide it, while antibiotics taken on your own mask the picture without solving it. Do not take laxatives or use an enema if you suspect an obstruction, and do not try to force a trapped hernia back in. And do not eat or drink anything, in case surgery is needed. If you have already taken something, say what it was and at what time."
+    },
+    {
+     "q": "It is the middle of the night, or a weekend. Which hospital do I go to, and will I be understood in English?",
+     "a": "In an emergency the hospital comes first: go to the nearest emergency room, or to one in your insurer's network, where they can examine you and run tests straight away. From there a general surgery assessment is requested. Emergency surgical care is not tied to office hours. The consultation and the consent are handled in English or in Spanish, whichever you prefer, so you will understand what is being proposed before you agree to it. How much English the rest of the staff on shift speaks varies from one hospital to another, so if a friend or relative can go with you, take them."
+    },
+    {
+     "q": "Will my insurance cover emergency surgery in Mexico?",
+     "a": "Patients with major medical expense insurance are seen, as well as private pay. In an emergency, go first and call your insurer from the hospital: emergency admissions usually have a deadline for reporting, and the admissions desk handles those calls every day. The part worth checking is what your plan does outside your own country. Many foreign travel and health plans do not pay a Mexican hospital directly and reimburse you afterwards instead, and private hospitals here commonly ask for a deposit or a card on file at admission even when you are insured. Keep the itemized bill, the operative report and the discharge summary, since that is what a claim is built on. What is covered, your deductible and any waiting periods depend on your policy and are confirmed by your insurer, not by the surgeon. If you spend the season here, it is worth sorting this out before you need it."
+    }
+   ],
+   "finalTitle": "When in doubt, go to the emergency room",
+   "finalText": "Abdominal pain that is getting worse, that will not let up, or that keeps you from moving needs to be looked at today, not tomorrow. Go to the nearest emergency room. If you have already been seen and need a surgical assessment or follow-up, book a consultation."
+  }
+ },
+ {
+  "es": "cirugia-laparoscopica",
+  "d": {
+   "breadcrumbLabel": "Laparoscopic surgery",
+   "kicker": "Minimally invasive surgery",
+   "title": "Laparoscopic Surgery in Puerto Vallarta",
+   "lede": "Laparoscopic surgery — also called minimally invasive or keyhole surgery — works inside the abdomen through small incisions, guided by a camera that puts a magnified image on a monitor. The operation done inside is the same one done in open surgery; what changes is the way of reaching it.",
+   "symptomsTitle": "What can be operated on laparoscopically",
+   "symptomsIntro": "In general surgery, a large share of abdominal conditions are approached this way today. These are the procedures performed here; each one has its own page with the details.",
+   "symptoms": [
+    "Gallbladder (cholecystectomy). This is the most common laparoscopic operation, and it is now the usual approach when gallstones cause symptoms or have already caused a complication. Stones that cause no trouble at all, found by chance on an ultrasound, are generally watched rather than operated on; there are exceptions, and they are weighed case by case.",
+    "Appendix (appendectomy). This is emergency surgery, and it is done laparoscopically in most cases, even when the inflammation is already significant. If what is found during the operation calls for it, the surgery continues as an open one.",
+    "Abdominal wall hernias: inguinal, umbilical — what most people call a belly-button hernia — and the kind that appears over the scar of a previous operation. Not all of them are suited to a laparoscopic approach: size, location and previous surgeries all weigh on the decision.",
+    "Reflux and hiatal hernia. Fundoplication, which rebuilds the valve between the esophagus and the stomach, is done laparoscopically. It is indicated in selected cases — when medication does not control the symptoms, or when the patient would rather not depend on it — and after the studies that confirm the diagnosis.",
+    "Diagnostic laparoscopy. When abdominal pain is not explained by testing, this makes it possible to look inside the abdomen directly and, when possible, to treat whatever is found in the same operation.",
+    "Not everything is treated this way, and that is worth saying plainly: the thyroid is reached through the neck, and cysts and lipomas through the skin. In those cases open surgery is not the inferior option, it is the right one."
+   ],
+   "whenTitle": "How it differs from open surgery, what risks it carries, and when it is not the right approach",
+   "whenText": "The difference is not in the procedure, it is in the access. In open surgery the incision is large enough for the surgeon's eyes and hands to work directly on the organ. In laparoscopy there are three or four small incisions, carbon dioxide lifts the abdominal wall away from the organs to create working space, and the surgeon operates while watching a monitor. The gallbladder that comes out and the hernia that gets repaired are the same. What changes is how much of the abdominal wall has to be opened to reach them, and that is where the advantages come from — advantages the surgical literature supports consistently and that the guidelines of the endoscopic surgery societies reflect: less pain afterward, a shorter hospital stay and an earlier return to normal activity, always measured against the same operation done open. An advantage is not the absence of risk. On top of the risks of any operation and of general anesthesia — bleeding, infection, clots in the legs — this route carries its own: placing the first access point can injure a blood vessel or a loop of bowel, gas can leak under the skin, and over time a hernia can form where an incision was made. Each operation adds risks of its own; in gallbladder surgery, injury to the bile duct is uncommon but it is the most serious one, and preventing it is the reason nothing is cut until the anatomy has been identified with certainty. It is also not always the better route. There are situations where the decision from the outset is to operate open: an unstable blood pressure or general condition, several previous abdominal operations with extensive adhesions that prevent safe access, severe heart or lung disease that makes the gas and the position on the table hard to tolerate, uncorrected clotting disorders, advanced cirrhosis, and suspected cancer of the gallbladder. None of these is an absolute prohibition or a rigid checklist: each one is weighed on its own. That decision is made beforehand, with the studies in hand, and it is explained to the patient.",
+   "procedureTitle": "How it is done",
+   "procedureIntro": "The general steps are practically the same in any laparoscopic operation. What changes from one to another is what happens once inside, and how long it takes.",
+   "steps": [
+    {
+     "title": "General anesthesia",
+     "desc": "The procedure is done under general anesthesia, with the patient asleep and with breathing support throughout. The anesthesiologist goes over each patient's medical history beforehand, along with the risks that belong to the anesthesia itself."
+    },
+    {
+     "title": "Access and pneumoperitoneum",
+     "desc": "The first incision is made, usually at the navel, and carbon dioxide lifts the abdominal wall away from the organs. That space is what makes it possible to see and to work. It is also the moment when a vessel or the bowel can be injured, which is why the access is made with careful technique and under control."
+    },
+    {
+     "title": "Camera and instruments",
+     "desc": "The laparoscope goes in through that incision — a camera that puts a magnified view of the inside on a monitor. Two or three more incisions follow, between half a centimeter and a little over one centimeter, for the instruments to pass through."
+    },
+    {
+     "title": "The procedure itself",
+     "desc": "Then comes the operation itself: taking out the gallbladder or the appendix, placing the mesh for a hernia, rebuilding the valve at the esophagus. Before anything is cut or removed, the anatomy is identified clearly; if that cannot be achieved, the surgery does not go further."
+    },
+    {
+     "title": "Letting the gas out and closing",
+     "desc": "The surgeon checks for bleeding, the gas is let out and the incisions are closed. The larger ones are closed in layers, to reduce the risk of a hernia forming there over time."
+    }
+   ],
+   "calloutStrong": "Converting to open surgery is not a complication and it is not a failure.",
+   "calloutText": "It is a decision made during the operation, at the point where carrying on laparoscopically stops being the safest thing to do: adhesions that block progress, inflammation that erases the tissue planes, anatomy that cannot be identified with certainty, bleeding, or an unexpected finding. When it happens, the same operation carries on as an open one, in the same surgical session and without waking the patient; what changes is the recovery, and afterward the surgeon explains why it was necessary. How often it happens varies a good deal between published series and between settings: in planned gallbladder surgery most publications put it below five percent, with higher figures in some series from this region, and it clearly rises when there is acute inflammation. That is why the consent form is always signed for both routes: the one that is planned, and the one that may turn out to be needed.",
+   "recoveryTitle": "Recovery",
+   "recoveryText": "Recovery varies with the procedure and with each person, and the honest comparison is against the same operation done open, not against not having surgery at all. What follows are the usual timeframes, not a promise. In general, patients are up and walking the same day; after an uncomplicated gallbladder or appendix operation discharge usually comes within the first day, while large hernia repairs and reflux surgery generally need more time in hospital. Shoulder pain in the first two or three days is common: it is not a shoulder problem, it is the leftover gas irritating the diaphragm, and it usually settles on its own. Exertion, the gym and lifting weight start again when the surgeon says so, not when the pain stops; with hernia repairs that wait is longer, because the repaired tissue needs time to knit. The incisions are small — usually three or four, one of them inside the navel — and how a scar ends up looking depends on your skin, on the tension in the area and on how the wounds are cared for in the first weeks; small scars, yes, but no one can promise invisible ones. Some signs mean you should call without waiting for the follow-up visit: fever, pain that grows instead of easing, vomiting that will not stop, a swollen abdomen, yellowing of the skin or eyes, and redness or drainage from any incision. Each procedure has its own timeline, explained on its page and in the consultation.",
+   "faqs": [
+    {
+     "q": "How much does laparoscopic surgery cost in Puerto Vallarta?",
+     "a": "It depends on the procedure, the hospital, how long the operating room is needed and the anesthesia team, so there is no single figure, and it cannot be quoted over the phone without assessing the case first. The assessment consultation costs $800 MXN and includes a written quote for your case. If you have major medical expense insurance, it is accepted and the office helps with the paperwork."
+    },
+    {
+     "q": "Will my US or Canadian insurance cover surgery in Mexico?",
+     "a": "That depends on your policy, and the insurer is the one who confirms it — not the surgeon's office. Some international and travel policies cover treatment abroad and some do not; certain ones require pre-authorization before the operation, and others reimburse you after you have paid. Bring your policy number and the insurer's phone line to the consultation. The office issues the medical report, the quote and the invoices the insurer asks for, and helps you through the process, but it cannot tell you in advance what your insurer will pay."
+    },
+    {
+     "q": "How soon can I fly home after laparoscopic surgery?",
+     "a": "There is no fixed date, and it is settled at your follow-up visit rather than promised in advance. After an uncomplicated laparoscopic operation, short flights are often considered from around a week, and long flights later, once the incisions are healing well and there is no fever or worsening pain — treat that as an orientation, not as clearance; the clearance comes from the surgeon after seeing you. Two things matter in the air: gas left in the abdomen expands at cabin pressure, and hours of sitting still raise the risk of clots in the legs. If you are flying home rather than staying in Vallarta, say so before surgery, so the operation and the follow-up visit can be planned around your travel dates."
+    },
+    {
+     "q": "Why does my shoulder hurt after a laparoscopy?",
+     "a": "It is referred pain. The carbon dioxide left in the abdomen irritates the diaphragm, and the nerve that supplies the diaphragm shares its origin with the one that gives sensation to the shoulder, so that is where you feel it. It is common, usually lasts two or three days, and gets better with walking. If it grows instead of easing, or comes with fever or shortness of breath, call without waiting."
+    },
+    {
+     "q": "Is laparoscopic surgery the same as keyhole surgery, or as laser surgery?",
+     "a": "Keyhole surgery, minimally invasive surgery and laparoscopic surgery are three names for the same thing. Laser is another matter: no laser is involved. The tools are a camera, long instruments, and electrical current or ultrasonic energy to cut and seal. When a clinic advertises laser gallbladder surgery, it is almost always laparoscopy going by another name."
+    },
+    {
+     "q": "What are the risks of laparoscopic surgery?",
+     "a": "The risks of any operation and any general anesthesia — bleeding, wound infection, clots in the legs, reactions to the anesthesia — plus the ones that belong to this route: injury to a vessel or to the bowel when the first access is placed, gas leaking under the skin, a hernia at an incision site over time, and the possibility of converting to open surgery. Each operation adds its own; in gallbladder surgery, bile duct injury is uncommon but it is the most serious. The odds are not the same for everyone: they change with the procedure, with the anatomy and with each patient's health, and they are gone through in detail in the consultation and in the informed consent you sign before surgery."
+    }
+   ],
+   "finalTitle": "Getting assessed in Puerto Vallarta",
+   "finalText": "Deciding whether a problem can be resolved laparoscopically means examining the patient and going through their studies; it is not settled over the phone or from the name of the condition. The assessment consultation costs $800 MXN and covers the proposed approach, its risks, what can happen during the operation, and a written quote. The office is at Calle Francia 186, Colonia Versalles, in Puerto Vallarta. Consultations are held in Spanish and English, and patients with major medical expense insurance are received."
+  },
+  "metaDescription": "Laparoscopic (keyhole) surgery in Puerto Vallarta by a general surgeon: what it treats, how it is done, the risks, recovery, and how to get a written quote.",
+  "metaTitle": "Laparoscopic Surgery in Puerto Vallarta | Dr. Valdivia",
+  "slug": "laparoscopic-surgery-puerto-vallarta"
+ },
+ {
+  "es": "manejo-de-heridas-complejas",
+  "d": {
+   "breadcrumbLabel": "Complex wounds",
+   "kicker": "Debridement and advanced wound care",
+   "title": "Complex and non-healing wound care in Puerto Vallarta",
+   "lede": "A wound that has not closed in the time it should is rarely a problem of the skin alone. Underneath there is usually dead tissue, infection, high blood sugar or poor circulation keeping it open. The visit looks at both the wound and the reason it is staying open, and treats what needs treating: debridement, dressing changes, control of blood sugar and, when it is needed, surgery.",
+   "symptomsTitle": "When a wound stops behaving like an ordinary wound",
+   "symptomsIntro": "A wound that is healing normally improves week by week: it gets smaller, drains less and hurts less. These signs mean something is holding it back, and it should be looked at:",
+   "symptoms": [
+    "A surgical wound has opened, partly or completely, when the stitches came out or even before.",
+    "Cloudy fluid or pus is draining from it, or the wound smells bad.",
+    "The redness around it is spreading, the pain is getting worse instead of easing, or there is fever.",
+    "A sore on the foot, heel or leg that has gone weeks without getting any smaller.",
+    "A black scab or yellowish tissue stuck to the base of the wound that dressing changes do not lift.",
+    "Skin on the leg that is hard, darkened and swollen, with an ulcer that opens and closes over and over.",
+    "In someone with diabetes, a foot injury that does not hurt: the absence of pain does not make it minor."
+   ],
+   "whenTitle": "When specialized treatment is needed",
+   "whenText": "Some signs should not wait for an appointment: fever with chills; redness that spreads over a matter of hours; pain far out of proportion to the wound; new blisters or purple or black patches of skin; swelling that grows quickly; a crackling or bubbling feeling under the skin; blood sugar that suddenly goes out of control; or feeling generally unwell and confused. The same goes for a surgical wound that drains enough fluid to soak through the dressing, splits open suddenly, or opens far enough that you can see tissue coming through it. In any of those situations, go to an emergency room instead of waiting for an office visit. Outside of those situations: a wound is called chronic when it does not move through the normal stages of healing in the time it should, despite the care it is getting. A surgical wound that opens (dehiscence) or gets infected needs to be examined, not simply re-dressed. A surgical site infection usually shows up in the first days after an operation, though it can appear up to a month later, and later still if mesh or an implant was placed, and it often has to be opened, drained and cleared of tissue that is no longer viable. Leg ulcers and foot wounds in people with diabetes work the same way: two questions come before any decision about treatment, whether enough blood is reaching the area and whether infection is involved. That is why the assessment includes checking the pulses and studying the circulation with an ankle-brachial index, or with toe pressures, which are more reliable when the arteries are calcified, something common in diabetes and in kidney disease, along with a look at blood sugar control and nutrition. If the circulation is poor, dressing changes are unlikely to close the wound until blood flow is restored, and that is assessed together with vascular surgery. A wound with no clear explanation, or one that does not respond to correct treatment, may also need a biopsy.",
+   "procedureTitle": "How the wound is managed",
+   "procedureIntro": "Management follows a sequence of steps, and it is adjusted at each visit according to how the wound is responding.",
+   "steps": [
+    {
+     "title": "Assessing the wound and the cause",
+     "desc": "The wound is measured and described, its size, depth, the kind of tissue at the base, how much it drains, the state of the edges, and the circulation and sensation in the area are checked. The visit also looks for whatever is holding it back: blood sugar out of range, infection, pressure on the area, poor nutrition, smoking, medications. If there is reason to think the infection has reached bone, or that the wound does not fit a usual cause, imaging or a biopsy is ordered."
+    },
+    {
+     "title": "Debridement",
+     "desc": "Removing the dead tissue, the scab and the fibrinous material covering the wound. This is one of the steps that counts most in preparing the wound bed: as long as non-viable tissue stays, the wound rarely progresses and infection has somewhere to hold on. It is done in the office under local anesthesia when the extent allows it, and in the operating room when the tissue to be removed is extensive or deep or when the infection is suspected to have reached deeper planes or bone. It usually has to be repeated over several sessions, and you are told which applies in your case, and why, before anything is done. Two things are worth knowing beforehand: it can bleed and can be uncomfortable even with anesthesia, and once the non-viable tissue is gone the wound sometimes looks bigger than it did before, without that meaning it has gotten worse. Not all black tissue comes off right away either: when circulation to the foot or leg is compromised, a dry, firm scab with no signs of infection may be left in place while the blood flow is studied, because debriding it at that point can make the injury worse."
+    },
+    {
+     "title": "Controlling infection",
+     "desc": "An open wound is not necessarily an infected wound; they are different things and are treated differently. When there is infection, any collection is drained and a culture is taken if it is called for. Antibiotics by mouth or by vein are prescribed when the findings justify them, not as a routine, and they are not something to start on your own: taken without an assessment they mask the picture, and they do not take the place of drainage or cleaning when those are what the wound needs. Topical antiseptics are used for a limited time and then reassessed, rather than left on indefinitely."
+    },
+    {
+     "title": "Dressings and the wound environment",
+     "desc": "The dressing is chosen according to how much the wound is draining, to keep it moist without macerating the edges, and it changes as the wound changes. A wound left to close by secondary intention is packed from the inside out, and the dressing keeps the skin from closing over the top before the base has filled in. Large or heavily draining wounds may be supported with negative pressure therapy, the kind often called a wound VAC. It does not suit every wound, it does not go over dead tissue, over exposed vessels, nerves or organs, over untreated bone infection or over a tumor, so it is decided case by case."
+    },
+    {
+     "title": "Offloading, compression and surgery when they are needed",
+     "desc": "For an ulcer on the sole of the foot caused by loss of sensation, taking the pressure off is usually the first measure, normally with a device that reaches up to the knee, because the wound rarely closes if you keep walking on it; when infection or poor circulation is involved, those are dealt with first and a device that can be removed is chosen instead. In venous ulcers, compression is the basis of the treatment, and arterial disease is ruled out before it is prescribed, because compressing a leg with poor circulation can damage it. Surgery comes in when tissue has to be removed in the operating room, when a wound that is now clean can be closed with a graft or a flap, or when blood flow has to be restored, which is coordinated with vascular surgery. And in some cases, when the tissue can no longer be saved or an infection threatens the limb or life, an amputation, often limited to a toe or to part of the foot, is the procedure that solves the problem and makes it possible to keep the rest."
+    }
+   ],
+   "calloutStrong": "Blood sugar control and circulation decide whether a wound closes.",
+   "calloutText": " High blood sugar over time weakens the defense against bacteria and gets in the way of forming collagen and new blood vessels; in people with diabetes, poor control is associated with more surgical wound infections. And if enough blood is not reaching the area, the tissue has little to repair itself with, however careful the wound care is. That is why treatment always works on these two fronts, with internal medicine, endocrinology or vascular surgery when their input is needed. Left alone, they set the limit: dressing changes may hold the wound steady, but they rarely close it.",
+   "recoveryTitle": "What to expect during treatment",
+   "recoveryText": "Closing a complex wound is measured in weeks or months, not days, and how long it takes depends on the person and on the cause, so no date can be committed to at the outset. It heals from the inside out: first the base fills in, then the edges pull together, and last of all the skin covers it. You are seen at regular intervals so the wound can be debrided again if it needs it and the dressing changed as the wound changes; needing several cleanings does not mean the treatment is failing. You are shown how to do the dressing change at home, what you should expect to see, what you should not, and which signs mean you should call or come in before your next appointment. At each visit the wound is measured against the last one, and that is what tells you whether it is progressing. It also has to be said plainly: some wounds do not close despite correct treatment, and some close and open again, and in those cases the diagnosis and the plan are reconsidered. The scar goes on maturing for months after the wound has closed. Once it is closed the work turns to prevention, daily foot checks and suitable footwear if you have diabetes, compression stockings for venous ulcers, blood sugar control, quitting smoking, because these wounds come back easily when the cause is still there.",
+   "faqs": [
+    {
+     "q": "How long does a wound that was left open take to close?",
+     "a": "It depends on the size, the depth and above all on the cause. A wound closing by secondary intention fills in gradually from the base and can take weeks or months; in the same patient, correcting blood sugar that is out of range or a lack of circulation changes that time completely. No one can give you a date at the start or promise a deadline, but at each visit it can be measured whether the wound is getting smaller. If it has not shrunk after several weeks of correct treatment, the diagnosis is reconsidered; and there are wounds that do not close even when everything is done right."
+    },
+    {
+     "q": "My surgical wound opened. Can it just be stitched closed again?",
+     "a": "Sometimes yes, sometimes no; it depends on why it opened and how much time has passed. If it opens within the first hours, the problem is with the closure itself, and there is no infection or damaged tissue, it can be closed again. When there is infection, dead tissue or tension on the edges, re-stitching usually ends in it opening a second time: in those cases the wound is cleaned and left to close from the inside out, and closing it is considered later on. Either way, it is worth being seen soon rather than waiting for your follow-up appointment. And if the wound splits open suddenly, soaks through the dressing, or opens far enough that you can see tissue coming through it, that is an emergency: go in right away."
+    },
+    {
+     "q": "How do I know if my wound is infected?",
+     "a": "Pain that gets worse instead of easing, redness that spreads, the area feeling warmer, drainage that is cloudy or smells bad, and fever all raise the suspicion of infection. A wound being open does not mean it is infected, and clear drainage does not mean it either. Some signs call for an emergency room the same day rather than an office visit: fever with chills, redness spreading within hours, pain out of proportion to the wound, new blisters or purple or black patches, a crackling feeling under the skin, or feeling generally unwell and confused. Starting antibiotics on your own is a bad idea, including any you brought with you or bought over the counter: they mask the picture and do not take the place of drainage or cleaning when those are what the wound needs."
+    },
+    {
+     "q": "Does a diabetic foot wound always end in amputation?",
+     "a": "Not always, and most do not. The outcome depends largely on three things that can be acted on: whether enough blood is reaching the foot, whether there is infection, and whether the pressure on the area can be taken off. That is why being seen early matters so much: a small injury that does not hurt, because the sensation is reduced, can get worse without you noticing. And the full picture has to be given: in some cases, when the tissue can no longer be saved or the infection threatens the limb or life, an amputation, often limited to a toe or to part of the foot, is the treatment that solves it and makes it possible to keep the rest. No outcome can be guaranteed. What can be said is that treating the wound early, with the circulation studied and the blood sugar under control, gives it better conditions to close."
+    },
+    {
+     "q": "I had surgery back home and the wound opened while I am in Puerto Vallarta. Can you take over the care?",
+     "a": "Yes. Wound care that started somewhere else can be continued here, which is common with patients who spend part of the year in Vallarta. Bring whatever you have from the original operation, the operative report, discharge instructions, culture or pathology results, your list of medications, and the dressings you have been using. At the first visit the wound is assessed from scratch, along with the circulation and your blood sugar control, and you leave with a plan: what is done that same day and what has to be checked. Notes in English can be provided for your physician at home, and if you are traveling back before the wound closes, the dressing plan and the handover are prepared ahead of the trip. Patients with major medical expense insurance are seen; whether your own policy covers care in Mexico, and whether it pays directly or reimburses you afterward, is something to confirm with your insurer before the visit."
+    },
+    {
+     "q": "Is there a cream or ointment that will heal a wound that will not close?",
+     "a": "No ointment closes a chronic wound by itself, and some of the products used out of habit, hydrogen peroxide among them, irritate the new tissue or hide an infection. Over-the-counter antibiotic ointment does not solve it either, and home remedies do not belong on an open wound. What moves a wound forward is removing the tissue that is no longer viable, keeping the right level of moisture with the dressing that suits that wound at that moment, controlling infection if there is any, and correcting the underlying cause. The dressing is chosen according to how much the wound drains and is changed as the wound changes; there is no single product that works from beginning to end."
+    }
+   ],
+   "finalTitle": "Wound assessment in Puerto Vallarta",
+   "finalText": "If you have a wound that has gone weeks without closing, a surgical wound that has opened, or a foot injury that is not improving, the assessment is done at the office at Calle Francia 186, colonia Versalles, in Puerto Vallarta. During the visit the wound is examined, the circulation is assessed and a plan is set out: what is done that same day, what studies are needed, and which other specialties it makes sense to coordinate with. The assessment consultation costs $800 MXN, and patients with major medical expense insurance are seen. Consultations are in English and Spanish. If you have a high fever, redness that is spreading quickly, severe pain, or a surgical wound that opens suddenly, go to an emergency room."
+  },
+  "metaDescription": "Wounds that will not close, surgical wounds that reopened, diabetic foot ulcers: assessment, debridement and wound care in Puerto Vallarta. English spoken.",
+  "metaTitle": "Complex Wound Care in Puerto Vallarta | Dr. Valdivia",
+  "slug": "complex-wound-care-puerto-vallarta"
+ },
+ {
+  "es": "terapia-de-presion-negativa",
+  "d": {
+   "breadcrumbLabel": "Negative pressure wound therapy",
+   "kicker": "Negative pressure wound therapy (NPWT / wound VAC)",
+   "title": "Negative pressure wound therapy (wound VAC) in Puerto Vallarta",
+   "lede": "Some complicated wounds drain heavily, are slow to close, or stay open after an operation. These are treated with a sealed dressing hooked up to steady suction, usually called a wound VAC. It is an add-on treatment: it works alongside debridement and infection control, never in place of them.",
+   "symptomsTitle": "Which wounds it is used for",
+   "symptomsIntro": "Not every wound needs negative pressure. Most heal fine with ordinary dressing changes, and putting the device on a wound that does not need it only adds cost, discomfort and risk. It is considered for wounds like these, and only after the dead tissue has been removed and the infection is under control:",
+   "symptoms": [
+    "Surgical wounds that opened up days after the operation (dehiscence) and cannot simply be closed again.",
+    "Complicated abdominal wounds, including an abdomen left open on purpose for a time after emergency surgery.",
+    "Chronic ulcers that are going nowhere with ordinary dressings, such as diabetic foot ulcers, once they have been debrided and the circulation has been checked.",
+    "Deep pressure ulcers, what most people call bedsores.",
+    "Wounds from accidents with loss of skin and tissue, including open fractures.",
+    "Getting the wound bed ready before a skin graft, and holding the graft in place once it is on.",
+    "Wounds draining so heavily that they soak through several dressings a day."
+   ],
+   "whenTitle": "When it is not the right treatment",
+   "whenText": "There are situations where this system should not go on, or should not go on yet. It is not applied over dead tissue or hard eschar that has not been cleared away: suction does not debride, and sealing a dirty wound under an adhesive film only makes it worse. It is also not indicated when there is an active infection that is not being treated, a bone infection (osteomyelitis) that is not being treated, a tumor inside the wound, or a fistula that has not been investigated; the foam is not pushed blindly into tunnels or tracts that nobody has explored. The foam is never placed in direct contact with arteries, veins, nerves, bowel, other organs, a vascular graft or an anastomosis: those situations call for a protective layer in between and a careful look at the risk, because erosion in that area can cause severe bleeding. It is used with particular caution in people on blood thinners (anticoagulants), in people with clotting disorders, and when bleeding from the wound was hard to stop in the first place. It also needs supervision: this is not a device to leave running while nobody trained looks at the wound or the equipment. Finally, if the wound has not changed after one to two weeks of treatment that has been done properly, the answer is not to keep going out of habit. The diagnosis, the blood supply to the area, nutrition and diabetes control all get reviewed, because the real cause is usually somewhere else.",
+   "procedureTitle": "How it works and how it goes on",
+   "procedureIntro": "The idea is simple: seal the wound and keep steady suction on it. That pulls out fluid that would otherwise collect, takes the swelling out of the edges, draws those edges toward each other, and encourages new tissue and small blood vessels to form. The sealed dressing also keeps the wound away from the outside environment and cuts down how many dressing changes are needed each day.",
+   "steps": [
+    {
+     "title": "Assessment and debridement",
+     "desc": "The wound is examined first, and all dead or contaminated tissue is cleared away, in the operating room or in the office depending on the case. A culture is taken if there are signs of infection. This step cannot be skipped: it is what makes everything after it work."
+    },
+    {
+     "title": "Placing the foam and sealing it",
+     "desc": "Sterile foam is cut to the exact size of the wound and set inside it, without riding up onto healthy skin. The number of pieces that go in is written down so that every one of them comes back out later: a fragment left behind in the wound is one of the known causes of infection. A clear film then goes over the top, sealing the area and making the whole thing airtight."
+    },
+    {
+     "title": "Connecting the pump",
+     "desc": "A small opening is made in the film and tubing connects it to a portable, battery-powered pump. The suction normally used runs between 75 and 125 mmHg, either constant or in cycles, and is set according to the wound and what each person can tolerate. The pump needs to stay on nearly all day; any time off has to be brief."
+    },
+    {
+     "title": "Dressing changes",
+     "desc": "The dressing is usually changed every 48 to 72 hours, and more often if the wound drains heavily or is infected. At each change every piece of foam comes out and is counted against what was written down, the base of the wound is inspected and measured, and a decision is made about whether the treatment still makes sense."
+    },
+    {
+     "title": "Coming off, and what follows",
+     "desc": "Once the wound bed is clean and has enough new tissue, the system comes off and the next step follows: surgical closure, a skin graft, or ordinary dressings until the wound closes on its own."
+    }
+   ],
+   "calloutStrong": "Negative pressure does not debride a wound, and it does not cure an infection.",
+   "calloutText": "It is an add-on. If dead tissue is still in there, if the bone is infected, or if the circulation in the leg is not enough to heal anything, the pump will not fix it, and leaving it on only delays the treatment that is actually needed. That is why every dressing change is also a fresh look at the wound, not a routine chore.",
+   "recoveryTitle": "What it is like to live with the pump",
+   "recoveryText": "Today's pumps are portable, run on a battery and are carried over the shoulder or at the waist, so many patients can walk and get on with much of their normal routine, within whatever the wound and the reason for the surgery allow; for other people movement is more limited, and that is judged person by person. A pulling or squeezing feeling in the area when the pump is running is common, and so is soreness during the first few dressing changes; that is handled with pain medication and, when constant suction is uncomfortable, by switching the pump to cycles. To shower, disconnect the pump for a short while and reconnect it as soon as you are done, keep the spray off the dressing, and do not put the area under water. One rule should not be bent: the system must not sit without suction for more than two hours, because a sealed wound with no suction is a good place for bacteria to multiply. If that does happen, the dressing has to come off and be replaced with a new one; turning the pump back on is not enough. Alarms work the same way, whether it is loss of seal, a full canister or a low battery: deal with them right away and call, rather than leaving it until the next day. Like any treatment, this one carries risks, and some are serious. The main one is bleeding, which can be heavy and has been linked to deaths, above all in wounds near blood vessels, vascular grafts or anastomoses, in groin and breastbone (sternal) wounds, and in people taking blood thinners. Infection can also occur, often tied to pieces of foam left inside the wound, along with softening and breakdown of the skin around the dressing and pain when the foam is peeled away. Go to an emergency room immediately if fresh blood shows up in the tubing or the canister, or if bleeding does not stop. Call the same day if pain is climbing instead of easing, if you have fever or chills, or if there is a bad smell or fluid leaking out from under the film. How long the whole treatment lasts varies a great deal, from a few days in some patients to several weeks in others, and it depends on the size of the wound, on what caused it and on how it responds: no removal date can be promised on the day the pump goes on.",
+   "faqs": [
+    {
+     "q": "Does the wound VAC hurt?",
+     "a": "Most people describe a pulling or squeezing feeling while the pump is running rather than pain. What tends to hurt is the dressing change, especially the first one or two. That is handled with pain medication taken beforehand, by wetting the foam so it lifts away more easily and, if needed, by lowering the pressure or switching to cycle mode. Say something if it hurts, because an adjustment can almost always be tried. And if the pain is climbing instead of settling, call without waiting for the next appointment."
+    },
+    {
+     "q": "How long does it stay on, and how often is the dressing changed?",
+     "a": "The dressing is usually changed every 48 to 72 hours, and sooner if the wound drains heavily, if there is infection, or if the seal is lost; over a skin graft it is normally left alone until the check the surgeon has already scheduled. How long the therapy runs in total depends on the wound, and no number can be promised: some wounds need a few days, others several weeks. What is fixed is the review. If the wound has not changed after one or two weeks, the treatment gets rethought rather than simply continued."
+    },
+    {
+     "q": "Can I shower with the pump on?",
+     "a": "Yes, carefully. Disconnect the pump for a short while, keep the spray off the dressing, and do not put the area under water, so no tub, pool or ocean. The film handles water, but the seal is what the whole treatment rests on and it is not worth testing. And do not leave the pump disconnected for more than two hours: if that happens, the dressing has to be changed, not just plugged back in."
+    },
+    {
+     "q": "Can I do this at home, or do I have to be admitted?",
+     "a": "Many patients use it at home with a portable unit and come in only for dressing changes. That works when the patient or a family member knows what to do when an alarm goes off and who to call: the serious complications reported with this therapy have happened mostly in people treated at home or in nursing facilities, where there are fewer eyes on the wound. Other patients need to be admitted, particularly at the start, when the wound is extensive or an infection is being treated with intravenous antibiotics. It is decided case by case."
+    },
+    {
+     "q": "I am visiting Puerto Vallarta. Can I fly home with the pump on?",
+     "a": "Raise it early, before you book anything, because it has to be planned rather than improvised. Airlines generally allow battery-powered medical devices, but confirm it with yours and ask about spare batteries and charging in the cabin. The bigger question is who picks up the treatment at the other end: someone there has to change the dressing, answer an alarm and reassess the wound, and the two-hour rule does not pause for a flight or a layover. The operative report, culture results and a written summary of the therapy are provided for whoever receives you. If the wound bleeds easily or an infection is still being treated, travel waits."
+    },
+    {
+     "q": "Will my insurance cover it?",
+     "a": "That usually depends on your policy and on whether the treatment follows an operation or condition that is covered. Patients with major medical expense insurance are seen, and the medical report and whatever documentation your insurer asks for are provided. If your policy was issued outside Mexico, check before treatment starts whether the insurer pays the provider directly or whether you pay and claim it back, since many international plans work by reimbursement. The answer comes from your insurer, not from this office."
+    }
+   ],
+   "finalTitle": "Getting the wound looked at in Puerto Vallarta",
+   "finalText": "If you have a wound that will not close, one that opened up after an operation, or one draining more than you expected, the first thing is for someone to look at it and decide what it needs. It may be negative pressure, or it may be debridement, antibiotics or a check of the circulation in the area. Heavy bleeding, high fever or pain that is growing fast is an emergency and should not wait for an appointment. The assessment visit costs $800 MXN (Mexican pesos), and consultations are in English or Spanish. The office is at Calle Francia 186, Colonia Versalles. If you have earlier imaging, culture results or the operative report from surgery done elsewhere, bring them with you."
+  },
+  "metaDescription": "Negative pressure wound therapy (wound VAC) in Puerto Vallarta: which wounds it suits, when it is not indicated and what daily life with the pump is like.",
+  "metaTitle": "Wound VAC Therapy (NPWT) in Puerto Vallarta",
+  "slug": "wound-vac-therapy-puerto-vallarta"
+ }
+]
