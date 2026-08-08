@@ -38,6 +38,14 @@
 # Moraleja para la próxima: una regla de redirección publicada no es una regla
 # que aplica. Pídale la URL a producción y mire el código de estado.
 
-/_pendiente/*   /404.html   404!
-/*.mjs          /404.html   404!
-/README.md      /404.html   404!
+# ⚠ Y `/*.mjs` TAMPOCO SIRVE: Netlify no admite comodines de EXTENSIÓN. El `*`
+# es un splat que sólo va al final de una ruta, así que `/*.mjs` no coincide con
+# nada y `auditar-arbol.mjs` siguió respondiendo 200 después del segundo intento.
+# Van uno por uno. Si algún día se agrega otro guion a la raíz, se agrega aquí —
+# o mejor, no se pone en la raíz.
+/_pendiente/*             /404.html   404!
+/README.md                /404.html   404!
+/auditar-arbol.mjs        /404.html   404!
+/revisar-rutas.mjs        /404.html   404!
+/generar-aviso.mjs        /404.html   404!
+/leer-docx.mjs            /404.html   404!
