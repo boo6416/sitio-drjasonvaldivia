@@ -1,0 +1,55 @@
+# Cabeceras de seguridad de drjasonvaldivia.com — 2026-08-08
+#
+# Hasta hoy el sitio servía UNA sola cabecera de seguridad, la que pone Netlify
+# por su cuenta (Strict-Transport-Security). Todo lo demás iba en blanco.
+#
+# ⚠ ANTES DE TOCAR LA CSP, LEA ESTO. El sitio carga React, ReactDOM y Babel desde
+# unpkg y COMPILA JSX EN EL NAVEGADOR: `support.js` usa `new Function(...)` y
+# monta módulos desde Blob. Por eso `script-src` lleva 'unsafe-eval' y `blob:`.
+# Quitarlos no "endurece" nada: deja TODAS las páginas en blanco, sin un solo
+# error visible — que es exactamente como este sitio ya falló una vez.
+#
+# Se probó antes de publicar, no después: se sirvió el sitio local con estas
+# mismas cabeceras y se cargaron la portada y /citas/ en Chrome (idénticas a la
+# versión sin cabeceras), y un guion revisó las 30 páginas comprobando que
+# ningún recurso externo quedara fuera de la política.
+#
+# Los tres scripts de unpkg YA van con Subresource Integrity (sha384) desde
+# `support.js`, y las tres huellas se verificaron contra los archivos reales el
+# 2026-08-08. Eso es lo que impide que unpkg, si lo comprometen, ejecute código
+# suyo en la página donde una paciente teclea su nombre y su teléfono.
+
+/*
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://images.unsplash.com https://plus.unsplash.com; connect-src 'self' blob: https://unpkg.com https://ehr-valdivia.boo6416.workers.dev; upgrade-insecure-requests
+
+# LA QUE MÁS IMPORTA EN UN SITIO MÉDICO, y no es la CSP.
+#
+# Sin esto, cada visita a /cirugia-de-hemorroides/ le manda esa dirección
+# COMPLETA a Google Fonts, a unpkg y a quien sirva una imagen — o sea que un
+# tercero se entera de qué padecimiento estaba leyendo esa persona. Con
+# `strict-origin` sólo viaja "drjasonvaldivia.com", nunca la ruta.
+#
+# No rompe nada: los créditos de Unsplash viajan por parámetros utm en el
+# enlace, no por la cabecera Referer.
+  Referrer-Policy: strict-origin
+
+# El navegador respeta el Content-Type declarado en vez de adivinarlo. Sin esto,
+# un archivo servido con el tipo equivocado se puede llegar a ejecutar como
+# script.
+  X-Content-Type-Options: nosniff
+
+# Contra el clickjacking: nadie puede meter el sitio en un <iframe> ajeno y
+# poner botones falsos encima. Importa aquí porque /citas/ APARTA UNA CITA con
+# un clic — un marco invisible encima convierte ese clic en otra cosa.
+# `frame-ancestors` de la CSP dice lo mismo para los navegadores modernos; esta
+# queda por los que aún miran la cabecera vieja.
+  X-Frame-Options: SAMEORIGIN
+
+# El sitio no usa cámara, micrófono, ubicación ni pagos. Decirlo cierra esas
+# puertas para cualquier cosa que llegue a inyectarse en la página.
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+
+# ⚠ NO se tocó Strict-Transport-Security. Netlify ya manda max-age=31536000, que
+# es lo que importa. Agregarle `includeSubDomains` o `preload` compromete
+# subdominios que hoy no existen y `preload` es de las cosas que cuesta semanas
+# deshacer: es una decisión del Dr., no un ajuste de mantenimiento.

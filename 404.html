@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow">
+<title>Página no encontrada | Dr. Jason Valdivia</title>
+<!--
+  Netlify sirve este archivo, por su cuenta, ante cualquier ruta que no exista,
+  y es también el destino de las reglas de `_redirects`.
+
+  Antes se servía la página por omisión de Netlify: en INGLÉS, sin marca y sin
+  una salida. En un sitio al que llega gente buscando "cirujano de vesícula en
+  Puerto Vallarta", un callejón sin salida en otro idioma se lee como que el
+  consultorio no existe, y esa persona se va con otro.
+
+  ⚠ Sin recursos externos a propósito: los estilos van aquí dentro para que no
+  dependa de Google Fonts ni de `support.js`. Una página de error que a su vez
+  depende de algo que puede fallar no sirve de nada.
+-->
+<style>
+  :root { --tinta:#0d2438; --papel:#faf7f2; --azul:#7ea6c9; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    background:var(--tinta); color:var(--papel); text-align:center; padding:2rem;
+    font-family:Georgia,'Times New Roman',serif;
+  }
+  main { max-width:34rem; }
+  .marca { font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; color:var(--azul); margin-bottom:2.5rem; }
+  h1 { font-size:clamp(1.9rem,5vw,2.7rem); font-weight:400; line-height:1.2; margin:0 0 1rem; }
+  p { font-family:system-ui,-apple-system,'Segoe UI',sans-serif; font-size:1rem; line-height:1.65; color:#c6d3de; margin:0 auto 2.2rem; max-width:28rem; }
+  .enlaces { display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; }
+  a {
+    font-family:system-ui,-apple-system,'Segoe UI',sans-serif; font-size:.95rem;
+    text-decoration:none; padding:.8rem 1.4rem; border-radius:8px;
+    border:1px solid rgba(250,247,242,.28); color:var(--papel); transition:background .15s;
+  }
+  a:hover, a:focus { background:rgba(250,247,242,.1); }
+  a.principal { background:var(--azul); border-color:var(--azul); color:var(--tinta); font-weight:600; }
+  a.principal:hover, a.principal:focus { background:#93b6d4; }
+  .pie { margin-top:3rem; font-family:system-ui,-apple-system,'Segoe UI',sans-serif; font-size:.8rem; color:#8ba0b3; }
+</style>
+</head>
+<body>
+  <main>
+    <p class="marca">Dr. Jason Valdivia · Cirujano general</p>
+    <h1>Esta página no existe</h1>
+    <p>Puede que el enlace esté incompleto o que la página haya cambiado de dirección. Desde aquí llega a lo que buscaba:</p>
+    <div class="enlaces">
+      <a class="principal" href="/citas/">Agendar consulta</a>
+      <a href="/">Inicio</a>
+      <a href="/preguntas-frecuentes/">Preguntas frecuentes</a>
+    </div>
+    <p class="pie">Puerto Vallarta, Jalisco · Céd. prof. 12375155</p>
+  </main>
+</body>
+</html>

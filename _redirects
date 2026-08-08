@@ -1,0 +1,31 @@
+# Lo que NO debe servirse al público — 2026-08-08
+#
+# Netlify publica la RAÍZ DEL REPOSITORIO tal cual, así que todo archivo que
+# viva aquí queda en internet aunque nadie lo enlace. Comprobado ese día contra
+# producción, con 200 OK:
+#
+#     /_pendiente/LEEME.md              200
+#     /_pendiente/textos-6-paginas.json 200
+#     /_pendiente/armar-paginas.mjs     200
+#     /auditar-arbol.mjs                200
+#     /README.md                        200
+#
+# El detalle que lo retrata: `_pendiente/LEEME.md` empieza con «Listo para
+# publicar — NO desplegado». Llevaba publicado desde que se fusionó la rama.
+#
+# No hay credenciales ahí —se revisó archivo por archivo— así que esto no es una
+# fuga de secretos. Lo que sí es: material de trabajo interno a la vista, y
+# **contenido indexable** (borradores de los mismos textos que ya están en las
+# páginas buenas) en un sitio que se está peleando por posicionar. Google
+# penaliza justo eso.
+#
+# El guion bajo del nombre NO protege nada: para Netlify sólo `_headers` y
+# `_redirects` son especiales, `_pendiente` es una carpeta como cualquier otra.
+#
+# ⚠ Ninguna página referencia un `.mjs` —se comprobó con grep sobre las 30— así
+# que bloquear la extensión no rompe nada. Si algún día una página necesita
+# cargar un módulo `.mjs`, hay que quitar esa línea.
+
+/_pendiente/*   /404.html   404
+/*.mjs          /404.html   404
+/README.md      /404.html   404
