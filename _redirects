@@ -25,7 +25,19 @@
 # ⚠ Ninguna página referencia un `.mjs` —se comprobó con grep sobre las 30— así
 # que bloquear la extensión no rompe nada. Si algún día una página necesita
 # cargar un módulo `.mjs`, hay que quitar esa línea.
+#
+# ⚠⚠ EL SIGNO `!` NO ES ADORNO, Y SIN ÉL ESTO NO HACE NADA.
+#
+# En Netlify una regla de `_redirects` sólo se aplica cuando NO existe un archivo
+# en esa ruta: el archivo estático gana siempre. Como `_pendiente/LEEME.md` sí
+# existe, la regla se ignoraba y seguía respondiendo 200. Se publicó sin el `!`,
+# se comprobó contra producción, y seguía expuesto — el arreglo parecía hecho y
+# no lo estaba. El `!` (shadowing forzado) es lo que hace que la regla mande
+# sobre el archivo.
+#
+# Moraleja para la próxima: una regla de redirección publicada no es una regla
+# que aplica. Pídale la URL a producción y mire el código de estado.
 
-/_pendiente/*   /404.html   404
-/*.mjs          /404.html   404
-/README.md      /404.html   404
+/_pendiente/*   /404.html   404!
+/*.mjs          /404.html   404!
+/README.md      /404.html   404!
