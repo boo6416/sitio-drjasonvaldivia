@@ -507,7 +507,9 @@
   }
 
   function campo(etiqueta, nombre, tipo) {
-    var env = el("div", "display:flex; flex-direction:column; gap:5px;");
+    // `min-width:0` NO es adorno: sin él, una celda de la rejilla nunca se
+    // encoge por debajo del ancho natural de su contenido (ver bloqueFormulario).
+    var env = el("div", "display:flex; flex-direction:column; gap:5px; min-width:0;");
     var l = el("label", FUENTE + "font-size:0.78rem; color:" + C.gris + ";", etiqueta);
     var i = el("input", FUENTE +
       "padding:0.65rem 0.75rem; min-height:44px; border:1px solid " + C.borde + "; border-radius:8px;" +
@@ -541,13 +543,28 @@
    * Un solo campo confiando en que la persona escriba el "+1" no sirve: la mitad
    * lo omite y la otra mitad lo escribe de tres formas distintas. */
   function campoTelefono(t) {
-    var env = el("div", "display:flex; flex-direction:column; gap:5px;");
+    var env = el("div", "display:flex; flex-direction:column; gap:5px; min-width:0;");
     var l = el("label", FUENTE + "font-size:0.78rem; color:" + C.gris + ";", t.telefono + " *");
-    var fila = el("div", "display:flex; gap:6px;");
+
+    /* En un TELÉFONO el selector va ARRIBA del número, no al lado.
+     *
+     * Medido en un ancho de 320 px: lado a lado, al numero le quedaban 116 px
+     * —el selector se comia casi la mitad del renglon— y ahi se teclean diez
+     * digitos. Apilados, los dos quedan a todo lo ancho y se leen completos.
+     * En pantalla grande siguen juntos, que es donde eso se ve bien. */
+    var angosto = window.innerWidth < 700;
+    var fila = el("div", "display:flex; gap:6px;" + (angosto ? " flex-direction:column;" : ""));
 
     var sel = el("select", FUENTE +
       "padding:0.65rem 0.4rem; min-height:44px; border:1px solid " + C.borde + "; border-radius:8px;" +
-      "font-size:0.95rem; color:" + C.tinta + "; background:#fff; flex:0 0 auto;");
+      "font-size:0.95rem; color:" + C.tinta + "; background:#fff; flex:0 0 auto;" +
+      /* ⚠ ANCHO FIJO, y esta es la razon: un <select> reclama por si solo el
+         ancho de su opcion MAS LARGA, y con 248 paises esa es "Islas Georgias
+         del Sur y Sandwich del Sur" — 382 px. Metido en una rejilla de dos
+         columnas, ese ancho natural se lleva la columna entera: el 2026-08-12
+         quedo en 574 px contra 185 px, con "Apellidos" y "Correo" espachurrados
+         contra el borde. Se ve como un problema de margenes y es del selector. */
+      (angosto ? " width:100%;" : " width:9.5rem; text-overflow:ellipsis;"));
     sel.name = "lada";
     // El <label> visible es del teléfono; el selector se anuncia solo, o un
     // lector de pantalla lo lee como "cuadro combinado" sin decir de qué.
@@ -595,8 +612,12 @@
     var f = el("div", "margin-top:2rem;");
     hijos(f, [el("p", TITULO, t.susDatos)]);
 
+    /* `minmax(0,1fr)` y no `1fr`: son distintos justo cuando importa. `1fr` es
+       en realidad `minmax(auto,1fr)`, o sea que una columna PUEDE crecer por
+       encima de su mitad si su contenido lo pide — y el selector de país lo
+       pide. Con `minmax(0,1fr)` las dos mitades son mitades siempre. */
     var rej = el("div", "display:grid; grid-template-columns:" +
-      (window.innerWidth < 700 ? "1fr" : "1fr 1fr") + "; gap:1rem;");
+      (window.innerWidth < 700 ? "minmax(0,1fr)" : "minmax(0,1fr) minmax(0,1fr)") + "; gap:1rem;");
     var cNombre = campo(t.nombre + " *", "nombre");
     var cApell = campo(t.apellidos + " *", "apellidos");
     var cTel = campoTelefono(t);
