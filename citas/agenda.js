@@ -39,6 +39,8 @@
       zona: "Horario de Puerto Vallarta (Centro, UTC−6)",
       nombre: "Nombre", apellidos: "Apellidos",
       telefono: "Teléfono / WhatsApp", correo: "Correo electrónico (opcional)",
+      pais: "Clave del país",
+      ladas: [{ v: "+52", n: "+52 México" }, { v: "+1", n: "+1 EE. UU. / Canadá" }],
       motivo: "Motivo de la consulta", motivoPh: "— Seleccione —",
       motivos: [
         "Valoración para cirugía de vesícula",
@@ -74,6 +76,8 @@
       zona: "Puerto Vallarta time (Central, UTC−6)",
       nombre: "First name", apellidos: "Last name",
       telefono: "Phone / WhatsApp", correo: "Email (optional)",
+      pais: "Country code",
+      ladas: [{ v: "+52", n: "+52 Mexico" }, { v: "+1", n: "+1 USA / Canada" }],
       motivo: "Reason for the visit", motivoPh: "— Select —",
       motivos: [
         "Gallbladder surgery consultation",
@@ -146,7 +150,11 @@
      * widget; al volver a colgarlo, los campos se construyen de nuevo. Si el
      * valor viviera sólo en el DOM, el paciente perdería su nombre y su
      * teléfono a media captura, sin entender por qué. */
-    datos: { nombre: "", apellidos: "", telefono: "", correo: "", motivo: "", consiente: false },
+    /* `lada` arranca en +52 y NO se adivina del idioma de la página: muchos
+       extranjeros que viven en Vallarta tienen número mexicano, y un valor
+       deducido mal es justo el fallo que este campo viene a cerrar. El
+       consultorio está en México; quien tenga otro país lo elige, y se ve. */
+    datos: { nombre: "", apellidos: "", telefono: "", lada: "+52", correo: "", motivo: "", consiente: false },
   };
   var caja = null;      // el nodo que pintamos
   var langPintado = null;
@@ -271,6 +279,49 @@
     return env;
   }
 
+  /* El teléfono, con su CLAVE DE PAÍS aparte (2026-08-12).
+   *
+   * Pedido por el Dr. al ver que la primera cita que entró por aquí venía de un
+   * número de Estados Unidos. Diez dígitos NO dicen de qué país son —México y
+   * Estados Unidos usan diez—, y el expediente asumía México: el recordatorio de
+   * esa cita habría salido a un número mexicano que no existe, y el fallo se ve
+   * como "mensaje no entregado" sin decir por qué.
+   *
+   * Un solo campo confiando en que la persona escriba el "+1" no sirve: la mitad
+   * lo omite y la otra mitad lo escribe de tres formas distintas. */
+  function campoTelefono(t) {
+    var env = el("div", "display:flex; flex-direction:column; gap:5px;");
+    var l = el("label", FUENTE + "font-size:0.78rem; color:" + C.gris + ";", t.telefono + " *");
+    var fila = el("div", "display:flex; gap:6px;");
+
+    var sel = el("select", FUENTE +
+      "padding:0.65rem 0.4rem; min-height:44px; border:1px solid " + C.borde + "; border-radius:8px;" +
+      "font-size:0.95rem; color:" + C.tinta + "; background:#fff; flex:0 0 auto;");
+    sel.name = "lada";
+    // El <label> visible es del teléfono; el selector se anuncia solo, o un
+    // lector de pantalla lo lee como "cuadro combinado" sin decir de qué.
+    sel.setAttribute("aria-label", t.pais);
+    for (var k = 0; k < t.ladas.length; k++) sel.appendChild(new Option(t.ladas[k].n, t.ladas[k].v));
+    sel.value = estado.datos.lada || "+52";
+    sel.onchange = function () { estado.datos.lada = sel.value; };
+
+    var inp = el("input", FUENTE +
+      "padding:0.65rem 0.75rem; min-height:44px; border:1px solid " + C.borde + "; border-radius:8px;" +
+      "font-size:0.95rem; color:" + C.tinta + "; background:#fff; flex:1 1 auto; min-width:0;");
+    inp.type = "tel";
+    inp.name = "telefono";
+    inp.required = true;
+    inp.id = idUnico("telefono");
+    inp.autocomplete = "tel";
+    l.setAttribute("for", inp.id);
+    inp.value = estado.datos.telefono || "";
+    inp.oninput = function () { estado.datos.telefono = inp.value; };
+
+    hijos(fila, [sel, inp]);
+    hijos(env, [l, fila]);
+    return env;
+  }
+
   function bloqueFormulario(t) {
     var f = el("div", "margin-top:2rem;");
     hijos(f, [el("p", TITULO, t.susDatos)]);
@@ -279,7 +330,7 @@
       (window.innerWidth < 700 ? "1fr" : "1fr 1fr") + "; gap:1rem;");
     var cNombre = campo(t.nombre + " *", "nombre");
     var cApell = campo(t.apellidos + " *", "apellidos");
-    var cTel = campo(t.telefono + " *", "telefono", "tel");
+    var cTel = campoTelefono(t);
     var cMail = campo(t.correo, "correo", "email");
     hijos(rej, [cNombre, cApell, cTel, cMail]);
 
@@ -332,6 +383,7 @@
         nombre: (estado.datos.nombre || "").trim(),
         apellidos: (estado.datos.apellidos || "").trim(),
         telefono: (estado.datos.telefono || "").trim(),
+        lada: estado.datos.lada || "+52",
         correo: (estado.datos.correo || "").trim(),
         fecha: estado.fecha,
         hora: estado.hora,
@@ -418,7 +470,21 @@
         "; color:" + C.tinta + "; padding:0.6rem 1.3rem; border-radius:6px; font-size:0.85rem; cursor:pointer;", t.otra);
       otra.type = "button";
       otra.onclick = function () {
-        estado = { fase: "cargando", dias: [], fecha: null, hora: null, error: "", mandando: false };
+        /* ⚠ `datos` TIENE que venir en el estado nuevo.
+         *
+         * Sin él, la siguiente pintada del formulario revienta en
+         * `estado.datos[nombre]` —leer una propiedad de undefined— justo después
+         * de haber vaciado la caja: el widget se queda EN BLANCO y no hay forma
+         * de agendar otra cita sin recargar la página. Nadie lo reportó porque
+         * pasa después de agendar bien, o sea cuando el paciente ya se fue.
+         *
+         * Se reinicia vacío a propósito: esta página la abre cualquiera, y el
+         * nombre y el teléfono de quien acaba de agendar no se le quedan
+         * escritos al siguiente. */
+        estado = {
+          fase: "cargando", dias: [], fecha: null, hora: null, error: "", mandando: false,
+          datos: { nombre: "", apellidos: "", telefono: "", lada: "+52", correo: "", motivo: "", consiente: false },
+        };
         pintar(); pedirHuecos();
       };
       ok.appendChild(otra);
