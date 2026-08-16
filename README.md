@@ -102,8 +102,84 @@ algún día existe `/en/`, se vuelven a poner cruzados.
    `https://drjasonvaldivia.com/` en `search.google.com/search-console` verifica al
    instante. **Sin esto se trabaja a ciegas**: no se sabe qué se busca para llegar
    aquí, en qué posición sale, ni si Google indexó una página. Es lo primero.
-2. **Reseñas nuevas.** Es la palanca que más mueve el mapa. Pedirlas a pacientes
-   reales está permitido; escribirlas o incentivarlas, no.
+2. **Reseñas nuevas.** Es la palanca que más mueve el mapa: 71 contra las 297 del
+   consultorio que ocupa el segundo lugar. Pedirlas a pacientes reales está
+   permitido; escribirlas o incentivarlas, no. El expediente ya las pide solo
+   desde el 2026-08-15 (`resenas.yml` en `ehr-valdivia`; antes el motor estaba
+   encendido pero nadie lo disparaba).
+3. **Estar en los directorios que HOY ocupan la primera página.** Doctoralia y
+   TopDoctors salen arriba para «cirujano en vallarta». Un perfil ahí con enlace
+   al sitio hace dos cosas a la vez: aparece en esa primera página por la vía del
+   directorio, y le da al dominio las citas y enlaces entrantes que hoy no tiene
+   —que es exactamente lo que le falta para que Google indexe las seis páginas
+   que descartó—.
+4. **El primer lugar del paquete del mapa se compra.** Salía «Patrocinado». Si se
+   quiere presencia inmediata mientras la autoridad crece, ése es el camino, y es
+   una decisión de presupuesto, no técnica.
+5. **Que el horario de la ficha de Google coincida con el del sitio.** El sitio ya
+   declara el horario real (lunes a jueves 14-17 y 19-20; viernes 14-20). Si la
+   ficha dice otra cosa, Google lo nota y la incoherencia le resta.
+
+### Lo que dijeron los datos reales (Search Console, 90 días)
+
+8 clics · 239 impresiones · posición media 9,7. Poquísimo volumen. El detalle:
+
+| Consulta | Posición | Impr. |
+|---|---|---|
+| cirujano general puerto vallarta | 1,0 | 10 |
+| **cirujano en vallarta** | **1,0** | **1** |
+| colecistectomía puerto vallarta | 10,2 | 10 |
+| especialista en hernias puerto vallarta | 16,2 | 10 |
+| cirujano de hernia puerto vallarta | 14,0 | 9 |
+| hernia inguinal puerto vallarta | 15,2 | 9 |
+| operación hernia hiatal puerto vallarta | 34,9 | 8 |
+| funduplicatura puerto vallarta | 48,9 | 7 |
+
+⚠ **La posición 1,0 en «cirujano en vallarta» NO significa que salga primero.** Es
+UNA impresión en 90 días: una muestra de uno es ruido, no un ranking. Se comprobó
+buscando de verdad, con la ubicación en Puerto Vallarta, y **no aparece en ninguna
+parte de la primera página** — ni en el mapa ni en los resultados. La primera
+página la ocupan directorios (Doctoralia, TopDoctors), hospitales, competidores y
+**dominios de coincidencia exacta** (`cirujanoenvallarta.com`,
+`cirujanopuertovallarta.net`), que son muy difíciles de desbancar.
+
+El paquete del mapa —los tres lugares de arriba— lo ocupaban: un ANUNCIO PAGADO
+(5.0, 23 reseñas), el Dr. Aguiar (4.9 con **297 reseñas**) y el Dr. Alvarado (5.0,
+96). Con 71 reseñas él tiene la mejor calificación y el peor volumen. Y el primer
+lugar del paquete **se compra**: dice «Patrocinado».
+
+**Dónde está la oportunidad real**: en las consultas de procedimiento, que traen
+intención de paciente y donde hoy está en la página 2 o peor. Ahí no compite con
+directorios genéricos.
+
+### Indexación: 13 de 29 páginas
+
+Google conoce estas seis y **decidió no indexarlas**: `/cirugia-de-vesicula/`,
+`/cirugia-antirreflujo/`, `/cirugia-de-quistes-y-lipomas/`, `/seguros/`,
+`/acid-reflux-surgery-puerto-vallarta/`, `/appendectomy-puerto-vallarta/`.
+
+Se descartaron las causas técnicas una por una: **no son huérfanas** (13 a 29
+enlaces internos cada una), **no son delgadas** (13-15 KB de texto), tienen
+títulos correctos con los términos médicos que la gente busca, y ya traían
+`MedicalProcedure`, `FAQPage` y `BreadcrumbList`. Lo que queda es **autoridad de
+dominio**: el sitio es nuevo y no tiene enlaces entrantes. Eso no se arregla
+escribiendo código.
+
+### Sobre poner la calificación de Google en la página
+
+Sí y no, y la diferencia importa:
+
+- **Como texto visible: ya está y está bien.** «5.0 ★ · 71 reseñas en Google» con
+  enlace a la ficha. Es un dato de un tercero, atribuido a ese tercero.
+- **Como `aggregateRating` en los datos estructurados: NO.** Google exige que las
+  reseñas marcadas así estén recogidas y alojadas por el propio sitio; marcar las
+  de Google como propias viola sus lineamientos y la sanción típica es perder
+  TODOS los resultados enriquecidos del dominio. No vale la pena.
+
+Lo que sí se hizo es unir las identidades: `sameAs` con la ficha de Maps,
+Instagram y Facebook, en las 26 páginas que declaran `Physician`. Antes lo tenía
+sólo la portada — o sea que en las páginas que compiten por las consultas de
+procedimiento, la reputación de la ficha no respaldaba nada.
 
 ### La portada depende de JavaScript, las demás no
 
@@ -113,11 +189,28 @@ pinta `support.js` en el navegador. Google ejecuta JavaScript y sí la lee —se
 comprobó que renderiza—, pero lo hace en una segunda pasada, más tarde y con menos
 garantía, y los rastreadores que no ejecutan JS no ven nada.
 
-No se cambió porque la portada es bilingüe con selector en la misma URL, y volverla
-estática significa partirla en `/` y `/en/`: es una reestructuración de verdad, no un
-ajuste. **Si el posicionamiento se atora teniendo ya Search Console, ése es el
-siguiente paso**, y el patrón a copiar ya está en el repo — mírese cualquier carpeta
-`cirugia-*`.
+**Resuelto el 2026-08-15 sin reestructurar nada.** La portada y `/citas/` llevan
+ahora un bloque `#pre-portada` / `#pre-citas` con clase `.pre-estatico`: el H1 de
+verdad, la prosa, los datos del consultorio y los enlaces a los 12 procedimientos,
+todo en HTML plano. Se retira solo en cuanto el runtime monta —se comprueba que
+aparezca otro `<h1>` fuera del bloque, no con un temporizador, porque un
+temporizador fijo parpadea en un teléfono lento—. Si a los 8 segundos la
+aplicación no montó, **el bloque se queda**: mejor una portada sobria que la
+página en blanco que quedaba antes.
+
+`/citas/` era el caso más grave: es la página de conversión y su H1 crudo era una
+plantilla sin rellenar. Si `support.js` fallaba, quedaba en blanco justo cuando el
+paciente ya había decidido.
+
+⚠ **Esto NO es contenido oculto ni una página puerta.** Se sirve el mismo HTML a
+todo el mundo, dice lo mismo que la versión rica y es visible mientras el runtime
+no monte. Es el mismo recurso que las páginas de procedimiento ya usaban dentro
+de `<dc-import>`. Contenido distinto para el buscador que para la persona sí
+estaría prohibido, y la sanción es quedarse fuera de Google.
+
+Queda pendiente, si algún día se quiere: la portada en inglés no tiene URL propia
+(el selector ES/EN pinta sobre `/`). Las páginas de procedimiento sí. Partirla en
+`/` y `/en/` es una reestructuración, no un ajuste.
 
 ## Pendiente
 

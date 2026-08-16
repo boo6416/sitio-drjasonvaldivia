@@ -8,8 +8,9 @@
 <meta name="description" content="Agende su consulta de cirugía general en Puerto Vallarta. Respuesta el mismo día por WhatsApp. Español e inglés.">
 <link rel="canonical" href="https://drjasonvaldivia.com/citas/">
 <meta name="robots" content="index,follow">
-<link rel="alternate" hreflang="es" href="https://drjasonvaldivia.com/citas/">
-<link rel="alternate" hreflang="en" href="https://drjasonvaldivia.com/">
+<!-- Sin hreflang: no hay version en ingles de esta pagina con URL propia, y
+     declarar "en" apuntando a la portada le dice a Google que la portada ES la
+     traduccion de esta pagina, que es falso. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Dr. Jason Valdivia — Cirujano General">
 <meta property="og:title" content="Agendar consulta | Dr. Jason Valdivia · Puerto Vallarta">
@@ -18,10 +19,77 @@
 <meta property="og:image" content="https://drjasonvaldivia.com/images/dr-office-portrait.jpg">
 <meta property="og:locale" content="es_MX">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Physician","name":"Dr. Jason Alejandro Valdivia Nájar","description":"Cirujano general certificado por el Consejo Mexicano de Cirugía General, con entrenamiento avanzado en cirugía laparoscópica, en Puerto Vallarta.","url":"https://drjasonvaldivia.com/citas/","telephone":"+523339718620","contactPoint":[{"@type":"ContactPoint","contactType":"reservations","telephone":"+523313470335","availableLanguage":["es","en"],"description":"Citas por WhatsApp, respuesta inmediata"},{"@type":"ContactPoint","contactType":"emergency","telephone":"+523339718620","availableLanguage":["es","en"],"description":"Urgencias quirúrgicas"}],"medicalSpecialty":"Surgical","availableLanguage":["es","en"],"priceRange":"$","address":{"@type":"PostalAddress","streetAddress":"Calle Francia 186, Col. Versalles","addressLocality":"Puerto Vallarta","addressRegion":"Jalisco","postalCode":"48310","addressCountry":"MX"},"geo":{"@type":"GeoCoordinates","latitude":20.6364712,"longitude":-105.2275679},"hasMap":"https://maps.app.goo.gl/q8n5PdiaCsoAVkMv7","areaServed":{"@type":"City","name":"Puerto Vallarta"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Physician","name":"Dr. Jason Alejandro Valdivia Nájar","description":"Cirujano general certificado por el Consejo Mexicano de Cirugía General, con entrenamiento avanzado en cirugía laparoscópica, en Puerto Vallarta.","url":"https://drjasonvaldivia.com/citas/","telephone":"+523339718620","contactPoint":[{"@type":"ContactPoint","contactType":"reservations","telephone":"+523313470335","availableLanguage":["es","en"],"description":"Citas por WhatsApp, respuesta inmediata"},{"@type":"ContactPoint","contactType":"emergency","telephone":"+523339718620","availableLanguage":["es","en"],"description":"Urgencias quirúrgicas"}],"medicalSpecialty":"Surgical","availableLanguage":["es","en"],"priceRange":"$","address":{"@type":"PostalAddress","streetAddress":"Calle Francia 186, Col. Versalles","addressLocality":"Puerto Vallarta","addressRegion":"Jalisco","postalCode":"48310","addressCountry":"MX"},"geo":{"@type":"GeoCoordinates","latitude":20.6364712,"longitude":-105.2275679},"hasMap":"https://maps.app.goo.gl/q8n5PdiaCsoAVkMv7","sameAs":["https://www.instagram.com/drjasonvaldivia/","https://www.facebook.com/profile.php?id=177835868736674","https://maps.app.goo.gl/q8n5PdiaCsoAVkMv7"],"areaServed":{"@type":"City","name":"Puerto Vallarta"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://drjasonvaldivia.com/"},{"@type":"ListItem","position":2,"name":"Agendar consulta","item":"https://drjasonvaldivia.com/citas/"}]}</script>
 </head>
 <body>
+
+<!-- Respaldo estático para quien no ejecuta JavaScript. Mismo patrón que la
+     portada y las páginas de procedimiento: el HTML crudo traía título,
+     descripción y datos estructurados, pero su encabezado era una plantilla sin
+     rellenar y el resto lo pinta `support.js`. Ésta es además la página de
+     CONVERSIÓN —existe para que alguien agende—, así que era la peor para
+     depender del navegador: si el runtime falla quedaba en blanco justo cuando
+     el paciente ya decidió. Se retira sola en cuanto la aplicación monta. -->
+<div id="pre-citas" class="pre-estatico">
+  <style>
+    .pre-estatico{max-width:700px;margin:0 auto;padding:2rem 6% 3rem;font-family:'DM Sans',system-ui,sans-serif;color:#123549;line-height:1.75}
+    .pre-estatico h1{font-family:'Playfair Display',Georgia,serif;font-size:1.9rem;line-height:1.22;margin:.4rem 0 1rem;color:#0d2b3e}
+    .pre-estatico h2{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;margin:1.8rem 0 .5rem;color:#0d2b3e}
+    .pre-estatico a{color:#2f6690}
+    .pre-estatico ul{margin:.4rem 0 0 1.1rem}
+    .pre-estatico .pre-kicker{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:#4f7ea8}
+    .pre-estatico .pre-boton{display:inline-block;background:#0d2b3e;color:#fdf0ea;text-decoration:none;padding:.75rem 1.4rem;border-radius:6px;margin:.3rem .4rem .3rem 0;font-weight:600}
+    .pre-estatico .pre-pie{margin-top:2rem;padding-top:1rem;border-top:1px solid rgba(13,43,62,.12);font-size:.9rem}
+  </style>
+
+  <nav class="pre-kicker"><a href="/">Inicio</a> / Agendar consulta</nav>
+  <h1>Agende su cita con el Dr. Jason Valdivia, Cirujano General en Puerto Vallarta</h1>
+  <p>Elija un horario libre de la agenda del consultorio: su lugar queda apartado
+  y se le confirma por WhatsApp. Costo de consulta: <b>$800 MXN</b>.</p>
+
+  <p class="pre-cta">
+    <a class="pre-boton" href="https://wa.me/523339718620">Agendar por WhatsApp · 33 3971 8620</a>
+    <a class="pre-boton" href="tel:+523339718620">Llamar</a>
+  </p>
+
+  <h2>Consultorio</h2>
+  <p>Calle Francia 186, Col. Versalles, 48310 Puerto Vallarta, Jalisco.<br>
+  Atención en español e inglés. Se aceptan
+  <a href="/seguros/">seguros de gastos médicos mayores</a> y pago particular.</p>
+
+  <h2>Motivos de consulta más frecuentes</h2>
+  <ul>
+    <li><a href="/cirugia-de-vesicula/">Valoración para cirugía de vesícula</a></li>
+    <li><a href="/cirugia-de-hernia/">Valoración para cirugía de hernia</a></li>
+    <li><a href="/cirugia-antirreflujo/">Valoración para cirugía antirreflujo o hernia hiatal</a></li>
+    <li><a href="/cirugia-de-apendice/">Valoración para apendicectomía</a></li>
+    <li><a href="/cirugia-de-tiroides/">Valoración para cirugía de tiroides</a></li>
+    <li><a href="/cirugia-de-urgencia/">Urgencia quirúrgica</a></li>
+  </ul>
+
+  <p class="pre-pie">Dr. Jason Alejandro Valdivia Nájar · Cirujano General ·
+  Aviso de publicidad COFEPRIS 2614082002A00062 ·
+  <a href="/aviso-de-privacidad/">Aviso de privacidad</a></p>
+</div>
+
+<script>
+/* Mismo criterio que en la portada: se retira cuando aparece otro H1 fuera del
+   bloque, no con un temporizador. Si a los 8 s la aplicación no montó, se queda
+   — con teléfono y WhatsApp a la vista, que es lo mínimo que esta página debe
+   ofrecer aunque todo lo demás falle. */
+(function () {
+  var t0 = Date.now();
+  var reloj = setInterval(function () {
+    var pre = document.getElementById('pre-citas');
+    if (!pre) { clearInterval(reloj); return; }
+    var otros = [].slice.call(document.querySelectorAll('h1')).filter(function (h) { return !pre.contains(h); });
+    if (otros.length) { pre.parentNode.removeChild(pre); clearInterval(reloj); return; }
+    if (Date.now() - t0 > 8000) clearInterval(reloj);
+  }, 120);
+})();
+</script>
+
 <x-dc>
 <helmet>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
