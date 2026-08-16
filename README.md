@@ -181,6 +181,41 @@ Instagram y Facebook, en las 26 páginas que declaran `Physician`. Antes lo ten�
 sólo la portada — o sea que en las páginas que compiten por las consultas de
 procedimiento, la reputación de la ficha no respaldaba nada.
 
+
+### Tres idiomas, tres URLs (2026-08-15)
+
+| | | |
+|---|---|---|
+|  | español | «Cirujano General en Puerto Vallarta» |
+|  | inglés | «General Surgeon in Puerto Vallarta» |
+|  | francés | «Chirurgien généraliste à Puerto Vallarta» |
+
+Antes el inglés sólo existía como SELECTOR sobre , sin dirección propia. Por eso
+las búsquedas en inglés —«surgery puerto vallarta», «surgery vallarta»— no tenían
+a dónde llegar: las páginas de procedimiento en inglés existían, pero sin una
+portada que las reuniera. Ahora  es esa portada, y el  de los tres
+se cruza bien (es · en · fr · x-default).
+
+El francés NO promete atención en francés — lo dice explícitamente en la página.
+Existe porque Puerto Vallarta recibe muchísimo visitante quebequés en invierno y
+esa gente busca en su idioma antes de decidir. La consulta sigue siendo en
+español o inglés, y la página lo advierte para no crear una expectativa falsa.
+
+Las dos portadas nuevas son HTML estático puro: sin , sin plantillas.
+Un rastreador las lee sin ejecutar nada.
+
+### Las palabras del paciente, no las del médico
+
+Un análisis de cobertura sobre las 32 páginas encontró que el sitio decía
+«cálculos biliares», «hernia inguinal», «reflujo» y «hemorroides» y NUNCA
+«piedras en la vesícula», «bulto en la ingle», «agruras» ni «almorranas» — que es
+como lo teclea la gente. Se agregaron esas preguntas, con respuesta real, al
+bloque visible Y al  de cada página. Están en
+, que es idempotente.
+
+⚠ Una respuesta que viva sólo en los datos estructurados y no en la página
+visible es exactamente lo que Google sanciona. Van en los dos sitios.
+
 ### La portada depende de JavaScript, las demás no
 
 ⚠ Las páginas de procedimiento son HTML estático con su texto dentro: un rastreador

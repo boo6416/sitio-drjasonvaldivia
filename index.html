@@ -8,14 +8,15 @@
 <meta name="description" content="Cirujano general certificado en Puerto Vallarta. Cirugía laparoscópica de vesícula, hernia, apéndice y tiroides. Atención en español e inglés. Seguros y particulares.">
 <link rel="canonical" href="https://drjasonvaldivia.com/">
 <meta name="robots" content="index,follow">
-<!-- SIN hreflang, a proposito. Declaraba dos idiomas apuntando a LA MISMA URL,
-     que para Google no dice nada: es una etiqueta que se contradice sola. Las
-     paginas de procedimiento si lo tienen bien, porque cada idioma vive en su
-     propia direccion (/cirugia-de-vesicula/ ↔ /gallbladder-surgery/). La portada
-     no: el ingles se pinta con el selector ES/EN sobre esta misma URL, asi que
-     no hay una segunda direccion a la cual apuntar.
-     Si algun dia la portada en ingles vive en /en/, aqui van los dos <link> y
-     alla los suyos, cruzados como en las paginas de procedimiento. -->
+<!-- El hreflang volvio, ahora que SI hay a donde apuntar. Estuvo unas horas fuera
+     porque declaraba dos idiomas sobre LA MISMA URL —una etiqueta que se
+     contradice sola—: el ingles se pintaba con el selector ES/EN sobre esta
+     misma direccion. Desde el 2026-08-15 la portada en ingles vive en /en/, con
+     URL propia como las paginas de procedimiento, y el par ya cruza bien. -->
+<link rel="alternate" hreflang="es" href="https://drjasonvaldivia.com/">
+<link rel="alternate" hreflang="en" href="https://drjasonvaldivia.com/en/">
+<link rel="alternate" hreflang="fr" href="https://drjasonvaldivia.com/fr/">
+<link rel="alternate" hreflang="x-default" href="https://drjasonvaldivia.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Dr. Jason Valdivia — Cirujano General">
 <meta property="og:title" content="Cirujano General en Puerto Vallarta | Dr. Jason Valdivia">
@@ -59,6 +60,7 @@
     .pre-estatico .pre-pie{margin-top:2rem;padding-top:1rem;border-top:1px solid rgba(13,43,62,.12);font-size:.9rem}
   </style>
 
+  <p class="idioma-pre" style="float:right;font-size:.85rem"><a href="/en/">English</a> · <a href="/fr/">Français</a></p>
   <p class="pre-kicker">Certificado · Consejo Mexicano de Cirugía General</p>
   <h1>Cirujano General en Puerto Vallarta</h1>
   <p>Cirugía laparoscópica de vesícula, hernia, apéndice y tiroides: incisiones
