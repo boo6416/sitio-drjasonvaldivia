@@ -8,8 +8,14 @@
 <meta name="description" content="Cirujano general certificado en Puerto Vallarta. Cirugía laparoscópica de vesícula, hernia, apéndice y tiroides. Atención en español e inglés. Seguros y particulares.">
 <link rel="canonical" href="https://drjasonvaldivia.com/">
 <meta name="robots" content="index,follow">
-<link rel="alternate" hreflang="es" href="https://drjasonvaldivia.com/">
-<link rel="alternate" hreflang="en" href="https://drjasonvaldivia.com/">
+<!-- SIN hreflang, a proposito. Declaraba dos idiomas apuntando a LA MISMA URL,
+     que para Google no dice nada: es una etiqueta que se contradice sola. Las
+     paginas de procedimiento si lo tienen bien, porque cada idioma vive en su
+     propia direccion (/cirugia-de-vesicula/ ↔ /gallbladder-surgery/). La portada
+     no: el ingles se pinta con el selector ES/EN sobre esta misma URL, asi que
+     no hay una segunda direccion a la cual apuntar.
+     Si algun dia la portada en ingles vive en /en/, aqui van los dos <link> y
+     alla los suyos, cruzados como en las paginas de procedimiento. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Dr. Jason Valdivia — Cirujano General">
 <meta property="og:title" content="Cirujano General en Puerto Vallarta | Dr. Jason Valdivia">
@@ -357,12 +363,23 @@ const CONTENT = {
     navAbout: 'Sobre mí', navProc: 'Procedimientos', navPatients: 'Pacientes', navContact: 'Contacto',
     navCta: 'Agendar consulta', navSeguros: 'Seguros', navFaq: 'Preguntas', langSwitchLabel: 'EN',
     heroBadge1: 'Certificado · Consejo Mexicano de Cirugía General', heroBadge2: '🇺🇸 English spoken',
-    heroTitle1: 'Cirugía laparoscópica avanzada', heroTitle2: 'en', heroTitleCity: 'Puerto Vallarta',
-    heroDesc: 'Procedimientos mínimamente invasivos con menor dolor, recuperación más rápida cuando el caso lo permite. Atención directa, personalizada y sin intermediarios.',
+    /* El H1 dice «Cirujano General en Puerto Vallarta» y no «Cirugía laparoscópica
+       avanzada» por dos razones que apuntan al mismo lado:
+        1. Es lo que la gente teclea en Google. La etiqueta <title> ya decía
+           «Cirujano General en Puerto Vallarta», pero el H1 —la señal más fuerte
+           después del title— hablaba de laparoscopia, que casi nadie busca por su
+           nombre cuando lo que necesita es un cirujano.
+        2. Es lo que dice su cédula. La especialidad es Cirugía General; la
+           laparoscopia es entrenamiento y descriptor comercial, no la
+           especialidad, y encabezar con ella describía mal la credencial.
+       La laparoscopia no se pierde: baja al párrafo, acompañada de los
+       procedimientos concretos, que ésos sí se buscan por su nombre. */
+    heroTitle1: 'Cirujano General', heroTitle2: 'en', heroTitleCity: 'Puerto Vallarta',
+    heroDesc: 'Cirugía laparoscópica de vesícula, hernia, apéndice y tiroides: incisiones mínimas, menos dolor y recuperación más rápida cuando el caso lo permite. Atención directa, en español e inglés.',
     heroCtaPrimary: 'Agendar por WhatsApp', heroCtaSecondary: 'Ver procedimientos',
     stat1Label: 'Años en medicina', stat2Label: 'Años como cirujano', stat3Label: 'Años de residencia quirúrgica',
-    reviewsLabel: '69 reseñas en Google',
-    trust1: 'Consejo Mexicano de Cirugía General', trust2: 'Hospital Multimédica', trust3: 'Seguros de gastos médicos', trust4: '5.0★ · 69 reseñas',
+    reviewsLabel: '71 reseñas en Google',
+    trust1: 'Consejo Mexicano de Cirugía General', trust2: 'Hospital Multimédica', trust3: 'Seguros de gastos médicos', trust4: '5.0★ · 71 reseñas',
     aboutKicker: 'Sobre mí', aboutTitle: 'Formación sólida, enfoque humano',
     aboutP1: 'Soy el Dr. Jason Alejandro Valdivia Najar, médico cirujano con más de 10 años de trayectoria en medicina y especialidad en Cirugía General con entrenamiento avanzado en laparoscopia. Mi práctica en Puerto Vallarta combina técnica depurada, equipo actualizado y un trato directo y cercano con cada paciente.',
     aboutP2: 'Creo que un buen cirujano no solo opera — también escucha, explica y acompaña al paciente antes, durante y después del procedimiento.',
@@ -371,8 +388,8 @@ const CONTENT = {
     whyKicker: '¿Por qué elegirme?', whyTitle: 'Lo que me distingue',
     orKicker: 'Detrás de la cirugía', orTitle: 'En el quirófano',
     orDesc: 'Tecnología laparoscópica moderna y un equipo comprometido con cada procedimiento.',
-    testKicker: 'Pacientes', testTitle: 'Opiniones verificadas en Google', testRating: '5.0 ★ · 69 reseñas en Google',
-    testMore: '69 reseñas · 5.0⭐ en Google Maps —', testMoreLink: 'ver todas las reseñas ↗',
+    testKicker: 'Pacientes', testTitle: 'Opiniones verificadas en Google', testRating: '5.0 ★ · 71 reseñas en Google',
+    testMore: '71 reseñas · 5.0⭐ en Google Maps —', testMoreLink: 'ver todas las reseñas ↗',
     contactKicker: 'Contacto', contactTitle: 'Agende su consulta',
     contactDesc: 'Para agendar, el consultorio responde por WhatsApp al momento, a cualquier hora. Si su caso es urgente, escríbame directo. Atiendo en español e inglés.',
     contactCitas: 'Agendar por WhatsApp', stickyCitas: 'Agendar', contactCitasTexto: 'Hola%2C%20quisiera%20agendar%20una%20consulta',
@@ -384,12 +401,17 @@ const CONTENT = {
     navAbout: 'About', navProc: 'Procedures', navPatients: 'Patients', navContact: 'Contact',
     navCta: 'Book consultation', navSeguros: 'Insurance', navFaq: 'FAQ', langSwitchLabel: 'ES',
     heroBadge1: 'Board-Certified · Mexican Council of General Surgery', heroBadge2: '🇺🇸 English spoken',
-    heroTitle1: 'Advanced laparoscopic surgery', heroTitle2: 'in', heroTitleCity: 'Puerto Vallarta',
-    heroDesc: 'Minimally invasive procedures with less pain, faster recovery, and safe outcomes. Direct, personalized care — English-speaking surgeon available.',
+    heroTitle1: 'General Surgeon', heroTitle2: 'in', heroTitleCity: 'Puerto Vallarta',
+    /* Decía «and safe outcomes». Es una PROMESA DE RESULTADO, prohibida en
+       publicidad médica en México (regla 2 del README, LGS arts. 300-310), y
+       llevaba meses en producción sólo porque nadie relee la versión en inglés
+       con el mismo cuidado que la española. La versión en español nunca lo dijo:
+       ahí la frase es «cuando el caso lo permite». */
+    heroDesc: 'Laparoscopic gallbladder, hernia, appendix and thyroid surgery: small incisions, less pain and faster recovery when the case allows. Direct care from an English-speaking surgeon.',
     heroCtaPrimary: 'Book via WhatsApp', heroCtaSecondary: 'View procedures',
     stat1Label: 'Years in medicine', stat2Label: 'Years as surgeon', stat3Label: 'Years surgical residency',
-    reviewsLabel: '69 reviews on Google',
-    trust1: 'Mexican Council of General Surgery', trust2: 'Hospital Multimédica', trust3: 'Major medical insurance', trust4: '5.0★ · 69 reviews',
+    reviewsLabel: '71 reviews on Google',
+    trust1: 'Mexican Council of General Surgery', trust2: 'Hospital Multimédica', trust3: 'Major medical insurance', trust4: '5.0★ · 71 reviews',
     aboutKicker: 'About me', aboutTitle: 'Strong training, human approach',
     aboutP1: 'I am Dr. Jason Alejandro Valdivia Najar, a general surgeon with over 10 years in medicine and a specialty in General Surgery with advanced laparoscopic training. My practice in Puerto Vallarta combines refined technique, up-to-date equipment, and direct, personal care for every patient — fully available in English.',
     aboutP2: "I believe a good surgeon doesn't just operate — they listen, explain, and support the patient before, during, and after the procedure.",
@@ -398,8 +420,9 @@ const CONTENT = {
     whyKicker: 'Why choose me?', whyTitle: 'What sets me apart',
     orKicker: 'Behind the surgery', orTitle: 'In the operating room',
     orDesc: 'Modern laparoscopic technology and a team committed to every procedure.',
-    testKicker: 'Patients', testTitle: 'Opiniones verificadas en Google', testRating: '5.0 ★ · 69 reviews on Google',
-    testMore: '69 reviews · 5.0⭐ on Google Maps —', testMoreLink: 'read all reviews ↗',
+    // Decia «Opiniones verificadas en Google»: espanol dentro del bloque ingles.
+    testKicker: 'Patients', testTitle: 'Verified reviews on Google', testRating: '5.0 ★ · 71 reviews on Google',
+    testMore: '71 reviews · 5.0⭐ on Google Maps —', testMoreLink: 'read all reviews ↗',
     contactKicker: 'Contact', contactTitle: 'Book your appointment',
     contactDesc: 'To book, the office replies on WhatsApp right away, any time. If your case is urgent, message me directly. Available in English and Spanish.',
     contactCitas: 'Book on WhatsApp', stickyCitas: 'Book', contactCitasTexto: 'Hello%2C%20I%20would%20like%20to%20book%20an%20appointment',
