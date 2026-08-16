@@ -43,6 +43,43 @@
 # nada y `auditar-arbol.mjs` siguió respondiendo 200 después del segundo intento.
 # Van uno por uno. Si algún día se agrega otro guion a la raíz, se agrega aquí —
 # o mejor, no se pone en la raíz.
+# ══════════ surgerypuertovallarta.com — 2026-08-16 ══════════
+#
+# El Dr. es dueño de ese dominio y hoy NO SIRVE DE NADA. Medido:
+#   http://surgerypuertovallarta.com    → 302 Found → www.drjasonvaldivia.com
+#   https://surgerypuertovallarta.com   → la conexión EXPIRA. No hay nada.
+#
+# Dos fallas, y la segunda es la que importa:
+#
+# 1. Es 302 (temporal). Un 302 le dice a Google «no consolides, el original se
+#    queda»: NO transmite autoridad. Tiene que ser 301.
+#
+# 2. La redirección de URL de Namecheap **no habla HTTPS**. Su servicio de
+#    forwarding sólo escucha en el puerto 80; responder en HTTPS exige un
+#    certificado, y un dominio que sólo tiene un registro de redirección no lo
+#    tiene ni puede tenerlo. Por eso expira. Y como los navegadores de hoy
+#    intentan HTTPS primero, la mayoría de quien teclee ese dominio ve un error
+#    en vez del sitio. NO se arregla dentro de Namecheap: es un límite del
+#    servicio, no una casilla mal puesta.
+#
+# LA SALIDA es que lo sirva Netlify, que ya publica este sitio y emite
+# certificados gratis. En cuanto el dominio apunte aquí, estas reglas mandan.
+#
+# Va a /en/ y no a la raíz a propósito: «surgery puerto vallarta» es una
+# consulta EN INGLÉS y la portada en inglés ya existe. Mandar a un anglófono a
+# una página en español es perderlo en el primer segundo.
+#
+# Se redirige todo a /en/ SIN conservar la ruta (nada de `:splat`): ese dominio
+# se registró el 2026-04-14, nunca tuvo sitio y no tiene rutas propias que
+# preservar. Un `:splat` sólo fabricaría 404 con aire de intencionales.
+#
+# ⚠ Igual que arriba: el `!` no es adorno. Sin él la regla se ignora en cuanto
+# exista un archivo en esa ruta.
+http://surgerypuertovallarta.com/*        https://drjasonvaldivia.com/en/   301!
+https://surgerypuertovallarta.com/*       https://drjasonvaldivia.com/en/   301!
+http://www.surgerypuertovallarta.com/*    https://drjasonvaldivia.com/en/   301!
+https://www.surgerypuertovallarta.com/*   https://drjasonvaldivia.com/en/   301!
+
 /_pendiente/*             /404.html   404!
 /README.md                /404.html   404!
 /auditar-arbol.mjs        /404.html   404!
