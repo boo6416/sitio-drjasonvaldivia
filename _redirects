@@ -86,3 +86,68 @@ https://www.surgerypuertovallarta.com/*   https://drjasonvaldivia.com/en/   301!
 /revisar-rutas.mjs        /404.html   404!
 /generar-aviso.mjs        /404.html   404!
 /leer-docx.mjs            /404.html   404!
+
+# ── 2026-08-17: los guiones que se agregaron DESPUÉS y nadie tapó ───────────
+#
+# Pasó exactamente lo que avisa el comentario de arriba. Comprobado contra
+# producción ese día, con 200 OK:
+#
+#     /alinear-direccion.mjs      200
+#     /anadir-faq-coloquial.mjs   200
+#     /anadir-sameas.mjs          200
+#     /fechar-sitemap.mjs         200
+#     /generar-anorrectal.mjs     200
+#     /generar-anorrectal-en.mjs  200
+#
+# Otra vez: no hay credenciales ahí —se revisó— pero `generar-anorrectal.mjs`
+# lleva DENTRO el texto completo de las cinco páginas de padecimientos
+# anorrectales. O sea que ese contenido está publicado dos veces: en su página
+# buena y en un `.mjs` suelto que Google puede rastrear. Contenido duplicado,
+# justo en el grupo de páginas que más nos interesa posicionar.
+#
+# Recordatorio de por qué van uno por uno: Netlify NO admite comodines de
+# extensión. `/*.mjs` no coincide con nada.
+/alinear-direccion.mjs      /404.html   404!
+/anadir-faq-coloquial.mjs   /404.html   404!
+/anadir-sameas.mjs          /404.html   404!
+/fechar-sitemap.mjs         /404.html   404!
+/generar-anorrectal.mjs     /404.html   404!
+/generar-anorrectal-en.mjs  /404.html   404!
+/limpiar-index-html.mjs     /404.html   404!
+
+# ══════════ Una página, una URL — 2026-08-17 ══════════
+#
+# Search Console avisó el 17/8: «Página alternativa con etiqueta canónica
+# adecuada», 3 páginas. Al abrir el informe, las tres eran `…/index.html`.
+#
+# Comprobado contra producción: `/cirugia-de-vesicula/` y
+# `/cirugia-de-vesicula/index.html` responden AMBAS 200. Netlify tiene una
+# opción de «URL bonita» que normalmente redirige la segunda a la primera; en
+# este sitio NO está actuando. Así que las 42 páginas viven en internet con dos
+# direcciones cada una.
+#
+# El aviso de Google era benigno —la canónica está bien puesta y él la respeta,
+# por eso dice «adecuada»— pero el desperdicio no lo es. En el MISMO informe hay
+# 6 páginas «Descubierta: actualmente sin indexar»: Google las conoce y no ha ido
+# a rastrearlas, y entre ellas está `/cirugia-de-vesicula/`. Un sitio recién
+# nacido tiene un presupuesto de rastreo corto, y aquí se gastaba en ver dos
+# veces la misma página.
+#
+# La causa de raíz —que el sitio se enlazaba a sí mismo con `/index.html` en el
+# selector de idioma y en las 12 tarjetas de la portada— se corrigió en el HTML
+# el mismo día (`limpiar-index-html.mjs`, 36 enlaces). Esta regla es la otra
+# mitad: cierra las URLs que Google YA descubrió.
+#
+# `:seccion` es un marcador de UN segmento de ruta, no un splat. Cubre
+# `/cirugia-de-vesicula/index.html`, `/en/index.html`, `/fr/index.html` — todas
+# las páginas del sitio son de un solo nivel.
+#
+# ⚠ El `!` otra vez: `index.html` SÍ existe como archivo en cada carpeta, y sin
+# shadowing forzado Netlify sirve el archivo e ignora la regla. Es el mismo error
+# que ya se cometió dos veces en este archivo.
+#
+# ⚠ NO se pone regla para el `/index.html` de la raíz. Redirigir `/index.html` a
+# `/` cuando `/` se sirve PRECISAMENTE desde ese archivo es la forma clásica de
+# fabricar un bucle en la portada, y la portada no es donde uno prueba cosas.
+# Nada la enlaza así y Google no la ha reportado.
+/:seccion/index.html        /:seccion/  301!
