@@ -6,10 +6,14 @@
  *      Healthcare by the Sea — Centro quirurgico ambulatorio
  *      De Los Tules 168-10, Jardines de Las Gaviotas, 48328 Puerto Vallarta, Jal.
  *
- *  ⚠ EL DR. SIGUE OPERANDO EN HOSPITAL MULTIMEDICA. Lo que se muda es LA
- *  CONSULTA, no la cirugia. Por eso el hospital NO se borra del sitio: se le
- *  cambia el papel. Donde decia "aqui esta el consultorio" ahora dice "aqui
- *  opera". Borrarlo del todo habria sido tan falso como dejarlo como domicilio.
+ *  ⚠ LO QUE SE MUDA ES LA CONSULTA. Multimedica se sigue nombrando UNA vez,
+ *  como referencia del domicilio ANTERIOR, porque de eso trata el aviso.
+ *
+ *  ⚠ Y NO SE REDACTA NADA SOBRE DONDE OPERA. La primera version decia "las
+ *  cirugias se siguen realizando en Hospital Multimedica" — el Dr. lo corrigio:
+ *  «yo opero en todos los hospitales, no es una aclaracion necesaria». Nombrar
+ *  un solo hospital no informa, lo ENCOGE. La pagina /credenciales/ ya dice que
+ *  esta credencializado en varios.
  *
  *  LA DIRECCION SE ESCRIBE COMO LA ESCRIBE GOOGLE, letra por letra —
  *  «De Los Tules 168-10, Jardines de Las Gaviotas» — porque el NAP sólo sirve
@@ -61,7 +65,7 @@ const CAMBIOS = [
    *    donde se consulta y donde se opera — que es justo lo que hay que
    *    decir. El ensayo lo destapo: esta cadena salia con 0 reemplazos. */
   ['"@type":"Answer","text":"En Hospital Multimédica Vallarta, Calle Francia 186, Consultorio 4, Col. Versalles, C.P. 48310, Puerto Vallarta, Jalisco."',
-   '"@type":"Answer","text":"La consulta es en Healthcare by the Sea, De Los Tules 168-10, Jardines de Las Gaviotas, C.P. 48328, Puerto Vallarta, Jalisco — domicilio nuevo desde septiembre de 2026. Las cirugías se siguen realizando en Hospital Multimédica Vallarta."'],
+   '"@type":"Answer","text":"La consulta es en Healthcare by the Sea, De Los Tules 168-10, Jardines de Las Gaviotas, C.P. 48328, Puerto Vallarta, Jalisco — domicilio nuevo desde septiembre de 2026."'],
 
   // ── 4. Domicilio LEGAL del aviso de privacidad ───────────────────────────
   ["Hospital Multimédica Vallarta, Calle Francia 186, Consultorio 4, Col. Versalles, C.P. 48310, Puerto Vallarta, Jalisco.",
@@ -75,9 +79,9 @@ const CAMBIOS = [
    *    vez de desaparecer: la respuesta separa donde se consulta de donde se
    *    opera, que es justo la confusion que hay que evitar. */
   ["En Hospital Multimédica, Calle Francia #186, Consultorio 4, Colonia Versalles, Puerto Vallarta, Jalisco. Las cirugías pueden realizarse en el hospital que mejor se adapte a su caso y cobertura.",
-   "La CONSULTA es en Healthcare by the Sea, De Los Tules 168-10, Jardines de Las Gaviotas, Puerto Vallarta, Jalisco — domicilio nuevo desde septiembre de 2026; antes se atendía en Hospital Multimédica. Las CIRUGÍAS se siguen realizando en Hospital Multimédica Vallarta y en el hospital que mejor se adapte a su caso y cobertura."],
+   "La CONSULTA es en Healthcare by the Sea, De Los Tules 168-10, Jardines de Las Gaviotas, Puerto Vallarta, Jalisco — domicilio nuevo desde septiembre de 2026; antes se atendía en Hospital Multimédica."],
   ["At Hospital Multimédica, Calle Francia #186, Consultorio 4, Colonia Versalles, Puerto Vallarta, Jalisco. Surgeries can be performed at the hospital that best fits your case and insurance coverage.",
-   "OFFICE VISITS are at Healthcare by the Sea, De Los Tules 168-10, Jardines de Las Gaviotas, Puerto Vallarta, Jalisco — a new address as of September 2026; the office was previously at Hospital Multimédica. SURGERIES are still performed at Hospital Multimédica Vallarta and at the hospital that best fits your case and insurance coverage."],
+   "OFFICE VISITS are at Healthcare by the Sea, De Los Tules 168-10, Jardines de Las Gaviotas, Puerto Vallarta, Jalisco — a new address as of September 2026; the office was previously at Hospital Multimédica."],
 
   /* 6. Etiquetas cortas. «Consultorio · Hospital Multimedica» era una etiqueta,
    *    no una direccion, y por eso no la agarra ninguno de los cambios de
@@ -117,7 +121,7 @@ const CAMBIOS = [
   ["Calle Francia 186, Col. Versalles, 48310 Puerto Vallarta, Jalisco.",
    "De Los Tules 168-10, Jardines de Las Gaviotas, 48328 Puerto Vallarta, Jalisco."],
   ["Consultorio en el <strong>Hospital Multimédica</strong>, Calle Francia #186, Consultorio 4, Col. Versalles, Puerto Vallarta, Jalisco.",
-   "Consultorio en <strong>Healthcare by the Sea</strong>, De Los Tules 168-10, Jardines de Las Gaviotas, Puerto Vallarta, Jalisco. Las cirugías se siguen realizando en Hospital Multimédica Vallarta."],
+   "Consultorio en <strong>Healthcare by the Sea</strong>, De Los Tules 168-10, Jardines de Las Gaviotas, Puerto Vallarta, Jalisco."],
   ['streetAddress: "Calle Francia 186, Col. Versalles"',
    'streetAddress: "Healthcare by the Sea, De Los Tules 168-10, Jardines de Las Gaviotas"'],
   ['postalCode: "48310"', 'postalCode: "48328"'],

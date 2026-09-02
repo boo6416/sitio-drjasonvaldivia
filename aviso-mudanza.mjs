@@ -9,9 +9,13 @@
  *     que decir que la consulta se MUDO, no solo cual es la direccion nueva:
  *     una direccion nueva sin la palabra «mudo» se lee como un segundo
  *     consultorio.
- *   · DUPLICIDAD — el Dr. SIGUE OPERANDO en Hospital Multimedica. Si el sitio
- *     borrara el hospital, el paciente que lo vio ahi pensaria que se equivoco
- *     de medico. El aviso separa donde se CONSULTA de donde se OPERA.
+ *   · DUPLICIDAD — el paciente que lo vio en Multimedica tiene que entender
+ *     que es el mismo medico, no otro. Por eso el aviso nombra el domicilio
+ *     anterior en vez de callarlo.
+ *
+ *  ⚠ EL AVISO NO DICE DONDE OPERA. La primera version cerraba con "las cirugias
+ *  se siguen realizando en Hospital Multimedica"; el Dr. lo corrigio porque
+ *  opera en todos los hospitales y nombrar uno solo lo encoge.
  *
  *  ⚠ VA EN HTML PLANO, JUSTO DESPUES DE <body>, y no dentro de la plantilla de
  *  `support.js`. Es a proposito: la portada pinta su texto con JavaScript, y un
@@ -53,17 +57,17 @@ const banner = ({ titulo, cuerpo, enlace }) => `
 
 const ES = banner({
   titulo: "El consultorio cambió de domicilio.",
-  cuerpo: "Desde septiembre de 2026 la <b>consulta</b> es en <b>Healthcare by the Sea</b>, De Los Tules 168-10, Jardines de Las Gaviotas, Puerto Vallarta — ya no en Hospital Multimédica. Las <b>cirugías</b> se siguen realizando en Hospital Multimédica Vallarta.",
+  cuerpo: "Desde septiembre de 2026 la <b>consulta</b> es en <b>Healthcare by the Sea</b>, De Los Tules 168-10, Jardines de Las Gaviotas, Puerto Vallarta — ya no en Hospital Multimédica.",
   enlace: "Cómo llegar",
 });
 const EN = banner({
   titulo: "The office has moved.",
-  cuerpo: "As of September 2026, <b>consultations</b> are at <b>Healthcare by the Sea</b>, De Los Tules 168-10, Jardines de Las Gaviotas, Puerto Vallarta — no longer at Hospital Multimédica. <b>Surgeries</b> are still performed at Hospital Multimédica Vallarta.",
+  cuerpo: "As of September 2026, <b>consultations</b> are at <b>Healthcare by the Sea</b>, De Los Tules 168-10, Jardines de Las Gaviotas, Puerto Vallarta — no longer at Hospital Multimédica.",
   enlace: "Directions",
 });
 const FR = banner({
   titulo: "Le cabinet a changé d'adresse.",
-  cuerpo: "Depuis septembre 2026, les <b>consultations</b> ont lieu à <b>Healthcare by the Sea</b>, De Los Tules 168-10, Jardines de Las Gaviotas, Puerto Vallarta — et non plus à l'Hospital Multimédica. Les <b>chirurgies</b> sont toujours réalisées à l'Hospital Multimédica Vallarta.",
+  cuerpo: "Depuis septembre 2026, les <b>consultations</b> ont lieu à <b>Healthcare by the Sea</b>, De Los Tules 168-10, Jardines de Las Gaviotas, Puerto Vallarta — et non plus à l'Hospital Multimédica.",
   enlace: "Itinéraire",
 });
 
@@ -79,10 +83,10 @@ const PORTADAS = [
  * direccion es identica en los tres idiomas y por si sola no distingue. */
 const DIR = "Healthcare by the Sea · De Los Tules 168-10, Jardines de Las Gaviotas, 48328 Puerto Vallarta, Jalisco.<br>";
 const NOTA = {
-  "Lunes a jueves": ' <span class="nota-mudanza"><i>Domicilio nuevo desde septiembre de 2026 — antes en Hospital Multimédica, donde el Dr. sigue operando.</i></span><br>',
-  "Monday to Thursday": ' <span class="nota-mudanza"><i>New address as of September 2026 — previously at Hospital Multimédica, where the Dr. still operates.</i></span><br>',
-  "Atención en español": ' <span class="nota-mudanza"><i>Domicilio nuevo desde septiembre de 2026 — antes en Hospital Multimédica, donde el Dr. sigue operando.</i></span><br>',
-  "Lunes a viernes": ' <span class="nota-mudanza"><i>Domicilio nuevo desde septiembre de 2026 — antes en Hospital Multimédica, donde el Dr. sigue operando.</i></span><br>',
+  "Lunes a jueves": ' <span class="nota-mudanza"><i>Domicilio nuevo desde septiembre de 2026 — antes en Hospital Multimédica.</i></span><br>',
+  "Monday to Thursday": ' <span class="nota-mudanza"><i>New address as of September 2026 — previously at Hospital Multimédica.</i></span><br>',
+  "Atención en español": ' <span class="nota-mudanza"><i>Domicilio nuevo desde septiembre de 2026 — antes en Hospital Multimédica.</i></span><br>',
+  "Lunes a viernes": ' <span class="nota-mudanza"><i>Domicilio nuevo desde septiembre de 2026 — antes en Hospital Multimédica.</i></span><br>',
   "Lundi au jeudi": ' <span class="nota-mudanza"><i>Nouvelle adresse depuis septembre 2026 — auparavant à l\'Hospital Multimédica, où le Dr opère toujours.</i></span><br>',
 };
 

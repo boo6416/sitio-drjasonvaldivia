@@ -40,7 +40,7 @@ El consultorio **se mudó**. Lo que cambió y lo que NO:
 | | |
 |---|---|
 | **Consulta** | **Healthcare by the Sea** — Centro quirúrgico ambulatorio<br>De Los Tules 168-10, Jardines de Las Gaviotas, 48328 Puerto Vallarta, Jal.<br>Coordenadas `20.6391151, -105.2208455` |
-| **Cirugía** | **Sigue siendo Hospital Multimédica Vallarta** y el hospital que convenga al caso y a la cobertura |
+| **Cirugía** | No se redacta. Opera en varios hospitales — lo dice `/credenciales/` |
 | Domicilio anterior | Hospital Multimédica Vallarta, Calle Francia 186, Consultorio 4, Col. Versalles, 48310 |
 
 **La dirección se escribe como la escribe Google, letra por letra**: «De Los Tules
@@ -48,9 +48,11 @@ El consultorio **se mudó**. Lo que cambió y lo que NO:
 (`seahealth.com.mx`) dice «Las Aralias» en vez de «Jardines de Las Gaviotas».
 Manda la ficha de Google, que es contra la que Google compara el NAP.
 
-**El hospital NO se borró del sitio: cambió de papel.** Donde decía «aquí está el
-consultorio» ahora dice «aquí se opera». Borrarlo habría sido tan falso como
-dejarlo de domicilio, y habría hecho dudar al paciente que ya lo vio operar ahí.
+⚠ **NO se redacta dónde opera.** La primera versión de esta mudanza escribió
+«las cirugías se siguen realizando en Hospital Multimédica»; el Dr. lo corrigió:
+**«yo opero en todos los hospitales, no es una aclaración necesaria»**. Nombrar
+un solo hospital no informa, lo encoge. Multimédica se nombra UNA vez, como el
+domicilio anterior, y nada más.
 
 **El enlace corto `maps.app.goo.gl/q8n5PdiaCsoAVkMv7` no se tocó** —los 46 que
 hay en el sitio— porque apunta a la FICHA del Dr., no a un domicilio: al MOVER la
@@ -105,9 +107,9 @@ el nombre del inmueble delante del número; para y avisa si alguien lo invoca.
    a la vez — app de Meta publicada, `ASISTENTE_ACTIVO=true`, y la bandeja
    `/asistente` del expediente atendida. Antes no. Un número de publicidad que
    nadie contesta es peor que no poner número.
-5. **El domicilio de la CONSULTA y el de la CIRUGÍA son distintos** desde el
-   2026-09-01, y el sitio tiene que decir los dos. Consulta: Healthcare by the
-   Sea. Cirugía: Hospital Multimédica Vallarta. Dejar sólo uno confunde.
+5. **No se escribe dónde opera.** El Dr. está credencializado en varios
+   hospitales y lo dice `/credenciales/`. Nombrar uno solo lo encoge; se
+   corrigió el 2026-09-01 tras hacerlo mal.
 6. **Cada página lleva su `<title>` y su descripción** en el HTML, no inyectados por
    JavaScript. Hasta el 2026-08-03 ninguna los tenía y el sitio era invisible en
    Google pese a estar bien diseñado.
