@@ -1,3 +1,21 @@
+/* ⛔ OBSOLETO DESDE EL 2026-09-01 — NO LO CORRA.
+ *
+ *  Este guion alineaba el domicilio VIEJO (Hospital Multimedica Vallarta,
+ *  Calle Francia 186, Consultorio 4, Col. Versalles). El consultorio se mudo a
+ *  Healthcare by the Sea, De Los Tules 168-10, Jardines de Las Gaviotas, 48328.
+ *
+ *  Correrlo hoy REINYECTARIA la direccion vieja en las paginas y mandaria al
+ *  paciente a un consultorio donde ya no se atiende. Por eso para solo.
+ *
+ *  Se conserva y no se borra porque documenta POR QUE la direccion se escribe
+ *  con el nombre del inmueble delante —«Francia 186» no era un punto de
+ *  referencia y el hospital si—, y ese criterio se siguio usando en la mudanza.
+ *  El guion vigente es `mudanza-domicilio.mjs`.
+ */
+console.error("alinear-direccion.mjs esta OBSOLETO: alineaba el domicilio de Versalles.");
+console.error("El consultorio se mudo el 2026-09-01. Use mudanza-domicilio.mjs.");
+process.exit(1);
+
 /* Alinea la dirección del sitio con la de las fichas (2026-08-16).
  *
  *  POR QUÉ IMPORTA. Que el nombre, la dirección y el teléfono (el «NAP») digan

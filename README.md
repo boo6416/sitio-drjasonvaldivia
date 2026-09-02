@@ -33,6 +33,56 @@ a su `index.html`:
 Una página que se ve bien en el navegador **no** prueba que las demás también. El
 revisor las mira todas.
 
+## ⚠ CAMBIO DE DOMICILIO — 2026-09-01
+
+El consultorio **se mudó**. Lo que cambió y lo que NO:
+
+| | |
+|---|---|
+| **Consulta** | **Healthcare by the Sea** — Centro quirúrgico ambulatorio<br>De Los Tules 168-10, Jardines de Las Gaviotas, 48328 Puerto Vallarta, Jal.<br>Coordenadas `20.6391151, -105.2208455` |
+| **Cirugía** | **Sigue siendo Hospital Multimédica Vallarta** y el hospital que convenga al caso y a la cobertura |
+| Domicilio anterior | Hospital Multimédica Vallarta, Calle Francia 186, Consultorio 4, Col. Versalles, 48310 |
+
+**La dirección se escribe como la escribe Google, letra por letra**: «De Los Tules
+168-10, Jardines de Las Gaviotas». Ojo — la web de la propia clínica
+(`seahealth.com.mx`) dice «Las Aralias» en vez de «Jardines de Las Gaviotas».
+Manda la ficha de Google, que es contra la que Google compara el NAP.
+
+**El hospital NO se borró del sitio: cambió de papel.** Donde decía «aquí está el
+consultorio» ahora dice «aquí se opera». Borrarlo habría sido tan falso como
+dejarlo de domicilio, y habría hecho dudar al paciente que ya lo vio operar ahí.
+
+**El enlace corto `maps.app.goo.gl/q8n5PdiaCsoAVkMv7` no se tocó** —los 46 que
+hay en el sitio— porque apunta a la FICHA del Dr., no a un domicilio: al MOVER la
+ficha (que es lo que se decidió, en vez de crear una nueva) el enlace sigue al
+lugar solo, y con él las 71 reseñas. ⚠ Verifíquelo después de mover la ficha: si
+se creó una nueva en vez de moverla, esos 46 enlaces llevan al domicilio viejo.
+
+### Cómo se hizo, y qué correr si vuelve a mudarse
+
+```bash
+node mudanza-domicilio.mjs            # ensayo
+node mudanza-domicilio.mjs --aplicar  # 44 archivos
+node aviso-mudanza.mjs --aplicar      # el banner de «cambiamos de domicilio»
+node aviso-mudanza.mjs --quitar --aplicar   # para retirarlo dentro de ~1 año
+```
+
+⚠ **La lección de esta mudanza**: cambiar las 13 cadenas obvias —los
+`streetAddress`, los códigos postales, los pies de página— dejó la dirección
+vieja viva **dentro de la prosa** de seis páginas, escrita a mano en cinco
+redacciones distintas («Col. Versalles», «colonia Versalles», «Colonia
+Versalles»…), y en los textos fuente de `_pendiente/`, que habrían resucitado el
+domicilio viejo el día que alguien regenerara esas páginas. Se descubrió con un
+grep DESPUÉS de aplicar. **No dé el trabajo por hecho sin correr esto:**
+
+```bash
+grep -rniE "francia 186|versalles|48310|20\.6364712" --include=*.html --include=*.mjs --include=*.json .
+```
+
+`alinear-direccion.mjs` quedó **neutralizado**: alineaba el domicilio viejo y
+correrlo hoy lo reinyectaría. Se conserva porque documenta el criterio de poner
+el nombre del inmueble delante del número; para y avisa si alguien lo invoca.
+
 ## Reglas que no se negocian
 
 1. **Sin testimonios de pacientes.** Están prohibidos en publicidad médica en México
@@ -55,7 +105,10 @@ revisor las mira todas.
    a la vez — app de Meta publicada, `ASISTENTE_ACTIVO=true`, y la bandeja
    `/asistente` del expediente atendida. Antes no. Un número de publicidad que
    nadie contesta es peor que no poner número.
-5. **Cada página lleva su `<title>` y su descripción** en el HTML, no inyectados por
+5. **El domicilio de la CONSULTA y el de la CIRUGÍA son distintos** desde el
+   2026-09-01, y el sitio tiene que decir los dos. Consulta: Healthcare by the
+   Sea. Cirugía: Hospital Multimédica Vallarta. Dejar sólo uno confunde.
+6. **Cada página lleva su `<title>` y su descripción** en el HTML, no inyectados por
    JavaScript. Hasta el 2026-08-03 ninguna los tenía y el sitio era invisible en
    Google pese a estar bien diseñado.
 

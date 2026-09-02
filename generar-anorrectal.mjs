@@ -39,9 +39,9 @@ const MEDICO = {
   availableLanguage: ["es", "en"],
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Calle Francia 186, Col. Versalles",
+    streetAddress: "Healthcare by the Sea, De Los Tules 168-10, Jardines de Las Gaviotas",
     addressLocality: "Puerto Vallarta", addressRegion: "Jalisco",
-    postalCode: "48310", addressCountry: "MX",
+    postalCode: "48328", addressCountry: "MX",
   },
   sameAs: [
     "https://www.instagram.com/drjasonvaldivia/",
@@ -352,7 +352,7 @@ ${faqHtml}
   </ul>
 
   <h2>Consultorio</h2>
-  <p>Calle Francia 186, Col. Versalles, 48310 Puerto Vallarta, Jalisco.<br>
+  <p>De Los Tules 168-10, Jardines de Las Gaviotas, 48328 Puerto Vallarta, Jalisco.<br>
   Lunes a jueves 14:00–17:00 y 19:00–20:00 · Viernes 14:00–20:00.<br>
   Teléfono y WhatsApp: <a href="tel:${TEL}">${TEL_VISIBLE}</a>.<br>
   Consulta de valoración: <b>$800 MXN</b>. Se aceptan
@@ -456,7 +456,7 @@ ${ld.map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script
   aquí — son de los motivos de consulta más frecuentes que existen.</p>
 
   <h2>Consultorio</h2>
-  <p>Calle Francia 186, Col. Versalles, 48310 Puerto Vallarta, Jalisco.<br>
+  <p>De Los Tules 168-10, Jardines de Las Gaviotas, 48328 Puerto Vallarta, Jalisco.<br>
   Lunes a jueves 14:00–17:00 y 19:00–20:00 · Viernes 14:00–20:00.<br>
   Teléfono y WhatsApp: <a href="tel:${TEL}">${TEL_VISIBLE}</a>.<br>
   Consulta de valoración: <b>$800 MXN</b>. Se aceptan

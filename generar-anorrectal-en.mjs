@@ -29,9 +29,9 @@ const MEDICO = {
   knowsLanguage: ["en", "es"],
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Calle Francia 186, Col. Versalles",
+    streetAddress: "Healthcare by the Sea, De Los Tules 168-10, Jardines de Las Gaviotas",
     addressLocality: "Puerto Vallarta", addressRegion: "Jalisco",
-    postalCode: "48310", addressCountry: "MX",
+    postalCode: "48328", addressCountry: "MX",
   },
   sameAs: [
     "https://www.instagram.com/drjasonvaldivia/",
@@ -303,7 +303,7 @@ ${p.faq.map(([q, a]) => `  <h3>${q}</h3>\n  <p>${a}</p>`).join("\n")}
   </ul>
 
   <h2>The office</h2>
-  <p>Calle Francia 186, Col. Versalles, 48310 Puerto Vallarta, Jalisco.<br>
+  <p>De Los Tules 168-10, Jardines de Las Gaviotas, 48328 Puerto Vallarta, Jalisco.<br>
   Monday to Thursday 2:00–5:00 pm and 7:00–8:00 pm · Friday 2:00–8:00 pm.<br>
   Phone and WhatsApp: <a href="tel:${TEL}">${TEL_VIS}</a>.<br>
   Initial consultation: <b>$800 MXN</b>. Major medical

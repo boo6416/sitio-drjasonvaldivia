@@ -70,7 +70,15 @@ for (const d of decl) {
   if (d === "/") continue;
   const { t } = await traer(d);
   const hrefs = [...t.matchAll(/href\s*=\s*["']([^"']+)["']/g)].map((m) => m[1]);
-  const inicio = hrefs.some((h) => h === "/" || h === "https://drjasonvaldivia.com/");
+  // La portada de una pagina en ingles es /en/, y la de una en frances /fr/ —
+  // no /. Exigir solo "/" marcaba como CALLEJON las cuatro paginas anorrectales
+  // en ingles, que si tienen salida y la correcta. Un aviso que grita en falso
+  // acaba tapando al de verdad, asi que se aceptan las tres portadas.
+  const PORTADAS = ["/", "/en/", "/fr/"];
+  const inicio = hrefs.some((h) => {
+    const r = ruta(h, RAIZ + d);
+    return r !== null && PORTADAS.includes(r);
+  });
   const agendar = hrefs.some((h) => h.includes("/citas/") || h.includes("wa.me"));
   if (!inicio || !agendar) {
     sinSalida++;
