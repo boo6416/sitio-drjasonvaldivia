@@ -363,6 +363,29 @@
     } catch (e) { return "es"; }
   }
 
+  /* De qué campaña llegó la persona (2026-09-12): la que trae ESTA dirección,
+   * o la que guardó /utm.js en la página por la que entró (hasta 90 días). Se
+   * manda con la solicitud para que el expediente sepa qué canal la trajo.
+   * Sólo valores limpios; si no hay nada, no se manda nada. */
+  function campanaGuardada() {
+    var limpio = function (v, n) { v = (v || "").slice(0, n); return /^[\w.-]+$/.test(v) ? v : ""; };
+    var c = null;
+    try {
+      var q = new URLSearchParams(location.search);
+      if (q.get("utm_source")) c = { fuente: q.get("utm_source"), medio: q.get("utm_medium"), campana: q.get("utm_campaign") };
+      else {
+        var g = JSON.parse(localStorage.getItem("drv_utm") || "null");
+        if (g && g.fuente && Date.now() - (g.t || 0) < 90 * 86400000) c = g;
+      }
+    } catch (e) { return undefined; }
+    if (!c) return undefined;
+    var r = {};
+    if (limpio(c.fuente, 40)) r.fuente = limpio(c.fuente, 40); else return undefined;
+    if (limpio(c.medio, 40)) r.medio = limpio(c.medio, 40);
+    if (limpio(c.campana, 60)) r.campana = limpio(c.campana, 60);
+    return r;
+  }
+
   /* ---------- utilería de DOM (sin innerHTML para nada que escriba el usuario) */
   function el(tag, estilo, texto) {
     var n = document.createElement(tag);
@@ -687,6 +710,8 @@
         estado.error = t.faltan; pintar(); return;
       }
       if (!d.correo) delete d.correo;
+      var camp = campanaGuardada();
+      if (camp) d.campana = camp;
       estado.mandando = true; estado.error = ""; pintar();
       mandar(d).then(function (j) {
         estado.mandando = false;

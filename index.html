@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
+<script src="/utm.js"></script>
 <title>Cirujano General en Puerto Vallarta | Dr. Jason Valdivia</title>
 <meta name="description" content="Cirujano general certificado en Puerto Vallarta. Cirugía laparoscópica de vesícula, hernia, apéndice y tiroides. Atención en español e inglés. Seguros y particulares.">
 <link rel="canonical" href="https://drjasonvaldivia.com/">
@@ -75,7 +76,7 @@
 
   <p class="pre-cta">
     <a class="pre-boton" href="/citas/">Agendar consulta</a>
-    <a class="pre-boton" href="https://wa.me/523339718620">WhatsApp 33 3971 8620</a>
+    <a class="pre-boton" href="https://wa.me/523313470335?text=Hola%2C%20quisiera%20agendar%20una%20consulta">WhatsApp de citas · 33 1347 0335</a>
   </p>
 
   <h2>Cirugías que realiza</h2>
@@ -207,7 +208,7 @@
       <h1 style="font-family:'Playfair Display',serif; font-size:clamp(2.2rem,4.6vw,3.4rem); color:#fdf0ea; font-weight:500; line-height:1.14; margin-bottom:1.4rem;">{{ t.heroTitle1 }}<br>{{ t.heroTitle2 }} <span style="color:{{ accentLight }}; font-style:italic;">{{ t.heroTitleCity }}</span></h1>
       <p style="font-size:1.02rem; color:rgba(255,255,255,0.62); max-width:520px; line-height:1.8; font-weight:300; margin-bottom:2.2rem;">{{ t.heroDesc }}</p>
       <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2.6rem;">
-        <a href="https://wa.me/523339718620" target="_blank" style="display:inline-flex; align-items:center; gap:10px; background:{{ accent }}; color:#1b2c3a; text-decoration:none; padding:0.95rem 1.7rem; border-radius:6px; font-weight:600; font-size:0.92rem;">
+        <a href="https://wa.me/523313470335?text={{ t.contactCitasTexto }}" target="_blank" style="display:inline-flex; align-items:center; gap:10px; background:{{ accent }}; color:#1b2c3a; text-decoration:none; padding:0.95rem 1.7rem; border-radius:6px; font-weight:600; font-size:0.92rem;">
           {{ t.heroCtaPrimary }}
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
         </a>
@@ -575,13 +576,13 @@ const PROCEDURES = {
 
 const WHY_ITEMS = {
   es: [
-    { num:'01', title:'Acceso directo', desc:'Puede contactarme personalmente por WhatsApp en español o inglés. Sin secretarias ni intermediarios.' },
+    { num:'01', title:'Acceso directo', desc:'Agenda por WhatsApp al momento, en español o inglés, y en consulta lo atiendo yo personalmente. Si su caso es urgente, me escribe directo.' },
     { num:'02', title:'Capacidad hospitalaria', desc:'Credencializado en múltiples hospitales de Puerto Vallarta. Cirugía donde mejor se adapte a su cobertura.' },
     { num:'03', title:'Técnica laparoscópica', desc:'Especializado en cirugía mínimamente invasiva: menos dolor, cicatrices pequeñas y recuperación más rápida.' },
     { num:'04', title:'Seguros médicos', desc:'Atención a pacientes con seguro de gastos médicos mayores y particulares.' },
   ],
   en: [
-    { num:'01', title:'Direct access', desc:'You can reach me personally via WhatsApp in English or Spanish. No gatekeepers, no delays.' },
+    { num:'01', title:'Direct access', desc:'Book on WhatsApp right away, in English or Spanish, and I see you personally at the consultation. If it is urgent, you message me directly.' },
     { num:'02', title:'Hospital coverage', desc:'Credentialed at multiple hospitals in Puerto Vallarta. Surgery at the facility that best fits your coverage.' },
     { num:'03', title:'Laparoscopic technique', desc:'Specialized in minimally invasive surgery: less pain, small scars, faster recovery than open surgery.' },
     { num:'04', title:'Insurance accepted', desc:'Accepts major medical insurance and international patients from the first visit.' },
