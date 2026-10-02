@@ -21,9 +21,9 @@ import { join } from "node:path";
 const PERFILES = [
   "https://www.instagram.com/drjasonvaldivia/",
   "https://www.facebook.com/profile.php?id=177835868736674",
-  "https://maps.app.goo.gl/q8n5PdiaCsoAVkMv7",
+  "https://maps.app.goo.gl/MnbK3xqooJie5NaSA",
 ];
-const ANCLA = '"hasMap":"https://maps.app.goo.gl/q8n5PdiaCsoAVkMv7",';
+const ANCLA = '"hasMap":"https://maps.app.goo.gl/MnbK3xqooJie5NaSA",';
 const SAMEAS = `"sameAs":${JSON.stringify(PERFILES)},`;
 
 function paginas(dir = ".", acc = []) {
@@ -41,7 +41,21 @@ for (const p of paginas()) {
   let html = readFileSync(p, "utf8");
   if (html.includes('"sameAs"')) {
     // La portada ya lo tenía, pero sin la ficha de Maps: se completa.
-    if (!html.includes(`"sameAs":["https://www.instagram`) || html.includes("maps.app.goo.gl/q8n5PdiaCsoAVkMv7\"]")) { yaTenian++; continue; }
+    /* ⚠ ESTA CONDICION QUEDO MUERTA, y se arregla por claridad (2026-10-02).
+     *
+     * Buscaba el enlace RETIRADO (`q8n5PdiaCsoAVkMv7`), que ya no existe en
+     * ningun archivo del sitio, asi que no podia cumplirse nunca. El guion
+     * seguia funcionando bien —la comprobacion de abajo ve que el `sameAs` ya
+     * trae un mapa y se salta la pagina igual—, pero el codigo decia algo
+     * imposible. El reemplazo masivo de la URL no la alcanzo porque aqui la
+     * cadena va SIN `https://`.
+     *
+     * ⛔ Y OJO CON LO QUE SUPONE: que el mapa sea el ULTIMO elemento del sameAs
+     * (por el `"]`). Hoy no siempre lo es —hay paginas que terminan en
+     * Doctoralia—, asi que esta comprobacion no detecta todo lo que cree. Se
+     * deja igual a proposito: el guion es idempotente y no corrompe nada, pero
+     * quien lo vuelva a correr tiene que revisar esto primero. */
+    if (!html.includes(`"sameAs":["https://www.instagram`) || html.includes("maps.app.goo.gl/MnbK3xqooJie5NaSA\"]")) { yaTenian++; continue; }
     const viejo = /"sameAs":\[[^\]]*\]/;
     if (viejo.test(html) && !html.match(viejo)[0].includes("maps.app.goo.gl")) {
       html = html.replace(viejo, `"sameAs":${JSON.stringify(PERFILES)}`);

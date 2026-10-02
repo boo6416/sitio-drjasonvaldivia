@@ -54,11 +54,28 @@ Manda la ficha de Google, que es contra la que Google compara el NAP.
 un solo hospital no informa, lo encoge. Multimédica se nombra UNA vez, como el
 domicilio anterior, y nada más.
 
-**El enlace corto `maps.app.goo.gl/q8n5PdiaCsoAVkMv7` no se tocó** —los 46 que
-hay en el sitio— porque apunta a la FICHA del Dr., no a un domicilio: al MOVER la
-ficha (que es lo que se decidió, en vez de crear una nueva) el enlace sigue al
-lugar solo, y con él las 71 reseñas. ⚠ Verifíquelo después de mover la ficha: si
-se creó una nueva en vez de moverla, esos 46 enlaces llevan al domicilio viejo.
+⛔ **AQUÍ DECÍA QUE EL ENLACE CORTO NO SE TOCÓ, Y ESO FUE UN ERROR QUE DURÓ UN MES.**
+Se dejó `q8n5PdiaCsoAVkMv7` dando por bueno que «apunta a la ficha, y la ficha se
+movió, así que el enlace la sigue». **No la sigue.** Un enlace corto de Maps es una
+fotografía del momento en que se creó: ése llevaba las coordenadas viejas grabadas
+dentro de la URL (`!3d20.6364712!4d-105.2275679`), que caen en Calle Francia, CP
+48310 — a unos 760 m del domicilio nuevo. **Una paciente citada el 1 de octubre
+llegó al consultorio viejo por ese enlace**, con la dirección correcta escrita
+justo encima.
+
+⚠ **La ficha de Google nunca estuvo mal** — dice «De Los Tules 168-10 … 48328 · Se
+encuentra en: Healthcare by the Sea». El fallo era sólo del enlace.
+
+✅ **Corregido el 2026-10-02**: los 81 lugares del sitio (enlaces visibles,
+`hasMap` y `sameAs`) y los cuatro guiones generadores usan ahora
+`MnbK3xqooJie5NaSA`, regenerado por el Dr. con el botón «Compartir» de su ficha.
+Verificado de dos formas: resuelto **sin sesión** lleva la dirección nueva escrita
+y ninguna coordenada congelada —sólo el id de la ficha—, y abierto en el navegador
+Google lo dibuja a ~5 m del consultorio. Al resolver por id, éste sí sigue a la
+ficha si vuelve a mudarse.
+
+⚠ **El aviso de «verifíquelo» ya estaba escrito aquí y nadie lo ejecutó.** Un aviso
+no es una verificación: al cambiar este enlace, **resuélvalo y mire dónde cae**.
 
 ### Cómo se hizo, y qué correr si vuelve a mudarse
 

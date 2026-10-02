@@ -46,7 +46,7 @@ const MEDICO = {
   sameAs: [
     "https://www.instagram.com/drjasonvaldivia/",
     "https://www.facebook.com/profile.php?id=177835868736674",
-    "https://maps.app.goo.gl/q8n5PdiaCsoAVkMv7",
+    "https://maps.app.goo.gl/MnbK3xqooJie5NaSA",
     "https://www.doctoralia.com.mx/perfil/jason-alejandro-valdivia-najar",
   ],
   areaServed: { "@type": "City", name: "Puerto Vallarta" },

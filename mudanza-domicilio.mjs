@@ -25,12 +25,27 @@
  *  Maps (`!3d20.6391151!4d-105.2208455`), leidas el 2026-09-01. Las viejas
  *  llevaban al paciente a Versalles.
  *
- *  EL ENLACE CORTO `maps.app.goo.gl/q8n5PdiaCsoAVkMv7` NO SE TOCA, a proposito:
- *  apunta a la FICHA del Dr., no a un domicilio. Al MOVER la ficha (que es lo
- *  que se decidio, en vez de crear una nueva) el enlace sigue al lugar solo, y
- *  con el las 71 resenas. Los 46 enlaces del sitio quedan buenos sin tocar uno.
- *  ⚠ Verifiquelo despues de mover la ficha: si en vez de moverla se creo una
- *  nueva, este enlace apunta al domicilio viejo y hay que cambiar los 46.
+ *  ⛔ AQUI DECIA QUE EL ENLACE CORTO `q8n5PdiaCsoAVkMv7` NO SE TOCABA PORQUE
+ *  "sigue al lugar solo". ERA FALSO, y costo que una paciente citada el 1-oct
+ *  llegara al consultorio VIEJO, un mes despues de esta mudanza.
+ *
+ *  UN ENLACE CORTO DE MAPS ES UNA FOTOGRAFIA DEL MOMENTO EN QUE SE CREO. Ese
+ *  llevaba las coordenadas antiguas GRABADAS dentro de la URL
+ *  (`!3d20.6364712!4d-105.2275679`), que caen en Calle Francia, CP 48310. Google
+ *  obedece esas coordenadas incrustadas, asi que abria Francia aunque la ficha
+ *  ya estuviera mudada.
+ *
+ *  ⚠ LA FICHA NUNCA ESTUVO MAL: dice "De Los Tules 168-10 … 48328" y "Se
+ *  encuentra en: Healthcare by the Sea". El fallo era solo del enlace.
+ *
+ *  Hoy el sitio usa `MnbK3xqooJie5NaSA`, regenerado por el Dr. con "Compartir"
+ *  el 2026-10-02 y verificado: resuelto sin sesion lleva la direccion nueva y
+ *  NINGUNA coordenada congelada —solo el id de la ficha—, y el navegador lo
+ *  dibuja a ~5 m del consultorio. Por resolver por id, ese si la sigue.
+ *
+ *  ⚠ EL AVISO DE VERIFICAR YA ESTABA ESCRITO AQUI, y nadie lo ejecuto en un mes.
+ *  Un "verifiquelo despues" no es una verificacion: al cambiar este enlace,
+ *  RESUELVALO Y MIRE DONDE CAE antes de darlo por bueno.
  *
  *  Idempotente: correrlo dos veces no hace dano.
  *

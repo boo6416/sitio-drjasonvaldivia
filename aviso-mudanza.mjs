@@ -43,7 +43,7 @@ const APLICAR = process.argv.includes("--aplicar");
 const QUITAR = process.argv.includes("--quitar");
 
 const MARCA = "aviso-mudanza-2026";
-const MAPA = "https://maps.app.goo.gl/q8n5PdiaCsoAVkMv7";
+const MAPA = "https://maps.app.goo.gl/MnbK3xqooJie5NaSA";
 
 /* Un solo dibujo para los tres idiomas. Colores del sitio: fondo crema sobre el
  * azul de la marca, sin rojo — esto es un dato util, no una alarma. */
