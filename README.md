@@ -25,13 +25,21 @@ a su `index.html`:
 
 | Archivo | Para qué |
 |---|---|
-| `image-slot.js` | el componente que pinta la foto del encabezado |
 | `ProcedurePage.dc.html` | la plantilla de la página; **es distinta en cada carpeta** |
 | `illus.png` | la ilustración clínica de esa cirugía |
 | `logo.png` | el logotipo que usa la plantilla |
 
 Una página que se ve bien en el navegador **no** prueba que las demás también. El
 revisor las mira todas.
+
+> **`image-slot.js` ya no está, y es a propósito (2026-10-14).** Era el andamiaje
+> de la herramienta de diseño con la que se armaron las páginas: 62 KB por página
+> para pintar una ilustración fija, más un `404` en cada visita —`.image-slots.state.json`,
+> el archivo donde el editor guarda las imágenes que uno arrastra, que en
+> producción no existe ni va a existir—. Eran **26 errores 404 por rastreo
+> completo del sitio**, invisibles para el paciente y muy visibles para cualquier
+> auditoría. La ilustración ahora es un `<img>` normal, con `alt`, que además sí
+> lee Google.
 
 ## ⚠ CAMBIO DE DOMICILIO — 2026-09-01
 

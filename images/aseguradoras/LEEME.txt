@@ -1,7 +1,13 @@
 LOGOTIPOS DE ASEGURADORAS
 
-Para que aparezca el logo de una aseguradora en /seguros/, ponga aqui el
-archivo PNG con el nombre exacto de la lista:
+Para que aparezca el logo de una aseguradora en /seguros/:
+
+  1. Deje aqui el archivo PNG con el nombre exacto de la lista.
+  2. Corra, desde la raiz del repositorio:
+
+         node logos-aseguradoras.mjs
+
+Nombres de archivo:
 
   gnp.png  axa.png  metlife.png  monterrey.png  mapfre.png  allianz.png
   zurich.png  hdi.png  banorte.png  inbursa.png  atlas.png  planseguro.png
@@ -12,3 +18,15 @@ Si el archivo no esta, la tarjeta muestra solo el nombre y la pagina se ve
 igual de bien. NO se descargaron los logos a proposito: son marcas registradas
 de terceros y mostrarlas puede leerse como que usted pertenece a su red. Si
 tiene convenio con alguna, ponga su logo con confianza.
+
+--- 2026-10-14 -----------------------------------------------------------
+
+EL PASO 2 ES NUEVO, y hay que darlo. Antes la pagina traia los diecinueve
+<img> SIEMPRE, estuviera o no el archivo: como no estan, cada visita producia
+diecinueve errores 404. A la vista no se notaba --el <img> se borra solo-- pero
+cualquier auditoria del sitio los cuenta como imagenes rotas, y es justo lo que
+acaba en la captura de pantalla de quien llama ofreciendo "arreglarle la
+pagina".
+
+Ahora la pagina pide SOLO los logos que existen. El guion es quien pone y
+quita el <img>; por eso hay que correrlo despues de agregar un archivo.
