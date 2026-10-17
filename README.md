@@ -17,6 +17,24 @@ Las páginas usan `support.js`, un runtime que interpola las plantillas `{{ }}` 
 node revisar-rutas.mjs      # debe decir "sin rutas relativas rotas"
 ```
 
+### El conteo de reseñas caduca solo
+
+La portada dice cuántas reseñas tiene en Google, en **ocho** lugares (los
+diccionarios `es` y `en`). Es un número escrito a mano: **no avisa cuando queda
+viejo**. Estuvo en 70 mientras la ficha iba por 82 — doce reseñas de prueba
+social que el sitio no enseñaba.
+
+```bash
+node actualizar-resenas.mjs 82            # ensayo
+node actualizar-resenas.mjs 82 --aplicar  # las ocho menciones
+```
+
+⛔ **El número se LEE de la ficha, no se estima.** Google Maps no entrega texto
+por `curl` —es JavaScript— así que hay que abrirla en el navegador, y **siempre
+con `authuser=1`**: la ficha vive en `boo.valdi@gmail.com` y la cuenta por
+omisión del Chrome es otra, que no administra nada. Medido el 2026-10-17:
+**5,0 · 82 reseñas**.
+
 **Por qué existe**: al traer el sitio a este repositorio se copiaron las páginas pero
 **no los archivos que cada carpeta necesita al lado**. El resultado fue que todas las
 páginas menos la portada salieron en blanco en producción, sin un solo error visible —
