@@ -352,24 +352,29 @@
     <div style="text-align:center; max-width:640px; margin:0 auto 3rem; animation:fadeUp 0.8s ease both;">
       <div style="font-size:0.75rem; letter-spacing:0.16em; text-transform:uppercase; color:{{ accentDark }}; font-weight:600; margin-bottom:0.7rem;">{{ t.testKicker }}</div>
       <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.7rem,2.8vw,2.4rem); font-weight:500; margin-bottom:0.9rem;">{{ t.testTitle }}</h2>
-      <p style="color:{{ accentDark }}; font-weight:600; font-size:0.95rem;">{{ t.testRating }}</p>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.4rem;">
-      <sc-for list="{{ testimonials }}" as="rev" hint-placeholder-count="3">
-        <div style="background:#ffffff; border:1px solid rgba(13,43,62,0.07); border-radius:12px; padding:1.9rem; animation:fadeUp 0.8s ease both;">
-          <div style="color:{{ accent }}; letter-spacing:2px; margin-bottom:0.9rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p style="font-size:0.9rem; color:#374651; line-height:1.75; font-weight:300; margin-bottom:1.3rem;">&ldquo;{{ rev.quote }}&rdquo;</p>
-          <div style="display:flex; align-items:center; gap:10px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#0d2b3e; color:#fdf0ea; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:600;">{{ rev.initials }}</div>
-            <div>
-              <div style="font-size:0.82rem; font-weight:600; color:#14293a;">{{ rev.name }}</div>
-              <div style="font-size:0.72rem; color:#8b98a3;">{{ rev.detail }}</div>
-            </div>
-          </div>
-        </div>
-      </sc-for>
+
+    <!-- ⛔ AQUI IBAN TARJETAS DE TESTIMONIO, Y NO VUELVEN (retiradas el
+         2026-08-03 por la revision legal; el armazon vacio se quito el
+         2026-10-17). La razon, textual de aquel commit: «prohibidos por
+         COFEPRIS AUNQUE SEAN REALES Y AUTORIZADOS», y uno ligaba un
+         procedimiento con una persona identificable por iniciales y fecha.
+
+         Quitar el nombre NO lo arregla: la version retirada ya usaba
+         iniciales, y eso fue lo que se senalo como agravante. El numero de
+         aviso de publicidad 2614082002A00062 va al pie de las 46 paginas,
+         asi que esta pagina esta dentro del alcance de esa regla.
+
+         La prueba social que SI se puede dar es la de un tercero
+         verificable: las resenas publicas de Google, que no las publica el
+         consultorio. Por eso esta seccion REMITE en vez de reproducir. -->
+    <div style="max-width:560px; margin:0 auto; background:#ffffff; border:1px solid rgba(13,43,62,0.07); border-radius:14px; padding:2.8rem 2rem; text-align:center; animation:fadeUp 0.8s ease both;">
+      <div style="font-family:'Playfair Display',serif; font-size:3.4rem; line-height:1; color:#14293a; font-weight:600;">{{ t.testScore }}</div>
+      <div style="color:{{ accent }}; letter-spacing:5px; font-size:1.15rem; margin:0.6rem 0 0.8rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div style="font-size:0.95rem; color:{{ accentDark }}; font-weight:600;">{{ t.testCount }}</div>
+      <p style="font-size:0.88rem; color:#5a6b78; line-height:1.75; font-weight:300; margin:1.4rem 0 1.9rem;">{{ t.testNote }}</p>
+      <a href="https://maps.app.goo.gl/MnbK3xqooJie5NaSA" target="_blank" rel="noopener" style="display:inline-block; background:{{ accentDark }}; color:#fdf0ea; padding:0.9rem 1.7rem; border-radius:8px; font-size:0.9rem; font-weight:600; text-decoration:none;">{{ t.testCta }}</a>
     </div>
-    <p style="text-align:center; margin-top:2.4rem; font-size:0.85rem; color:#5a6b78;">{{ t.testMore }} <a href="https://maps.app.goo.gl/MnbK3xqooJie5NaSA" target="_blank" style="color:{{ accentDark }};">{{ t.testMoreLink }}</a></p>
   </div>
 </section>
 
@@ -497,8 +502,10 @@ const CONTENT = {
     whyKicker: '¿Por qué elegirme?', whyTitle: 'Lo que me distingue',
     orKicker: 'Detrás de la cirugía', orTitle: 'En el quirófano',
     orDesc: 'Tecnología laparoscópica moderna y un equipo comprometido con cada procedimiento.',
-    testKicker: 'Pacientes', testTitle: 'Opiniones verificadas en Google', testRating: '5.0 ★ · 82 reseñas en Google',
-    testMore: '82 reseñas · 5.0⭐ en Google Maps —', testMoreLink: 'ver todas las reseñas ↗',
+    testKicker: 'Pacientes', testTitle: 'Opiniones verificadas en Google',
+    testScore: '5.0', testCount: '82 reseñas en Google',
+    testNote: 'Son reseñas públicas, escritas por pacientes en el perfil de Google del consultorio. Puede leerlas todas, sin filtrar.',
+    testCta: 'Leer las reseñas en Google ↗',
     contactKicker: 'Contacto', contactTitle: 'Agende su consulta',
     contactDesc: 'Para agendar, el consultorio responde por WhatsApp al momento, a cualquier hora. Si su caso es urgente, escríbame directo. Atiendo en español e inglés.',
     contactCitas: 'Agendar por WhatsApp', stickyCitas: 'Agendar', contactCitasTexto: 'Hola%2C%20quisiera%20agendar%20una%20consulta',
@@ -530,8 +537,10 @@ const CONTENT = {
     orKicker: 'Behind the surgery', orTitle: 'In the operating room',
     orDesc: 'Modern laparoscopic technology and a team committed to every procedure.',
     // Decia «Opiniones verificadas en Google»: espanol dentro del bloque ingles.
-    testKicker: 'Patients', testTitle: 'Verified reviews on Google', testRating: '5.0 ★ · 82 reviews on Google',
-    testMore: '82 reviews · 5.0⭐ on Google Maps —', testMoreLink: 'read all reviews ↗',
+    testKicker: 'Patients', testTitle: 'Verified reviews on Google',
+    testScore: '5.0', testCount: '82 reviews on Google',
+    testNote: 'These are public reviews, written by patients on the Google profile of the practice. You can read every one of them, unfiltered.',
+    testCta: 'Read the reviews on Google ↗',
     contactKicker: 'Contact', contactTitle: 'Book your appointment',
     contactDesc: 'To book, the office replies on WhatsApp right away, any time. If your case is urgent, message me directly. Available in English and Spanish.',
     contactCitas: 'Book on WhatsApp', stickyCitas: 'Book', contactCitasTexto: 'Hello%2C%20I%20would%20like%20to%20book%20an%20appointment',
@@ -590,7 +599,18 @@ const WHY_ITEMS = {
   ]
 };
 
-const TESTIMONIALS = { es: [], en: [] };
+/* ⛔ AQUI VIVIA `TESTIMONIALS`, Y NO VUELVE (2026-10-17).
+ *
+ * Se vacio el 2026-08-03 en la revision legal —«testimonios de pacientes
+ * retirados, prohibidos por COFEPRIS aunque sean reales y autorizados»— y
+ * desde entonces la lista vacia dejaba un HUECO visible en la portada: el
+ * armazon de tarjetas seguia ahi, reservando el espacio de tres opiniones que
+ * nunca llegaban. Eso es lo que se veia como «la pagina tiene errores».
+ *
+ * Quitar el nombre no lo arregla: la version retirada ya usaba iniciales.
+ * Lo que si se puede es REMITIR a las resenas publicas de Google, que las
+ * publica un tercero y cualquiera puede verificar. Es lo que hace la seccion.
+ */
 
 const OR_PHOTOS = [
   { src:'images/or-1.jpg', alt:'Dr. Jason Valdivia en quirófano' },
@@ -714,7 +734,6 @@ class Component extends DCLogic {
       credentials: CREDENTIALS[lang],
       procedures: PROCEDURES[lang],
       whyItems: WHY_ITEMS[lang],
-      testimonials: TESTIMONIALS[lang],
       orPhotos: OR_PHOTOS,
       carouselTrackStyle: {
         display: 'flex',
