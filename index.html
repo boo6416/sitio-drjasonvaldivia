@@ -254,7 +254,7 @@
 <!-- ABOUT -->
 <section id="sobre-mi" data-screen-label="About" style="padding:{{ sectionPadding }}; max-width:1240px; margin:0 auto; display:flex; gap:3.5rem; align-items:flex-start; flex-wrap:wrap;">
   <div style="flex:1 1 340px; min-width:280px; animation:fadeUp 0.9s ease both;">
-    <img src="images/dr-model-demo.jpg" alt="Dr. Valdivia explicando un procedimiento" style="width:100%; border-radius:14px; display:block; box-shadow:0 20px 45px rgba(13,43,62,0.12);">
+    <img src="images/dr-model-demo.webp" alt="Dr. Valdivia explicando un procedimiento" style="width:100%; display:block;">
   </div>
   <div style="flex:1.3 1 420px; min-width:300px; animation:fadeUp 0.9s ease 0.1s both;">
     <div style="font-size:0.75rem; letter-spacing:0.16em; text-transform:uppercase; color:{{ accentDark }}; font-weight:600; margin-bottom:0.7rem;">{{ t.aboutKicker }}</div>
@@ -262,7 +262,7 @@
     <p style="font-size:0.98rem; color:#42535f; line-height:1.85; font-weight:300; margin-bottom:1rem;">{{ t.aboutP1 }}</p>
     <p style="font-size:0.98rem; color:#42535f; line-height:1.85; font-weight:300; margin-bottom:1.8rem;">{{ t.aboutP2 }}</p>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1rem;">
-      <sc-for list="{{ credentials }}" as="c" hint-placeholder-count="4">
+      <sc-for list="{{ credentials }}" as="c" hint-placeholder-count="9">
         <div style="display:flex; gap:12px; align-items:flex-start;">
           <div style="width:34px; height:34px; border-radius:8px; background:{{ accentDarkA10 }}; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:{{ accentDark }}; font-family:'Playfair Display',serif; font-weight:600;">{{ c.mono }}</div>
           <div>
@@ -306,7 +306,7 @@
       <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.7rem,2.8vw,2.4rem); font-weight:500;">{{ t.whyTitle }}</h2>
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.4rem;">
-      <sc-for list="{{ whyItems }}" as="w" hint-placeholder-count="4">
+      <sc-for list="{{ whyItems }}" as="w" hint-placeholder-count="9">
         <div style="text-align:center; padding:2.3rem 1.5rem; background:#ffffff; border-radius:10px; border:1px solid rgba(13,43,62,0.07); transition:transform 0.25s ease, box-shadow 0.25s ease; animation:fadeUp 0.8s ease both;" style-hover="transform:translateY(-6px); box-shadow:0 16px 34px rgba(13,43,62,0.1);">
           <div style="font-family:'Playfair Display',serif; font-size:2.3rem; color:{{ accent }}; font-weight:400; margin-bottom:0.6rem;">{{ w.num }}</div>
           <h4 style="font-size:0.95rem; font-weight:600; color:#14293a; margin-bottom:0.6rem;">{{ w.title }}</h4>
@@ -328,9 +328,9 @@
     <div style="position:relative; max-width:920px; margin:0 auto; animation:fadeScale 0.8s ease both;">
       <div style="border-radius:14px; overflow:hidden; aspect-ratio:16/9; box-shadow:0 24px 50px rgba(13,43,62,0.18); position:relative;" onMouseEnter="{{ pauseCarousel }}" onMouseLeave="{{ resumeCarousel }}">
         <div style="{{ carouselTrackStyle }}">
-          <sc-for list="{{ orPhotos }}" as="photo" hint-placeholder-count="4">
+          <sc-for list="{{ orPhotos }}" as="photo" hint-placeholder-count="9">
             <div style="width:100%; height:100%; flex-shrink:0;">
-              <img src="{{ photo.src }}" alt="{{ photo.alt }}" style="width:100%; height:100%; object-fit:cover; display:block;">
+              <img src="{{ photo.src }}" alt="{{ photo.alt }}" style="{{ photo.style }}">
             </div>
           </sc-for>
         </div>
@@ -338,7 +338,7 @@
         <button onClick="{{ carouselNext }}" aria-label="Next photo" style="position:absolute; top:50%; right:14px; transform:translateY(-50%); width:42px; height:42px; border-radius:50%; background:rgba(13,43,62,0.65); border:none; color:#fff; font-size:1.2rem; cursor:pointer; display:flex; align-items:center; justify-content:center;">&#8250;</button>
       </div>
       <div style="display:flex; justify-content:center; gap:9px; margin-top:1.1rem;">
-        <sc-for list="{{ orPhotos }}" as="photo" hint-placeholder-count="4">
+        <sc-for list="{{ orPhotos }}" as="photo" hint-placeholder-count="9">
           <button onClick="{{ carouselGoTo($index) }}" aria-label="Go to photo {{ $index }}" style="{{ dotStyle($index) }}"></button>
         </sc-for>
       </div>
@@ -413,7 +413,7 @@
       </div>
     </div>
     <div style="border-radius:14px; overflow:hidden; min-height:320px; animation:fadeUp 0.8s ease 0.1s both;">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.8!2d-105.2208455!3d20.6391151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842145cd62a90235%3A0xc3f66c6a177c86b5!2sDr%20Jason%20Valdivia%20Najar%20Cirujano!5e0!3m2!1ses!2smx!4v1" style="width:100%; height:100%; min-height:320px; border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://maps.google.com/maps?q=Dr%20Jason%20Valdivia%20Najar%20Cirujano%2C%20De%20Los%20Tules%20168-10%2C%20Jardines%20de%20Las%20Gaviotas%2C%20Puerto%20Vallarta&z=16&hl=es&output=embed" style="width:100%; height:100%; min-height:320px; border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </section>
@@ -617,7 +617,13 @@ const OR_PHOTOS = [
   { src:'images/or-2.jpg', alt:'Cirugía laparoscópica' },
   { src:'images/or-3.jpg', alt:'Dr. Jason Valdivia con lupas quirúrgicas' },
   { src:'images/or-4.jpg', alt:'Equipo quirúrgico en procedimiento' },
-];
+  // 2026-10-28, enviadas por el Dr. Verticales: se anclan arriba para no cortar caras.
+  { src:'images/or-5.jpg', alt:'Dr. Jason Valdivia operando con su ayudante', pos:'50% 25%' },
+  { src:'images/or-6.jpg', alt:'Dr. Jason Valdivia en el área quirúrgica', pos:'50% 35%' },
+  { src:'images/or-7.jpg', alt:'Equipo quirúrgico durante una cirugía', pos:'50% 30%' },
+  { src:'images/or-8.jpg', alt:'Dr. Jason Valdivia durante una cirugía', pos:'50% 25%' },
+  { src:'images/or-9.jpg', alt:'Dr. Jason Valdivia en cirugía laparoscópica', pos:'50% 20%' },
+].map((p) => ({ ...p, style: 'width:100%; height:100%; object-fit:cover; object-position:' + (p.pos || '50% 50%') + '; display:block;' }));
 
 function hexToRgba(hex, alpha) {
   const h = hex.replace('#', '');
